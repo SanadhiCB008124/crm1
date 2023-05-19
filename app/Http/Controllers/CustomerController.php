@@ -35,7 +35,7 @@ class CustomerController extends Controller
 
 
     public function addEmployee(){
-        return view('add-Employee');
+        return view('add-employee');
     }
 
     public function saveCustomer(Request $request){

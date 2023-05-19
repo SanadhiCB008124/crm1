@@ -12,7 +12,7 @@
 <div>
     <h2>Add Employee</h2>
 
-    <form method="post" action="{{url ('saveEmployee') }}">
+    <form method="post" action="{{url ('save-employee') }}">
 @csrf 
 <div>
 
@@ -26,6 +26,7 @@
                 <label  class="block text-bg" for="email" >email</label>
                 <input type="email"  name="email"  class="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-purple-300 focus:bg-white focus:outline-none"/>
             </div>
+           
 
 
            

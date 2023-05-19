@@ -26,10 +26,10 @@ Route::middleware([
 ])->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
-    })
-    ->Middleware(['role'])
-    
-    ->name('dashboard');
+  
+})
+->middleware(['role:0','role:1','role:2'])
+->name('dashboard');
 });
 
 
@@ -48,16 +48,17 @@ Route::get('customer-list',[CustomerController::class,'index']);
 
 Route::get('employee-list',[CustomerController::class,'employee']);
 
-Route::get('add-Employee',[CustomerController::class,'addEmployee']);
+Route::get('add-employee',[CustomerController::class,'addEmployee']);
 
 Route::post('save-employee',[CustomerController::class,'saveEmployee']);
 
 
-Route::get('add-customer',[CustomerController::class,'addCustomer']);//unused
+Route::get('add-customer',[CustomerController::class,'addEmployee']);//unused
 
 Route::post('save-customer',[CustomerController::class,'saveCustomer']);//unused
 
 Route::get('edit-customer/{email}',[CustomerController::class,'editCustomer']);
+
 Route::get('edit-employee/{email}',[CustomerController::class,'editEmployee']);
 
 Route::post('update-customer',[CustomerController::class,'updateCustomer']);

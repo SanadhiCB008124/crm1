@@ -13,8 +13,13 @@ class ValidateRole
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
-    public function handle(Request $request, Closure $next): Response
+    public function handle(Request $request, Closure $next, string $role_id): Response
     {
+
+        $role=\App\Models\Role::findOrFail($role_id);
+        if ($request->user()->role_id !==$role->id){
+          abort(403,'unauthorzed action');
+        }
         return $next($request);
     }
 }

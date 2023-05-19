@@ -14,10 +14,10 @@ class HomeController extends Controller
     
    
     if($role_id==0){
-        return view('employee-dashboard');
+        return view('dashboard');
     }
     else if($role_id==1){
-        return view('dashboard');
+        return view('employee-dashboard');
     }
     else{
         return view('welcome');

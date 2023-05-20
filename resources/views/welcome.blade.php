@@ -236,340 +236,258 @@ button.addEventListener('click', () => {
 
 </section>
 
-<!--men-->
-<div class="bg-white">
-  <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-    <h2 class="text-2xl font-bold tracking-tight text-gray-900">Men</h2>
-
-    <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 ">
-      <div >
-        <div class="min-h-80 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none  lg:h-80">
-          <img src="images\nike air force 1 high.jpg" alt="Nike air force i high" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
-        </div>
-        <div class="mt-4 flex justify-between">
-          <div>
-            <h3 class="text-sm text-black">
-              <a href="#">
-                <span aria-hidden="true" class="absolute inset-0"></span>
-                Nike air force 1 high
-                <br>
-                <p class="text-sm font-medium text-rose-500">$35</p>
-              </a>
-            </h3>
-           
-          </div>
-          
-          <br>
-          
-          <a href="#" class="text-orange-500 no-underline hover:underline">Add to Cart</a>
-       
-          
-        </div>
-        <br>
-        
-      </div>
 
 
-     
-      <div class="group relative">
-        <div class="min-h-80 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none  lg:h-80">
-          <img src="images\adidas.webp" alt="Adidas NMD Runner R1" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
-        </div>
-        <div class="mt-4 flex justify-between">
-          <div>
-            <h3 class="text-sm text-black">
-              <a href="#">
-                <span aria-hidden="true" class="absolute inset-0"></span>
-                Adidas NMD Runner R1
-                <br>
-                <p class="text-sm font-medium text-rose-500">$35</p>
-              </a>
-            </h3>
-            
-          </div>
-         
-          <br>
-          <a href="#" class="text-orange-500 hover:text-white no-underline hover:underline">Add to Cart</a>
-
-        </div>
-        <br>
-       
-      </div>
+<section class=" text-gray-600 ">
+    <div class="container mx-auto px-10 py-4 ">
+      <h5 class="text-2xl font-bold text-black ">Men</h5>
+      <br>
+      <div class="-m-4 flex flex-wrap">
 
 
-      <div class="group relative">
-        <div class="min-h-80 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none  lg:h-80">
-          <img src="images\enzo2.jpg" alt="Enzo" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
-        </div>
-        <div class="mt-4 flex justify-between">
-          <div>
-            <h3 class="text-sm text-black">
-              <a href="#">
-                <span aria-hidden="true" class="absolute inset-0"></span>
-              Enzo
-              <br>
-                <p class="text-sm font-medium text-rose-500">$35</p>
-              </a>
-            </h3>
-           
-          </div>
-       
-          <br>
-          <a href="#" class="text-orange-500 hover:text-white no-underline hover:underline">Add to Cart</a>
-        </div>
-        <br>
-        
-      </div>
-      
 
-      <div class="group relative">
-        <div class="min-h-80 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none  lg:h-80">
-          <img src="images\vap.webp" alt="Nike Vapormax" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
-        </div>
-        <div class="mt-4 flex justify-between">
-          <div>
-            <h3 class="text-sm text-black">
-              <a href="#">
-                <span aria-hidden="true" class="absolute inset-0"></span>
-                Nike Air Vapormax
-                <br>
-                <p class="text-sm font-medium text-rose-500">$35</p>
-              </a>
-            </h3>
-            
-          </div>
-        
-          <br>
-          <a href="#" class="text-orange-500 hover:text-white no-underline hover:underline">Add to Cart</a>
-        </div>
-        <br>
-       
-      </div>
-
-      
-    </div>
-  </div>
-</div>
-<!--women-->
-<div class="bg-white">
-  <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-    <h2 class="text-2xl font-bold tracking-tight text-gray-900">Women</h2>
-
-    <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-      <div class="group relative">
-        <div class="min-h-80 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none  lg:h-80">
-          <img src="images\nike air max.webp" alt="Nike air max" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
-        </div>
-        <div class="mt-4 flex justify-between">
-          <div>
-            <h3 class="text-sm text-black">
-              <a href="#">
-                <span aria-hidden="true" class="absolute inset-0"></span>
-                Nike Air Max
-                <br>
-                <p class="text-sm font-medium text-rose-500">$35</p>
-              </a>
-            </h3>
-           
-          </div>
-       
-          <br>
-          <a href="#" class="text-orange-500 hover:text-white no-underline hover:underline">Add to Cart</a>
-        </div>
-        <br>
-       
-      </div>
-
-
-     
-      <div class="group relative">
-        <div class="min-h-80 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none  lg:h-80">
+        <div class="w-full p-4 md:w-1/2 lg:w-1/4">
+          <a class="relative block h-48 overflow-hidden rounded">
           <img src="images\puma3.webp" alt="Puma Run XX Nitro WNS" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
-        </div>
-        <div class="mt-4 flex justify-between">
-          <div>
-            <h3 class="text-sm text-black">
-              <a href="#">
-                <span aria-hidden="true" class="absolute inset-0"></span>
-                Puma Run XX Nitro WNS
-                <br>
-                <p class="text-sm font-medium text-rose-500">$35</p>
-              </a>
-            </h3>
-            
-          </div>
-         
-          <br>
-          <a href="#" class="text-orange-500 hover:text-white no-underline hover:underline">Add to Cart</a>
-        </div>
-        <br>
-        
-      </div>
-
-
-      <div class="group relative">
-        <div class="min-h-80 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none lg:h-80">
-          <img src="images\chasker.webp" alt="adidas chasker boots" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
-        </div>
-        <div class="mt-4 flex justify-between">
-          <div>
-            <h3 class="text-sm text-black">
-              <a href="#">
-                <span aria-hidden="true" class="absolute inset-0"></span>
-                Adidas Chasker Boots
-                <br>
-                <p class="text-sm font-medium text-rose-500">$35</p>
-              </a>
-            </h3>
-           
-          </div>
-         
-          <br>
-          <a href="#" class="text-orange-500 hover:text-white no-underline hover:underline">Add to Cart</a>
-         
-        </div>
-        <br>
-       
-      </div>
-
-
-      <div class="group relative">
-        <div class="min-h-80 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none  lg:h-80">
-          <img src="images\nike air force 1.webp" alt="nike air force 1 " class="h-full w-full object-cover object-center lg:h-full lg:w-full">
-        </div>
-        <div class="mt-4 flex justify-between">
-          <div>
-            <h3 class="text-sm text-black">
-              <a href="#">
-                <span aria-hidden="true" class="absolute inset-0"></span>
-                Nike Air Force 1
-                <br>
-                <p class="text-sm font-medium text-rose-500">$35</p>
-              </a>
-            </h3>
-           
-          </div>
+          </a>
+          <div class="mt-4">
           
-          <br>
-          <a href="#" class="text-orange-500 hover:text-white no-underline hover:underline">Add to Cart</a>
+            <h2 class="title-font text-lg font-medium text-gray-900">Puma Run XX Nitro WNS</h2>
+            <h2 class="title-font text-lg font-medium text-gray-900">$35.00</h2>
+            <div class="flex items-center space-x-1.5 rounded-lg bg-orange-400  hover:bg-orange-600 px-4 py-1.5 text-white duration-100 ">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+              </svg>
+
+              <button class="text-sm">Add to cart</button>
+            </div>
+          </div>
         </div>
-        <br>
-      
-      </div>
 
-      
-    </div>
-  </div>
-</div>
-<!--top selling-->
-<div class="bg-white">
-  <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-    <h2 class="text-2xl font-bold tracking-tight text-gray-900">Top Selling products</h2>
+        <div class="w-full p-4 md:w-1/2 lg:w-1/4">
+          <a class="relative block h-48 overflow-hidden rounded">
+          <img src="images\vap.webp" alt="Nike Vapormax" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+          </a>
+          <div class="mt-4">
+          
+            <h2 class="title-font text-lg font-medium text-gray-900">Nike Vapormax</h2>
+            <h2 class="title-font text-lg font-medium text-gray-900">$35.00</h2>
+            <div class="flex items-center space-x-1.5 rounded-lg bg-orange-400  hover:bg-orange-600 px-4 py-1.5 text-white duration-100 ">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+              </svg>
 
-    <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-    <div class="group relative">
-        <div class="min-h-80 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none  lg:h-80">
+              <button class="text-sm">Add to cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="w-full p-4 md:w-1/2 lg:w-1/4">
+          <a class="relative block h-48 overflow-hidden rounded">
+          <img src="images\nike air force 1 high.jpg" alt="Nike air force i high" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+          </a>
+          <div class="mt-4">
+          
+            <h2 class="title-font text-lg font-medium text-gray-900">Nike Air Force 1 High</h2>
+            <h2 class="title-font text-lg font-medium text-gray-900">$35.00</h2>
+            <div class="flex items-center space-x-1.5 rounded-lg bg-orange-400  hover:bg-orange-600 px-4 py-1.5 text-white duration-100 ">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+              </svg>
+
+              <button class="text-sm">Add to cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="w-full p-4 md:w-1/2 lg:w-1/4">
+          <a class="relative block h-48 overflow-hidden rounded">
           <img src="images\enzo2.jpg" alt="Enzo" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
-        </div>
-        <div class="mt-4 flex justify-between">
-          <div>
-            <h3 class="text-sm text-black">
-              <a href="#">
-                <span aria-hidden="true" class="absolute inset-0"></span>
-              Enzo
-              <br>
-                <p class="text-sm font-medium text-rose-500">$35</p>
-              </a>
-            </h3>
-           
+          </a>
+          <div class="mt-4">
+          
+            <h2 class="title-font text-lg font-medium text-gray-900">Enzo</h2>
+            <h2 class="title-font text-lg font-medium text-gray-900">$35.00</h2>
+            <div class="flex items-center space-x-1.5 rounded-lg bg-orange-400  hover:bg-orange-600 px-4 py-1.5 text-white duration-100 ">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+              </svg>
+
+              <button class="text-sm">Add to cart</button>
+            </div>
           </div>
-         
-          <br>
-          <a href="#" class="text-orange-500 hover:text-white no-underline hover:underline">Add to Cart</a>
         </div>
-        <br>
-       
-      </div>
-
-
-     
-      <div class="group relative">
-        <div class="min-h-80 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none  lg:h-80">
-          <img src="images\nike air max sc.jpg" alt="Nike Air Max SC" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
         </div>
-        <div class="mt-4 flex justify-between">
-          <div>
-            <h3 class="text-sm text-black">
-              <a href="#">
-                <span aria-hidden="true" class="absolute inset-0"></span>
-                Nike Air Max SC
-                <br>
-                <p class="text-sm font-medium text-rose-500">$35</p>
-              </a>
-            </h3>
-            
-          </div>
-        
-          <br>
-          <a href="#" class="text-orange-500 hover:text-white no-underline hover:underline">Add to Cart</a>
-        </div>
-        <br>
-       
-      </div>
-
-
-      <div class="group relative">
-        <div class="min-h-80 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none  lg:h-80">
-          <img src="images\adidas.webp" alt="Adidas NMD Runner R1" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
-        </div>
-        <div class="mt-4 flex justify-between">
-          <div>
-            <h3 class="text-sm text-black">
-              <a href="#">
-                <span aria-hidden="true" class="absolute inset-0"></span>
-                Adidas NMD Runner R1
-                <br>
-                <p class="text-sm font-medium text-rose-500">$35</p>
-              </a>
-            </h3>
-            
-          </div>
-        
-          <br>
-          <a href="#" class="text-orange-500 hover:text-white no-underline hover:underline">Add to Cart</a>
-        </div>
-        <br>
-       
-      </div>
-
-      <div class="group relative">
-        <div class="min-h-80 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none  lg:h-80">
-          <img src="images\nike air max.webp" alt="Nike air max" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
-        </div>
-        <div class="mt-4 flex justify-between">
-          <div>
-            <h3 class="text-sm text-black">
-              <a href="#">
-                <span aria-hidden="true" class="absolute inset-0"></span>
-                Nike Air Max
-                <br>
-                <p class="text-sm font-medium text-rose-500">$35</p>
-              </a>
-            </h3>
-           
-          </div>
-        
-          <br>
-          <a href="#" class="text-orange-500 hover:text-white no-underline hover:underline">Add to Cart</a>
-        </div>
-        <br>
-        
-      </div>
-
-      
     </div>
   </div>
-</div>
+</section>
+<!--women-->
+<section class=" text-gray-600 ">
+    <div class="container mx-auto px-10 py-4 ">
+      <h5 class="text-2xl font-bold text-black "> Women</h5>
+      <br>
+      <div class="-m-4 flex flex-wrap">
+
+
+
+        <div class="w-full p-4 md:w-1/2 lg:w-1/4">
+          <a class="relative block h-48 overflow-hidden rounded">
+          <img src="images\nike air max.webp" alt="Nike air max" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+          </a>
+          <div class="mt-4">
+          
+            <h2 class="title-font text-lg font-medium text-gray-900">Nike Air Max</h2>
+            <h2 class="title-font text-lg font-medium text-gray-900">$35.00<</h2>
+            <div class="flex items-center space-x-1.5 rounded-lg bg-orange-400  hover:bg-orange-600 px-4 py-1.5 text-white duration-100 ">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+              </svg>
+
+              <button class="text-sm">Add to cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="w-full p-4 md:w-1/2 lg:w-1/4">
+          <a class="relative block h-48 overflow-hidden rounded">
+          <img src="images\chasker.webp" alt="adidas chasker boots" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+          </a>
+          <div class="mt-4">
+          
+            <h2 class="title-font text-lg font-medium text-gray-900">Adidas Chasker Boots</h2>
+            <h2 class="title-font text-lg font-medium text-gray-900">$35.00</h2>
+            <div class="flex items-center space-x-1.5 rounded-lg bg-orange-400  hover:bg-orange-600 px-4 py-1.5 text-white duration-100 ">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+              </svg>
+
+              <button class="text-sm">Add to cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="w-full p-4 md:w-1/2 lg:w-1/4">
+          <a class="relative block h-48 overflow-hidden rounded">
+          <img src="images\nike air force 1.webp" alt="Nike air force i high" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+          </a>
+          <div class="mt-4">
+          
+            <h2 class="title-font text-lg font-medium text-gray-900">Nike Air Force 1</h2>
+            <h2 class="title-font text-lg font-medium text-gray-900">$35.00</h2>
+            <div class="flex items-center space-x-1.5 rounded-lg bg-orange-400  hover:bg-orange-600 px-4 py-1.5 text-white duration-100 ">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+              </svg>
+
+              <button class="text-sm">Add to cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="w-full p-4 md:w-1/2 lg:w-1/4">
+          <a class="relative block h-48 overflow-hidden rounded">
+          <img src="images\nike air max sc.jpg" alt="Nike Air Max SC" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+          </a>
+          <div class="mt-4">
+          
+            <h2 class="title-font text-lg font-medium text-gray-900">Nike Air Max SC</h2>
+            <h2 class="title-font text-lg font-medium text-gray-900">$35.00</h2>
+            <div class="flex items-center space-x-1.5 rounded-lg bg-orange-400  hover:bg-orange-600 px-4 py-1.5 text-white duration-100 ">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+              </svg>
+
+              <button class="text-sm">Add to cart</button>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</section>
+
+<!--top sellers-->
+<section class=" text-gray-600 ">
+    <div class="container mx-auto px-10 py-4 ">
+      <h5 class="text-2xl font-bold text-black "> Top Selling</h5>
+      <br>
+      <div class="-m-4 flex flex-wrap">
+
+
+
+        <div class="w-full p-4 md:w-1/2 lg:w-1/4">
+          <a class="relative block h-48 overflow-hidden rounded">
+          <img src="images\nike air force 1 high.jpg" alt="Nike air force i high" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+          </a>
+          <div class="mt-4">
+          
+            <h2 class="title-font text-lg font-medium text-gray-900">Nike Air Force 1 High</h2>
+            <h2 class="title-font text-lg font-medium text-gray-900">$35.00</h2>
+            <div class="flex items-center space-x-1.5 rounded-lg bg-orange-400  hover:bg-orange-600 px-4 py-1.5 text-white duration-100 ">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+              </svg>
+
+              <button class="text-sm">Add to cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="w-full p-4 md:w-1/2 lg:w-1/4">
+          <a class="relative block h-48 overflow-hidden rounded">
+          <img src="images\adidas NMD Runner R1.jpg" alt="adidas NMD Runner R1" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+          </a>
+          <div class="mt-4">
+          
+            <h2 class="title-font text-lg font-medium text-gray-900">adidas NMD Runner R1</h2>
+            <h2 class="title-font text-lg font-medium text-gray-900">$35.00</h2>
+            <div class="flex items-center space-x-1.5 rounded-lg bg-orange-400  hover:bg-orange-600 px-4 py-1.5 text-white duration-100 ">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+              </svg>
+
+              <button class="text-sm">Add to cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="w-full p-4 md:w-1/2 lg:w-1/4">
+          <a class="relative block h-48 overflow-hidden rounded">
+          <img src="images\enzo2.jpg" alt="Enzo" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+          </a>
+          <div class="mt-4">
+          
+            <h2 class="title-font text-lg font-medium text-gray-900">Enzo</h2>
+            <h2 class="title-font text-lg font-medium text-gray-900">$35.00</h2>
+            <div class="flex items-center space-x-1.5 rounded-lg bg-orange-400  hover:bg-orange-600 px-4 py-1.5 text-white duration-100 ">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+              </svg>
+
+              <button class="text-sm">Add to cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="w-full p-4 md:w-1/2 lg:w-1/4">
+          <a class="relative block h-48 overflow-hidden rounded">
+          <img src="images\chasker.webp" alt="adidas chasker boots" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+          </a>
+          <div class="mt-4">
+          
+            <h2 class="title-font text-lg font-medium text-gray-900">Adidas Chasker Boots</h2>
+            <h2 class="title-font text-lg font-medium text-gray-900">$35.00</h2>
+            <div class="flex items-center space-x-1.5 rounded-lg bg-orange-400  hover:bg-orange-600 px-4 py-1.5 text-white duration-100 ">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+              </svg>
+
+              <button class="text-sm">Add to cart</button>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</section>
 
 
 

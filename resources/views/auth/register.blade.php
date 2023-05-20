@@ -71,6 +71,7 @@
              
       
             </div>
+          
 
             <button type="submit" class="w-full block bg-black text-amber-100   hover:text-white  border border-amber-100  font-semibold rounded-lg
               px-4 py-3 mt-6">  {{ __('Register') }}</button>

@@ -32,9 +32,15 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
                 <div class="hidden lg:block" id="menu">
+                <span class="text-white text-xl">
+           Hi  {{ Auth::user()->email }} !
+</span><br>
                     <div class="my-2 mb-6">
                         <h1 class="text-2xl font-bold text-white">Admin Dashboard</h1>
                     </div>
+                    <div>
+                   
+</div>
                     <ul >
                         <li class="mb-6">
                             <div class="relative">

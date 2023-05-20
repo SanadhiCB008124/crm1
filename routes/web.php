@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Routing\Controllers\Middleware;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomerController;
@@ -44,7 +45,7 @@ Route::get('redirects', [App\Http\Controllers\HomeController::class, 'index'])->
 
 Route::get('logout', [App\Http\Controllers\UserController::class, 'logout'])->name('logout');
 
-
+Route::get('view-welcome',[HomeController::class,'view']);
 
 Route::get('customer-list',[CustomerController::class,'index']);
 

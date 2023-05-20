@@ -90,3 +90,4 @@ Route::get('delete-employee',[CustomerController::class,'deleteEmployee'])
 Route::get('welcome',[CustomerController::class,'viewWelcome']);
 
 
+

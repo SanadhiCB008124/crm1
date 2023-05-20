@@ -24,9 +24,9 @@ class CustomerController extends Controller
   
     
     public function employee(){
-       $totalEmployees=User::where('role_id',0)->count();
+       $totalEmployees=User::where('role_id',1)->count();
         // $data= User::get();
-         $data= User::where('role_id',0)->get();
+         $data= User::where('role_id',1)->get();
         // return $data;
          return view('employee-list',compact('data'));
     }

@@ -11,6 +11,7 @@
 
 <body class="bg-black">
 
+<a href="{{ url('add-employee') }}"  class="text-white"> Add </a>
 
 <div class="container flex justify-center mx-auto mt-10">
     <div class="flex flex-col">
@@ -56,8 +57,9 @@
 
             </div>
         </div>
+        <a href="{{url ('dashboard') }}" class="text-white">back</a>
     </div>
- 
+  
 </div>
 
 

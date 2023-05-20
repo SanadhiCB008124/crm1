@@ -9,40 +9,6 @@
 </head>
 
 <body class="bg-black">
-<!--<div>
-    <h2>Edit customer</h2>
-
-    <form method="post" action="{{url ('update-customer') }}">
-@csrf 
-
-<input type="hidden" name="id" value="{{$data->id}}" >
-<div>
-
-           <div class="mt-4">
-                <label  class="block text-bg" for="name" >Name</label>
-                <input   type="text"  name="name"  value="{{$data->name}}" class="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-purple-300 focus:bg-white focus:outline-none"/>
-            </div>
-
-
-            <div class="mt-4">
-                <label  class="block text-bg" for="email" >email</label>
-                <input type="email"  name="email"  value="{{$data->email}}"   class="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-purple-300 focus:bg-white focus:outline-none"/>
-            </div>
-
-
-    
-</div>
-<br>
-<button type="submit" >
-  Update
-    </buttom>
-<a href="{{ url('customer-list') }}" >Back</a>
-</form>
-
-
-
-
-</div>-->
 
 <div class="w-full max-w-xs flex justify-center mx-auto mt-10">
 

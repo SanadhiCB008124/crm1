@@ -11,20 +11,21 @@
 <body>
 <div>
     <h2>Add Employee</h2>
+   
 
-    <form method="post" action="{{url ('save-employee') }}">
+    <form method="post" action="{{url ('save-Employee') }}">
 @csrf 
 <div>
 
 <div class="mt-4">
                 <label  class="block text-bg" for="name" >Name</label>
-                <input   type="text"  name="name"  class="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-purple-300 focus:bg-white focus:outline-none"/>
+                <input   type="text"  name="name"  class="w-2/3 px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-purple-300 focus:bg-white focus:outline-none"/>
             </div>
 
 
             <div class="mt-4">
                 <label  class="block text-bg" for="email" >email</label>
-                <input type="email"  name="email"  class="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-purple-300 focus:bg-white focus:outline-none"/>
+                <input type="email"  name="email"  class="w-2/3 px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-purple-300 focus:bg-white focus:outline-none"/>
             </div>
            
 

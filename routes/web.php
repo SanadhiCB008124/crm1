@@ -32,8 +32,6 @@ Route::middleware([
 ->middleware(['role:0'])
 ->name('dashboard');
 
-
-
 });
 
 
@@ -49,8 +47,9 @@ Route::get('redirects', [App\Http\Controllers\HomeController::class, 'index'])->
 Route::get('logout', [App\Http\Controllers\UserController::class, 'logout'])->name('logout');
 
 
-Route::get('customer-list',[CustomerController::class,'index'])
-    ->middleware('role:0','role:1');
+Route::get('customer-list',[CustomerController::class,'customer'])
+     ->middleware('role:0' );
+   
 
 
 Route::get('employee-list', [CustomerController::class, 'employee'])
@@ -58,32 +57,32 @@ Route::get('employee-list', [CustomerController::class, 'employee'])
 
 
 
-Route::post('save-employee',[CustomerController::class,'saveEmployee'])
-->middleware('role:0');;
+Route::post('save-Employee',[CustomerController::class,'saveEmployee'])
+->middleware('role:0');
 
 
 Route::get('add-employee',[CustomerController::class,'addEmployee'])
-->middleware('role:0');;
+->middleware('role:0');
 
 Route::post('update-employee',[CustomerController::class,'updateEmployee'])
-->middleware('role:0');;
+    ->middleware('role:0');
 
 
 Route::get('edit-customer/{email}',[CustomerController::class,'editCustomer'])
-->middleware('role:0','role:1');
+     ->middleware('role:0');
 
 Route::get('edit-employee/{email}',[CustomerController::class,'editEmployee'])
-->middleware('role:0');
+     ->middleware('role:0');
 
 Route::post('update-customer',[CustomerController::class,'updateCustomer'])
-->middleware('role:0','role:1');
+     ->middleware('role:0','role:1');
 
 
 Route::get('delete-customer{email}',[CustomerController::class,'deleteCustomer'])
-->middleware('role:0','role:1');
+     ->middleware('role:0');
 
-Route::get('delete-employee{email}',[CustomerController::class,'deleteEmployee'])
-->middleware('role:0');
+Route::get('delete-employee',[CustomerController::class,'deleteEmployee'])
+      ->middleware('role:0');
 
 
 

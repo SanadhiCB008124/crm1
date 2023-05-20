@@ -5,12 +5,13 @@ namespace App\Http\Controllers;
 use App\Models\Customer;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class CustomerController extends Controller
 {
 
 
-    public function index(){
+    public function customer(){
 
     
      // $totalCustomers=User::where('role',2)->count();
@@ -70,10 +71,13 @@ class CustomerController extends Controller
       $name=$request->name;
       $email=$request->email;
      
+     
 
       $cust= new User();
       $cust->name=$name;
       $cust->email=$email;
+      $cust->role_id=1;
+      $cust->password = $request->password?$request->password:Auth::user()->password;
      
 
       $cust->save();

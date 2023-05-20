@@ -241,8 +241,8 @@ button.addEventListener('click', () => {
   <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
     <h2 class="text-2xl font-bold tracking-tight text-gray-900">Men</h2>
 
-    <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-      <div class="group relative">
+    <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 ">
+      <div >
         <div class="min-h-80 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none  lg:h-80">
           <img src="images\nike air force 1 high.jpg" alt="Nike air force i high" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
         </div>
@@ -252,17 +252,21 @@ button.addEventListener('click', () => {
               <a href="#">
                 <span aria-hidden="true" class="absolute inset-0"></span>
                 Nike air force 1 high
+                <br>
+                <p class="text-sm font-medium text-rose-500">$35</p>
               </a>
             </h3>
            
           </div>
-          <p class="text-sm font-medium text-rose-500">$35</p>
+          
+          <br>
+          
+          <a href="#" class="text-orange-500 no-underline hover:underline">Add to Cart</a>
+       
           
         </div>
         <br>
-        <button class="bg-white border border-orange-500   font-bold py-2 px-6 rounded">
-          <a href="#" class="text-orange-500 hover:text-white no-underline hover:underline">Add to Cart</a>
-         </button>
+        
       </div>
 
 
@@ -277,16 +281,19 @@ button.addEventListener('click', () => {
               <a href="#">
                 <span aria-hidden="true" class="absolute inset-0"></span>
                 Adidas NMD Runner R1
+                <br>
+                <p class="text-sm font-medium text-rose-500">$35</p>
               </a>
             </h3>
             
           </div>
-          <p class="text-sm font-medium text-rose-500">$35</p>
+         
+          <br>
+          <a href="#" class="text-orange-500 hover:text-white no-underline hover:underline">Add to Cart</a>
+
         </div>
         <br>
-        <button class="bg-white border border-orange-500   font-bold py-2 px-6 rounded">
-          <a href="#" class="text-orange-500 hover:text-white no-underline hover:underline">Add to Cart</a>
-         </button>
+       
       </div>
 
 
@@ -300,17 +307,20 @@ button.addEventListener('click', () => {
               <a href="#">
                 <span aria-hidden="true" class="absolute inset-0"></span>
               Enzo
+              <br>
+                <p class="text-sm font-medium text-rose-500">$35</p>
               </a>
             </h3>
            
           </div>
-          <p class="text-sm font-medium text-rose-500">$35</p>
+       
+          <br>
+          <a href="#" class="text-orange-500 hover:text-white no-underline hover:underline">Add to Cart</a>
         </div>
         <br>
-        <button class="bg-white border border-orange-500   font-bold py-2 px-6 rounded">
-          <a href="#" class="text-orange-500 hover:text-white no-underline hover:underline">Add to Cart</a>
-         </button>
+        
       </div>
+      
 
       <div class="group relative">
         <div class="min-h-80 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none  lg:h-80">
@@ -322,16 +332,18 @@ button.addEventListener('click', () => {
               <a href="#">
                 <span aria-hidden="true" class="absolute inset-0"></span>
                 Nike Air Vapormax
+                <br>
+                <p class="text-sm font-medium text-rose-500">$35</p>
               </a>
             </h3>
             
           </div>
-          <p class="text-sm font-medium text-rose-500">$35</p>
+        
+          <br>
+          <a href="#" class="text-orange-500 hover:text-white no-underline hover:underline">Add to Cart</a>
         </div>
         <br>
-        <button class="bg-white border border-orange-500   font-bold py-2 px-6 rounded">
-          <a href="#" class="text-orange-500 hover:text-white no-underline hover:underline">Add to Cart</a>
-         </button>
+       
       </div>
 
       
@@ -354,16 +366,18 @@ button.addEventListener('click', () => {
               <a href="#">
                 <span aria-hidden="true" class="absolute inset-0"></span>
                 Nike Air Max
+                <br>
+                <p class="text-sm font-medium text-rose-500">$35</p>
               </a>
             </h3>
            
           </div>
-          <p class="text-sm font-medium text-rose-500">$35</p>
+       
+          <br>
+          <a href="#" class="text-orange-500 hover:text-white no-underline hover:underline">Add to Cart</a>
         </div>
         <br>
-        <button class="bg-white border border-orange-500   font-bold py-2 px-6 rounded">
-          <a href="#" class="text-orange-500 hover:text-white no-underline hover:underline">Add to Cart</a>
-         </button>
+       
       </div>
 
 
@@ -378,16 +392,18 @@ button.addEventListener('click', () => {
               <a href="#">
                 <span aria-hidden="true" class="absolute inset-0"></span>
                 Puma Run XX Nitro WNS
+                <br>
+                <p class="text-sm font-medium text-rose-500">$35</p>
               </a>
             </h3>
             
           </div>
-          <p class="text-sm font-medium text-rose-500">$35</p>
+         
+          <br>
+          <a href="#" class="text-orange-500 hover:text-white no-underline hover:underline">Add to Cart</a>
         </div>
         <br>
-        <button class="bg-white border border-orange-500   font-bold py-2 px-6 rounded">
-          <a href="#" class="text-orange-500 hover:text-white no-underline hover:underline">Add to Cart</a>
-         </button>
+        
       </div>
 
 
@@ -401,16 +417,19 @@ button.addEventListener('click', () => {
               <a href="#">
                 <span aria-hidden="true" class="absolute inset-0"></span>
                 Adidas Chasker Boots
+                <br>
+                <p class="text-sm font-medium text-rose-500">$35</p>
               </a>
             </h3>
            
           </div>
-          <p class="text-sm font-medium text-rose-500">$35</p>
+         
+          <br>
+          <a href="#" class="text-orange-500 hover:text-white no-underline hover:underline">Add to Cart</a>
+         
         </div>
         <br>
-        <button class="bg-white border border-orange-500   font-bold py-2 px-6 rounded">
-          <a href="#" class="text-orange-500 hover:text-white no-underline hover:underline">Add to Cart</a>
-         </button>
+       
       </div>
 
 
@@ -424,16 +443,18 @@ button.addEventListener('click', () => {
               <a href="#">
                 <span aria-hidden="true" class="absolute inset-0"></span>
                 Nike Air Force 1
+                <br>
+                <p class="text-sm font-medium text-rose-500">$35</p>
               </a>
             </h3>
            
           </div>
-          <p class="text-sm font-medium text-rose-500">$35</p>
+          
+          <br>
+          <a href="#" class="text-orange-500 hover:text-white no-underline hover:underline">Add to Cart</a>
         </div>
         <br>
-        <button class="bg-white border border-orange-500   font-bold py-2 px-6 rounded">
-          <a href="#" class="text-orange-500 hover:text-white no-underline hover:underline">Add to Cart</a>
-         </button>
+      
       </div>
 
       
@@ -456,16 +477,18 @@ button.addEventListener('click', () => {
               <a href="#">
                 <span aria-hidden="true" class="absolute inset-0"></span>
               Enzo
+              <br>
+                <p class="text-sm font-medium text-rose-500">$35</p>
               </a>
             </h3>
            
           </div>
-          <p class="text-sm font-medium text-rose-500">$35</p>
+         
+          <br>
+          <a href="#" class="text-orange-500 hover:text-white no-underline hover:underline">Add to Cart</a>
         </div>
         <br>
-        <button class="bg-white border border-orange-500   font-bold py-2 px-6 rounded">
-          <a href="#" class="text-orange-500 hover:text-white no-underline hover:underline">Add to Cart</a>
-         </button>
+       
       </div>
 
 
@@ -480,16 +503,18 @@ button.addEventListener('click', () => {
               <a href="#">
                 <span aria-hidden="true" class="absolute inset-0"></span>
                 Nike Air Max SC
+                <br>
+                <p class="text-sm font-medium text-rose-500">$35</p>
               </a>
             </h3>
             
           </div>
-          <p class="text-sm font-medium text-rose-500">$35</p>
+        
+          <br>
+          <a href="#" class="text-orange-500 hover:text-white no-underline hover:underline">Add to Cart</a>
         </div>
         <br>
-        <button class="bg-white border border-orange-500   font-bold py-2 px-6 rounded">
-          <a href="#" class="text-orange-500 hover:text-white no-underline hover:underline">Add to Cart</a>
-         </button>
+       
       </div>
 
 
@@ -503,16 +528,18 @@ button.addEventListener('click', () => {
               <a href="#">
                 <span aria-hidden="true" class="absolute inset-0"></span>
                 Adidas NMD Runner R1
+                <br>
+                <p class="text-sm font-medium text-rose-500">$35</p>
               </a>
             </h3>
             
           </div>
-          <p class="text-sm font-medium text-rose-500">$35</p>
+        
+          <br>
+          <a href="#" class="text-orange-500 hover:text-white no-underline hover:underline">Add to Cart</a>
         </div>
         <br>
-        <button class="bg-white border border-orange-500   font-bold py-2 px-6 rounded">
-          <a href="#" class="text-orange-500 hover:text-white no-underline hover:underline">Add to Cart</a>
-         </button>
+       
       </div>
 
       <div class="group relative">
@@ -525,16 +552,18 @@ button.addEventListener('click', () => {
               <a href="#">
                 <span aria-hidden="true" class="absolute inset-0"></span>
                 Nike Air Max
+                <br>
+                <p class="text-sm font-medium text-rose-500">$35</p>
               </a>
             </h3>
            
           </div>
-          <p class="text-sm font-medium text-rose-500">$35</p>
+        
+          <br>
+          <a href="#" class="text-orange-500 hover:text-white no-underline hover:underline">Add to Cart</a>
         </div>
         <br>
-        <button class="bg-white border border-orange-500   font-bold py-2 px-6 rounded">
-          <a href="#" class="text-orange-500 hover:text-white no-underline hover:underline">Add to Cart</a>
-         </button>
+        
       </div>
 
       

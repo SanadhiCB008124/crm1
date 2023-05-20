@@ -54,7 +54,7 @@
  </tbody>
 </table>
 
-<a href="{{ url ('dashboard')}}"  class="text-white">Back</a>
+<!--<a href="{{ url ('dashboard')}}"  class="text-white">Back</a>-->
             </div>
         </div>
     </div>

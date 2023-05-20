@@ -31,10 +31,10 @@
             <div class="flex h-screen">
             <div class="px-4 py-2  bg-black lg:w-1/4 border border-r-amber-100  border-y-black">
                 <svg xmlns="http://www.w3.org/2000/svg" class="inline w-8 h-8 text-white lg:hidden" fill="none"
-                    viewBox="0 0 24 24" stroke="currentColor">
+                    viewBox="0 0 24 24" stroke="currentColor" id="menu-button">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
-                <div class="hidden lg:block">
+                <div class="hidden lg:block" id="menu">
                     <div class="my-2 mb-6">
                         <h1 class="text-2xl font-bold text-white">Employee Dashboard</h1>
                     </div>
@@ -106,6 +106,17 @@
                 </div>
 
             </div>
+            <script>
+      
+    
+      const button = document.querySelector('#menu-button');
+  const menu = document.querySelector('#menu');
+  
+  
+  button.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+  });
+  </script>  
             <div class="w-full px-4 py-2 bg-black lg:w-full">
                 <div class="container mx-auto mt-12">
                     <div class="grid gap-4 lg:grid-cols-3">

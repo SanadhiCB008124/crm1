@@ -89,13 +89,13 @@
                         <li class="mb-2 rounded hover:shadow hover:bg-amber-100 ">
                             <a href="#" class="inline-block w-full h-full px-3 py-2 font-bold text-white hover:text-black">
                                 
-                               Reports
+                               Settings
                             </a>
                         </li>
                         <li class="mb-2 rounded hover:shadow hover:bg-amber-100 ">
-                            <a href="#" class="inline-block w-full h-full px-3 py-2 font-bold text-white hover:text-black">
+                            <a href="{{ route('profile.show') }}"  class="inline-block w-full h-full px-3 py-2 font-bold text-white hover:text-black">
                                 
-                               Settings
+                               Profile
                             </a>
                         </li>
                         

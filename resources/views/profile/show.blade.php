@@ -3,6 +3,13 @@
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Profile') }}
         </h2>
+    
+      <span>  <a href="{{ route('logout') }}" class="block mt-2 lg:inline-block lg:mt-0 text-black mr-4  no-underline hover:underline  sm:block"
+                                         @click.prevent="$root.submit();">
+                                    {{ __('Log Out') }}
+       </a></span>
+
+
     </x-slot>
 
     <div>

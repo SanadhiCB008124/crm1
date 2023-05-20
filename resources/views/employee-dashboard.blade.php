@@ -136,6 +136,7 @@
                                 <div class="text-black"><a href="{{url ('customer-list')}}">view customer registered</a></div>
                             </div>
                         </div>
+                       
                         
                         <div class="flex items-center px-4 py-6 bg-white rounded-md shadow-md">
                             <div class="p-3 bg-indigo-600 rounded">

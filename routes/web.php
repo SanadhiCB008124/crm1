@@ -29,8 +29,11 @@ Route::middleware([
         return view('dashboard');
   
 })
-->middleware(['role:0','role:1','role:2'])
+->middleware(['role:0'])
 ->name('dashboard');
+
+
+
 });
 
 
@@ -45,32 +48,42 @@ Route::get('redirects', [App\Http\Controllers\HomeController::class, 'index'])->
 
 Route::get('logout', [App\Http\Controllers\UserController::class, 'logout'])->name('logout');
 
-Route::get('view-welcome',[HomeController::class,'view']);
 
-Route::get('customer-list',[CustomerController::class,'index']);
-
-Route::get('employee-list',[CustomerController::class,'employee']);
-
-Route::get('add-employee',[CustomerController::class,'addEmployee']);
-
-Route::post('save-employee',[CustomerController::class,'saveEmployee']);
+Route::get('customer-list',[CustomerController::class,'index'])
+    ->middleware('role:0','role:1');
 
 
-Route::get('add-customer',[CustomerController::class,'addEmployee']);//unused
+Route::get('employee-list', [CustomerController::class, 'employee'])
+    ->middleware('role:0');
 
-Route::post('save-customer',[CustomerController::class,'saveCustomer']);//unused
 
-Route::get('edit-customer/{email}',[CustomerController::class,'editCustomer']);
 
-Route::get('edit-employee/{email}',[CustomerController::class,'editEmployee']);
+Route::post('save-employee',[CustomerController::class,'saveEmployee'])
+->middleware('role:0');;
 
-Route::post('update-customer',[CustomerController::class,'updateCustomer']);
 
-Route::post('update-employee',[CustomerController::class,'updateEmployee']);
+Route::get('add-employee',[CustomerController::class,'addEmployee'])
+->middleware('role:0');;
 
-Route::get('delete-customer{email}',[CustomerController::class,'deleteCustomer']);
+Route::post('update-employee',[CustomerController::class,'updateEmployee'])
+->middleware('role:0');;
 
-Route::get('delete-employee{email}',[CustomerController::class,'deleteEmployee']);
+
+Route::get('edit-customer/{email}',[CustomerController::class,'editCustomer'])
+->middleware('role:0','role:1');
+
+Route::get('edit-employee/{email}',[CustomerController::class,'editEmployee'])
+->middleware('role:0');
+
+Route::post('update-customer',[CustomerController::class,'updateCustomer'])
+->middleware('role:0','role:1');
+
+
+Route::get('delete-customer{email}',[CustomerController::class,'deleteCustomer'])
+->middleware('role:0','role:1');
+
+Route::get('delete-employee{email}',[CustomerController::class,'deleteEmployee'])
+->middleware('role:0');
 
 
 

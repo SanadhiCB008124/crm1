@@ -75,7 +75,7 @@ Route::get('edit-employee/{email}',[CustomerController::class,'editEmployee'])
      ->middleware('role:0');
 
 Route::post('update-customer',[CustomerController::class,'updateCustomer'])
-     ->middleware('role:0','role:1');
+     ->middleware('role:0');
 
 
 Route::get('delete-customer{email}',[CustomerController::class,'deleteCustomer'])

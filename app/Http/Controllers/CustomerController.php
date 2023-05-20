@@ -89,7 +89,7 @@ class CustomerController extends Controller
     public function editCustomer($email){
 
         $data= User::where('email','=',$email)->first();
-        return view('edit-student',compact('data'));
+        return view('edit-customer',compact('data'));
 
     }
 

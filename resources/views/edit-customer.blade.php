@@ -5,15 +5,15 @@
     <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="https://cdn.tailwindcss.com"></script>
-        <title>Edit Employee</title>
+        <title>Edit customer</title>
 </head>
 
 <body class="bg-black">
 
 <div class="w-full max-w-xs flex justify-center mx-auto mt-10">
 
-  <form method="post" action="{{url ('update-employee') }}" class="bg-black shadow-md rounded px-8 pt-6 pb-8 mb-4">
-  <h2 class="text-white">Edit Employee</h2>
+  <form method="post" action="{{url ('update-customer') }}" class="bg-black shadow-md rounded px-8 pt-6 pb-8 mb-4">
+  <h2 class="text-white">Edit Customer</h2>
   @csrf 
 
 <input type="hidden" name="id" value="{{$data->id}}" >
@@ -38,7 +38,7 @@
         Update
       </button>
       
-      <a href="{{ url('employee-list') }}" class="text-amber-100 no-underline hover:underline" >Back</a>
+      <a href="{{ url('customer-list') }}" class="text-amber-100 no-underline hover:underline" >Back</a>
    
     </div>
   </form>

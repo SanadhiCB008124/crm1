@@ -44,6 +44,8 @@ Route::get('redirects', [App\Http\Controllers\HomeController::class, 'index'])->
 
 Route::get('logout', [App\Http\Controllers\UserController::class, 'logout'])->name('logout');
 
+
+
 Route::get('customer-list',[CustomerController::class,'index']);
 
 Route::get('employee-list',[CustomerController::class,'employee']);

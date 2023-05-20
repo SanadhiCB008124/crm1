@@ -16,7 +16,7 @@
     <div class="flex flex-col">
         <div class="w-full">
             <div class="border-b border-gray-200 shadow">
-                <div><a href="{{url('add-employee')}}" class="text-white">Add employee</a></div>
+               
  <table class="table-auto ">
     <thead class="bg-black divide-y divide-gray-300">
        <tr>

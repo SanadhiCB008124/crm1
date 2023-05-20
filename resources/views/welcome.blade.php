@@ -224,10 +224,9 @@ button.addEventListener('click', () => {
 
 
 <section class="w-full ">
-<h1 class="absolute md:text-5xl text-white font-bold  top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2  sm:text-xl">
-  STEP INTO STYLE</h1>
+
 <img
-    src="images/home5.webp"
+    src="images/homee.webp"
     class="object-center w-full h-4/5 shadow-lg "
     alt="Homepage image"
   />
@@ -238,7 +237,7 @@ button.addEventListener('click', () => {
 
 
 
-<section class=" text-gray-600 ">
+<section class=" text-gray-600 py-6">
     <div class="container mx-auto px-10 py-4 ">
       <h5 class="text-2xl font-bold text-black ">Men</h5>
       <br>
@@ -253,13 +252,13 @@ button.addEventListener('click', () => {
           <div class="mt-4">
           
             <h2 class="title-font text-lg font-medium text-gray-900">Puma Run XX Nitro WNS</h2>
-            <h2 class="title-font text-lg font-medium text-gray-900">$35.00</h2>
-            <div class="flex items-center space-x-1.5 rounded-lg bg-orange-400  hover:bg-orange-600 px-4 py-1.5 text-white duration-100 ">
+            <h2 class="title-font text-lg font-medium text-rose-500">$35.00</h2><br>
+            <div class="flex items-center space-x-1.5 rounded-lg bg-orange-400  hover:bg-orange-600 px-4 py-1.5 text-white duration-100 w-1/2 ">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
               </svg>
 
-              <button class="text-sm">Add to cart</button>
+              <button class="text-sm ">Add to cart</button>
             </div>
           </div>
         </div>
@@ -271,8 +270,8 @@ button.addEventListener('click', () => {
           <div class="mt-4">
           
             <h2 class="title-font text-lg font-medium text-gray-900">Nike Vapormax</h2>
-            <h2 class="title-font text-lg font-medium text-gray-900">$35.00</h2>
-            <div class="flex items-center space-x-1.5 rounded-lg bg-orange-400  hover:bg-orange-600 px-4 py-1.5 text-white duration-100 ">
+            <h2 class="title-font text-lg font-medium text-rose-500">$35.00</h2><br>
+            <div class="flex items-center space-x-1.5 rounded-lg bg-orange-400  hover:bg-orange-600 px-4 py-1.5 text-white duration-100 w-1/2 ">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
               </svg>
@@ -289,8 +288,8 @@ button.addEventListener('click', () => {
           <div class="mt-4">
           
             <h2 class="title-font text-lg font-medium text-gray-900">Nike Air Force 1 High</h2>
-            <h2 class="title-font text-lg font-medium text-gray-900">$35.00</h2>
-            <div class="flex items-center space-x-1.5 rounded-lg bg-orange-400  hover:bg-orange-600 px-4 py-1.5 text-white duration-100 ">
+            <h2 class="title-font text-lg font-medium text-rose-500">$35.00</h2><br>
+            <div class="flex items-center space-x-1.5 rounded-lg bg-orange-400  hover:bg-orange-600 px-4 py-1.5 text-white duration-100 w-1/2">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
               </svg>
@@ -307,8 +306,8 @@ button.addEventListener('click', () => {
           <div class="mt-4">
           
             <h2 class="title-font text-lg font-medium text-gray-900">Enzo</h2>
-            <h2 class="title-font text-lg font-medium text-gray-900">$35.00</h2>
-            <div class="flex items-center space-x-1.5 rounded-lg bg-orange-400  hover:bg-orange-600 px-4 py-1.5 text-white duration-100 ">
+            <h2 class="title-font text-lg font-medium text-rose-500">$35.00</h2><br>
+            <div class="flex items-center space-x-1.5 rounded-lg bg-orange-400  hover:bg-orange-600 px-4 py-1.5 text-white duration-100 w-1/2 ">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
               </svg>
@@ -322,7 +321,7 @@ button.addEventListener('click', () => {
   </div>
 </section>
 <!--women-->
-<section class=" text-gray-600 ">
+<section class=" text-gray-600 py-6 ">
     <div class="container mx-auto px-10 py-4 ">
       <h5 class="text-2xl font-bold text-black "> Women</h5>
       <br>
@@ -337,8 +336,8 @@ button.addEventListener('click', () => {
           <div class="mt-4">
           
             <h2 class="title-font text-lg font-medium text-gray-900">Nike Air Max</h2>
-            <h2 class="title-font text-lg font-medium text-gray-900">$35.00<</h2>
-            <div class="flex items-center space-x-1.5 rounded-lg bg-orange-400  hover:bg-orange-600 px-4 py-1.5 text-white duration-100 ">
+            <h2 class="title-font text-lg font-medium text-rose-500">$35.00</h2><br>
+            <div class="flex items-center space-x-1.5 rounded-lg bg-orange-400  hover:bg-orange-600 px-4 py-1.5 text-white duration-100 w-1/2">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
               </svg>
@@ -355,8 +354,8 @@ button.addEventListener('click', () => {
           <div class="mt-4">
           
             <h2 class="title-font text-lg font-medium text-gray-900">Adidas Chasker Boots</h2>
-            <h2 class="title-font text-lg font-medium text-gray-900">$35.00</h2>
-            <div class="flex items-center space-x-1.5 rounded-lg bg-orange-400  hover:bg-orange-600 px-4 py-1.5 text-white duration-100 ">
+            <h2 class="title-font text-lg font-medium text-rose-500">$35.00</h2><br>
+            <div class="flex items-center space-x-1.5 rounded-lg bg-orange-400  hover:bg-orange-600 px-4 py-1.5 text-white duration-100 w-1/2 ">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
               </svg>
@@ -373,8 +372,8 @@ button.addEventListener('click', () => {
           <div class="mt-4">
           
             <h2 class="title-font text-lg font-medium text-gray-900">Nike Air Force 1</h2>
-            <h2 class="title-font text-lg font-medium text-gray-900">$35.00</h2>
-            <div class="flex items-center space-x-1.5 rounded-lg bg-orange-400  hover:bg-orange-600 px-4 py-1.5 text-white duration-100 ">
+            <h2 class="title-font text-lg font-medium text-rose-500">$35.00</h2><br>
+            <div class="flex items-center space-x-1.5 rounded-lg bg-orange-400  hover:bg-orange-600 px-4 py-1.5 text-white duration-100 w-1/2">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
               </svg>
@@ -391,8 +390,8 @@ button.addEventListener('click', () => {
           <div class="mt-4">
           
             <h2 class="title-font text-lg font-medium text-gray-900">Nike Air Max SC</h2>
-            <h2 class="title-font text-lg font-medium text-gray-900">$35.00</h2>
-            <div class="flex items-center space-x-1.5 rounded-lg bg-orange-400  hover:bg-orange-600 px-4 py-1.5 text-white duration-100 ">
+            <h2 class="title-font text-lg font-medium text-rose-500">$35.00</h2><br>
+            <div class="flex items-center space-x-1.5 rounded-lg bg-orange-400  hover:bg-orange-600 px-4 py-1.5 text-white duration-100  w-1/2">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
               </svg>
@@ -406,7 +405,7 @@ button.addEventListener('click', () => {
 </section>
 
 <!--top sellers-->
-<section class=" text-gray-600 ">
+<section class=" text-gray-600 py-6 ">
     <div class="container mx-auto px-10 py-4 ">
       <h5 class="text-2xl font-bold text-black "> Top Selling</h5>
       <br>
@@ -421,8 +420,8 @@ button.addEventListener('click', () => {
           <div class="mt-4">
           
             <h2 class="title-font text-lg font-medium text-gray-900">Nike Air Force 1 High</h2>
-            <h2 class="title-font text-lg font-medium text-gray-900">$35.00</h2>
-            <div class="flex items-center space-x-1.5 rounded-lg bg-orange-400  hover:bg-orange-600 px-4 py-1.5 text-white duration-100 ">
+            <h2 class="title-font text-lg font-medium text-rose-500">$35.00</h2><br>
+            <div class="flex items-center space-x-1.5 rounded-lg bg-orange-400  hover:bg-orange-600 px-4 py-1.5 text-white duration-100 w-1/2 ">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
               </svg>
@@ -439,8 +438,8 @@ button.addEventListener('click', () => {
           <div class="mt-4">
           
             <h2 class="title-font text-lg font-medium text-gray-900">adidas NMD Runner R1</h2>
-            <h2 class="title-font text-lg font-medium text-gray-900">$35.00</h2>
-            <div class="flex items-center space-x-1.5 rounded-lg bg-orange-400  hover:bg-orange-600 px-4 py-1.5 text-white duration-100 ">
+            <h2 class="title-font text-lg font-medium text-rose-500">$35.00</h2><br>
+            <div class="flex items-center space-x-1.5 rounded-lg bg-orange-400  hover:bg-orange-600 px-4 py-1.5 text-white duration-100  w-1/2">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
               </svg>
@@ -457,8 +456,8 @@ button.addEventListener('click', () => {
           <div class="mt-4">
           
             <h2 class="title-font text-lg font-medium text-gray-900">Enzo</h2>
-            <h2 class="title-font text-lg font-medium text-gray-900">$35.00</h2>
-            <div class="flex items-center space-x-1.5 rounded-lg bg-orange-400  hover:bg-orange-600 px-4 py-1.5 text-white duration-100 ">
+            <h2 class="title-font text-lg font-medium text-rose-500">$35.00</h2><br>
+            <div class="flex items-center space-x-1.5 rounded-lg bg-orange-400  hover:bg-orange-600 px-4 py-1.5 text-white duration-100 w-1/2">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
               </svg>
@@ -475,8 +474,8 @@ button.addEventListener('click', () => {
           <div class="mt-4">
           
             <h2 class="title-font text-lg font-medium text-gray-900">Adidas Chasker Boots</h2>
-            <h2 class="title-font text-lg font-medium text-gray-900">$35.00</h2>
-            <div class="flex items-center space-x-1.5 rounded-lg bg-orange-400  hover:bg-orange-600 px-4 py-1.5 text-white duration-100 ">
+            <h2 class="title-font text-lg font-medium text-rose-500">$35.00</h2><br>
+            <div class="flex items-center space-x-1.5 rounded-lg bg-orange-400  hover:bg-orange-600 px-4 py-1.5 text-white duration-100 w-1/2">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
               </svg>

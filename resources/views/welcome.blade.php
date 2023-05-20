@@ -9,7 +9,7 @@
 </head>
 <body>
 
-    <nav
+  <!--  <nav
         class="flex items-center justify-between flex-wrap bg-black py-4 lg:px-12 shadow border-solid border-t-2 border-black-700">
         <div class="flex justify-between lg:w-auto w-full lg:border-b-0 pl-6 pr-2 border-solid border-b-2 border-gray-300 pb-5 lg:pb-0">
             <div class="flex items-center flex-shrink-0 text-gray-800 mr-16">
@@ -45,7 +45,7 @@
                     Kids
                 </a>
             </div>
-            <!-- This is an example component -->
+         This is an example component 
             <div class="relative mx-auto text-gray-600 lg:block hidden">
                 <input
                     class="border-2 border-gray-300 bg-white h-10 pl-2 pr-8 rounded-lg text-sm focus:outline-none"
@@ -100,17 +100,139 @@
             </div>
            @endif
     
+    </nav>-->
+
+
+    <nav
+        class="
+          flex flex-wrap
+          items-center
+          justify-between
+          w-full
+          py-4
+          md:py-0
+          px-4
+          text-lg text-gray-700
+          bg-black
+        "
+      >
+       <div>
+          <a href="#">
+          <img src="images\light.jpg" class=" h-10 w-18"></img>
+          </a>
+        </div>
+       
+         <svg
+            xmlns="http://www.w3.org/2000/svg"
+            id="menu-button"
+            class="h-6 w-6 cursor-pointer md:hidden block"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+       
+       <div class="hidden w-full md:flex md:items-center md:w-auto" id="menu">
+          <ul
+            class="
+              pt-4
+              text-xl text-amber-100
+              no-underline
+              font-bold
+              md:flex
+              md:justify-between 
+              md:pt-0"
+          >
+            <li>
+              <a class="md:p-4 py-2 block hover:underline" href="#"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a class="md:p-4 py-2 block hover:underline" href="#"
+                >Men</a
+              >
+            </li>
+            <li>
+              <a class="md:p-4 py-2 block hover:underline" href="#"
+                >Women</a
+              >
+            </li>
+            <li>
+              <a class="md:p-4 py-2 block hover:underline" href="#"
+                >Kids</a
+              >
+            </li>
+
+            
+          </ul>
+          @if (Route::has('login'))
+          <div class="block text-md px-4 py-2 rounded text-amber-100 ml-2 font-bold  mt-4  lg:mt-0 ">
+           @auth
+           <ul class="list-unstyled flex flex-wrap place-content-between">
+           <li>
+           <a href ="#"class="text-sm text-white ">
+           <svg width="35px" height="35px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M8 12L8 8C8 5.79086 9.79086 4 12 4V4C14.2091 4 16 5.79086 16 8L16 12" stroke="#ffffff" stroke-width="2" stroke-linecap="round"></path> <path d="M3.69435 12.6678C3.83942 10.9269 3.91196 10.0565 4.48605 9.52824C5.06013 9 5.9336 9 7.68053 9H16.3195C18.0664 9 18.9399 9 19.514 9.52824C20.088 10.0565 20.1606 10.9269 20.3057 12.6678L20.8195 18.8339C20.904 19.8474 20.9462 20.3542 20.6491 20.6771C20.352 21 19.8435 21 18.8264 21H5.1736C4.15655 21 3.64802 21 3.35092 20.6771C3.05382 20.3542 3.09605 19.8474 3.18051 18.8339L3.69435 12.6678Z" stroke="#ffffff" stroke-width="2"></path> </g></svg>
+           </a></li>&nbsp
+           <li>
+           <a href ="#"class="text-sm text-white ">
+           <svg fill="#ffffff" height="35px" width="30px" version="1.1" id="XMLID_298_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" xml:space="preserve" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="favorite"> <path d="M12,23.2l-0.6-0.5C8.7,20.7,0,13.5,0,7.3C0,3.8,2.9,1,6.5,1c2.2,0,4.3,1.1,5.5,2.9l0,0l0,0C13.2,2.1,15.3,1,17.5,1 C21.1,1,24,3.8,24,7.3c0,6.3-8.7,13.4-11.4,15.5L12,23.2z M6.5,2.9C4,2.9,2,4.8,2,7.2c0,4.1,5.1,9.5,10,13.4 c4.9-3.9,10-9.3,10-13.4c0-2.4-2-4.3-4.5-4.3c-1.6,0-3,0.8-3.8,2L12,7.6L10.3,5C9.5,3.7,8.1,2.9,6.5,2.9z"></path> </g> </g></svg>
+           </a></li>&nbsp
+           <li>
+           <a href ="#"class="text-sm text-white ">
+           <svg fill="#ffffff"  height="35px" width="30px" viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><title></title><path d="M69.3677,51.0059a30,30,0,1,0-42.7354,0A41.9971,41.9971,0,0,0,0,90a5.9966,5.9966,0,0,0,6,6H90a5.9966,5.9966,0,0,0,6-6A41.9971,41.9971,0,0,0,69.3677,51.0059ZM48,12A18,18,0,1,1,30,30,18.02,18.02,0,0,1,48,12ZM12.5977,84A30.0624,30.0624,0,0,1,42,60H54A30.0624,30.0624,0,0,1,83.4023,84Z"></path></g></svg>
+           </a></li>
+           &nbsp&nbsp&nbsp
+           <form method="POST" action="{{ route('logout') }}" x-data>
+                                @csrf
+
+                                <a href="{{ route('logout') }}" class="block mt-4 lg:inline-block lg:mt-0 text-amber-100 mr-4  no-underline hover:underline  sm:block"
+                                         @click.prevent="$root.submit();">
+                                    {{ __('Log Out') }}
+                                </a>
+           </form>
+           
+
+        
+           @else
+                    <a href="{{ route('login') }}" class="block mt-4 lg:inline-block lg:mt-0 text-amber-100 mr-4  no-underline hover:underline ">Log in</a>
+                    @if (Route::has('register'))
+                        <a href="{{ route('register') }}" class="block mt-4 lg:inline-block lg:mt-0 text-amber-100 mr-4  no-underline hover:underline ">Register</a>
+                    @endif
+                @endauth
+            </div>
+           @endif
+        </div>
     </nav>
+    <script>
+      
+    
+    const button = document.querySelector('#menu-button');
+const menu = document.querySelector('#menu');
+
+
+button.addEventListener('click', () => {
+  menu.classList.toggle('hidden');
+});
+</script>  
+
 
 <section class="w-full ">
+<h1 class="absolute md:text-5xl text-white font-bold  top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2  sm:text-xl">
+  STEP INTO STYLE</h1>
 <img
     src="images/home5.webp"
     class="object-center w-full h-4/5 shadow-lg "
     alt="Homepage image"
   />
 
-  <h1 class="absolute text-5xl text-white font-bold  top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2">
-  STEP INTO STYLE</h1>
+ 
 
 </section>
 

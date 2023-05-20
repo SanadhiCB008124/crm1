@@ -24,10 +24,7 @@
         <x-banner />
 
         <div class="min-h-screen bg-gray-100">
-            @livewire('navigation-menu')
-
-
-
+        
             <div class="flex h-screen">
             <div class="px-4 py-2  bg-black lg:w-1/4 border border-r-amber-100  border-y-black">
                 <svg xmlns="http://www.w3.org/2000/svg" class="inline w-8 h-8 text-white lg:hidden" fill="none"
@@ -95,7 +92,13 @@
                                Settings
                             </a>
                         </li>
-                        
+                       
+                        <li >
+                        <a href="{{ route('logout') }}" class="block mt-4 lg:inline-block lg:mt-0 text-amber-100 mr-4 px-3 py-2 no-underline hover:underline  sm:block"
+                                         @click.prevent="$root.submit();">
+                                    {{ __('Log Out') }}
+                                </a>
+                        <li>
                     </ul>
                 </div>
 

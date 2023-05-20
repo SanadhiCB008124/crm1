@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
 use Illuminate\Routing\Controllers\Middleware;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomerController;
@@ -86,6 +87,6 @@ Route::get('delete-employee',[CustomerController::class,'deleteEmployee'])
 
 
 
-
+Route::get('welcome',[CustomerController::class,'viewWelcome']);
 
 

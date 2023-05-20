@@ -152,7 +152,9 @@ class CustomerController extends Controller
         return redirect('employee-list');
     }
 
-
+public function viewWelcome(){
+  return view('welcome');
+}
 
 
 }

@@ -57,7 +57,7 @@
             </div>
         </div>
     </div>
-   
+    <a href="{{ url('dashboard') }}" class="text-amber-100 no-underline hover:underline" >Back</a>
 </div>
 
 

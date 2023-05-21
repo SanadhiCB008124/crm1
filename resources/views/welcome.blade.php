@@ -243,9 +243,11 @@ button.addEventListener('click', () => {
  
 
 </section>
+
+
 <div class="flex items-center justify-center mt-6">
-    <div class="flex border-2 rounded">
-        <input type="text" class="px-4 py-2 w-80" placeholder="Search...">
+    <div class="flex border-2 rounded border-black">
+        <input type="text" class="px-4 py-2 w-80" placeholder="Search for products...">
         <button class="flex items-center justify-center px-4 border-l">
             <svg class="w-6 h-6 text-gray-600 " fill="black" xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24">
@@ -254,8 +256,57 @@ button.addEventListener('click', () => {
             </svg>
         </button>
     </div>
-</div>
+</div><br>
+<div class="relative overflow-hidden bg-white">
+  <div class="pb-80 pt-16 sm:pb-40 sm:pt-24 lg:pb-48 lg:pt-40">
+    <div class="relative mx-auto max-w-7xl px-4 sm:static sm:px-6 lg:px-8">
+      <div class="sm:max-w-lg">
+        <h1 class="font text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">New Arrivals</h1>
+        <p class="mt-4 text-xl text-gray-500">Check out our latest collections and shop your heart out</p>
+      </div>
+      <div>
+        <div class="mt-10">
+          <!-- Decorative image grid -->
+          <div aria-hidden="true" class="pointer-events-none lg:absolute lg:inset-y-0 lg:mx-auto lg:w-full lg:max-w-7xl">
+            <div class="absolute transform sm:left-1/2 sm:top-0 sm:translate-x-8 lg:left-1/2 lg:top-1/2 lg:-translate-y-1/2 lg:translate-x-8">
+              <div class="flex items-center space-x-6 lg:space-x-8">
+                <div class="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
+                  <div class="h-64 w-44 overflow-hidden rounded-lg sm:opacity-0 lg:opacity-100">
+                    <img src="images\login2.jpg" alt="" class="h-full w-full object-cover object-center">
+                  </div>
+                  <div class="h-64 w-44 overflow-hidden rounded-lg">
+                    <img src="images\img2.jpg" alt="" class="h-full w-full object-cover object-center">
+                  </div>
+                </div>
+                <div class="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
+                  <div class="h-64 w-44 overflow-hidden rounded-lg">
+                    <img src="images\home2.jpg" alt="" class="h-full w-full object-cover object-center">
+                  </div>
+                  <div class="h-64 w-44 overflow-hidden rounded-lg">
+                    <img src="images\img.jpg" alt="" class="h-full w-full object-cover object-center">
+                  </div>
+                  <div class="h-64 w-44 overflow-hidden rounded-lg">
+                    <img src="images\home.jpg" alt="" class="h-full w-full object-cover object-center">
+                  </div>
+                </div>
+                <div class="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
+                  <div class="h-64 w-44 overflow-hidden rounded-lg">
+                    <img src="images\home3.jpg" alt="" class="h-full w-full object-cover object-center">
+                  </div>
+                  <div class="h-64 w-44 overflow-hidden rounded-lg">
+                    <img src="images\img3.jpg" alt="" class="h-full w-full object-cover object-center">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
+          <a href="#" class="inline-block rounded-md border border-transparent bg-black px-8 py-3 text-center font-medium text-white hover:text-amber-100">Shop Collection</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 <section class=" text-gray-600 py-6">

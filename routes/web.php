@@ -40,7 +40,11 @@ Route::middleware([
 
 
 
+Route::get('/employee-dashboard', function () {
+    return view('employee-dashboard');
 
+})
+->middleware(['role:1']);
 
 
 Route::get('redirects', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
@@ -69,17 +73,17 @@ Route::post('update-employee',[CustomerController::class,'updateEmployee'])
     ->middleware('role:0');
 
 
-Route::get('edit-customer/{email}',[CustomerController::class,'editCustomer'])
+Route::get('edit-customer',[CustomerController::class,'editCustomer'])
      ->middleware('role:0');
 
-Route::get('edit-employee/{email}',[CustomerController::class,'editEmployee'])
+Route::get('edit-employee',[CustomerController::class,'editEmployee'])
      ->middleware('role:0');
 
 Route::post('update-customer',[CustomerController::class,'updateCustomer'])
      ->middleware('role:0');
 
 
-Route::get('delete-customer{email}',[CustomerController::class,'deleteCustomer'])
+Route::get('delete-customer',[CustomerController::class,'deleteCustomer'])
      ->middleware('role:0');
 
 Route::get('delete-employee',[CustomerController::class,'deleteEmployee'])

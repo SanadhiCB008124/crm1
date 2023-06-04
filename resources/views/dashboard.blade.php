@@ -139,7 +139,7 @@
                                 </svg>
                             </div>
                             <div class="mx-4">
-                                <h4 class="text-2xl font-semibold text-gray-700">0</h4>
+                               
                                
                                 <div class="text-gray-500">Total customers</div>
                                
@@ -158,7 +158,7 @@
                                 </svg>
                             </div>
                             <div class="mx-4">
-                                <h4 class="text-2xl font-semibold text-gray-700">0</h4>
+                               
                                 <div class="text-gray-500">Total Employees</div>
                                 <div class="text-black"><a href="{{url ('employee-list')}}">View registered employees</a></div>
                             </div>
@@ -175,8 +175,9 @@
                                 </svg>
                             </div>
                             <div class="mx-4">
-                                <h4 class="text-2xl font-semibold text-gray-700">0</h4>
-                                <div class="text-gray-500">Total Orders</div>
+                         
+                                <div class="text-gray-500">Products</div>
+                                <div class="text-black"><a href="{{url ('products')}}">View Products</a></div>
                             </div>
                         </div>
                         

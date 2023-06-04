@@ -5,6 +5,7 @@ use App\Http\Controllers\UserController;
 use Illuminate\Routing\Controllers\Middleware;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomerController;
+use App\Http\Livewire\Products;
 
 /*
 |--------------------------------------------------------------------------
@@ -55,12 +56,12 @@ Route::get('logout', [App\Http\Controllers\UserController::class, 'logout'])->na
 Route::get('customer-list',[CustomerController::class,'customer'])
      ->middleware('role:0' );
    
-
+Route::get('products', Products::class)->middleware('role:0');
 
 Route::get('employee-list', [CustomerController::class, 'employee'])
     ->middleware('role:0');
 
-
+Route::get('products',Products::class)->middleware('role:0');
 
 Route::post('save-Employee',[CustomerController::class,'saveEmployee'])
 ->middleware('role:0');

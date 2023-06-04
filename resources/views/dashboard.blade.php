@@ -177,7 +177,7 @@
                             <div class="mx-4">
                          
                                 <div class="text-gray-500">Products</div>
-                                <div class="text-black"><a href="{{url ('products')}}">View Products</a></div>
+                                <div class="text-black"><a href="{{ url('products') }}">View Products</a></div>
                             </div>
                         </div>
                         

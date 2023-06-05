@@ -6,6 +6,7 @@ use Illuminate\Routing\Controllers\Middleware;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomerController;
 use App\Http\Livewire\Products;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -97,3 +98,8 @@ Route::get('welcome',[CustomerController::class,'viewWelcome']);
 
 
 
+
+
+Route::get('men-products', [ProductController::class, 'men'])->name('men');
+Route::get('women-products', [ProductController::class, 'women'])->name('women');
+Route::get('top-selling-products', [ProductController::class, 'topSelling'])->name('topSelling');

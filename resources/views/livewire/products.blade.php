@@ -24,8 +24,10 @@
                     <tr class="bg-gray-100">
                         <th class="px-4 py-2 w-20">No.</th>
                         <th class="px-4 py-2">Title</th>
+                        <th class="px-4 py-2">Catagory</th>
                         <th class="px-4 py-2">description</th>
                         <th class="px-4 py-2">Price</th>
+                        <th class="px-4 py-2">Stocks</th>
                         <th class="px-4 py-2">Image</th>
                         <th class="px-4 py-2 w-60">Action</th>
                     </tr>
@@ -35,10 +37,12 @@
                     <tr>
                         <td class="border px-4 py-2">{{ $product->id }}</td>
                         <td class="border px-4 py-2">{{ $product->name }}</td>
+                        <td class="border px-4 py-2">{{ $product->catagory }}</td>
                         <td class="border px-4 py-2">{{ $product->detail }}</td>
                         <td class="border px-4 py-2">{{ $product->price }}</td>
+                        <td class="border px-4 py-2">{{ $product->stocks }}</td>
                         <td class="border px-4 py-2">
-                            <img src="{{ asset('storage/images/'.$product->image) }}" alt="" width="100px" height="100px">
+                            <img src="{{ asset('images/'.$product->image) }}" alt="" width="100px" height="100px">
                        
                         <td class="border px-4 py-2 text-center">
                         <button wire:click="edit({{ $product->id }})" class="bg-blue-500 hover:bg-blue-700 text-white py-1 px-3 rounded">Edit</button>

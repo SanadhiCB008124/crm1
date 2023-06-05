@@ -57,6 +57,7 @@ Route::get('customer-list',[CustomerController::class,'customer'])
      ->middleware('role:0' );
    
 Route::get('products', Products::class);
+     
 
 Route::get('employee-list', [CustomerController::class, 'employee'])
     ->middleware('role:0');

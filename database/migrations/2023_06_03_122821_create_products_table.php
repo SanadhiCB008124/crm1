@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string('name');
             $table->text('detail');
             $table->float('price');
+            $table->string('catagory');
+            $table->integer('stocks');
             $table->string('image')->nullable();
             $table->timestamps();
         });

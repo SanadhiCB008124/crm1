@@ -9,7 +9,7 @@ use Livewire\WithFileUploads;
 class Products extends Component
 {
       use WithFileUploads;
-    public $products, $name, $detail, $price,$image, $product_id;
+    public $products, $name, $detail, $price,$image, $product_id, $catagory, $stocks;
     public $isOpen = 0;
 
     /**
@@ -65,6 +65,8 @@ class Products extends Component
         $this->price = '';
         $this->product_id = '';
         $this->image = '';
+        $this->catagory = '';
+        $this->stocks = '';
     }
 
     /**
@@ -80,6 +82,8 @@ class Products extends Component
             'detail' => 'required',
             'price' => 'required',
             'image' => 'required|image',
+            'catagory' => 'required',
+            'stocks' => 'required',
 
         ]);
    
@@ -88,7 +92,9 @@ class Products extends Component
             
             'detail' => $this->detail,
             'price' => $this->price,
-            'image'=> $this->image->store('images', 'public'),
+            'image' => $this->image->storePublicly('images', 'public'),
+            'catagory' => $this->catagory,
+            'stocks' => $this->stocks,
         ]);
   
         session()->flash('message', 
@@ -111,6 +117,8 @@ class Products extends Component
         $this->detail = $product->detail;
         $this->price = $product->price;
         $this->image = $product->image;
+        $this->catagory = $product->catagory;
+        $this->stocks = $product->stocks;
     
         $this->openModal();
     }

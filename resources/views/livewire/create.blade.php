@@ -19,10 +19,15 @@
                   @error('name') <span class="text-red-500">{{ $message }}</span>@enderror
               </div>
               <div class="mb-4">
-                  <label for="exampleFormControlInput1" class="block text-white text-sm font-bold mb-2">Catagory:</label>
-                  <input type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="exampleFormControlInput1" placeholder="What is the Catagory" wire:model="catagory">
-                  @error('catagory') <span class="text-red-500">{{ $message }}</span>@enderror
-              </div>
+    <label for="exampleFormControlSelect1" class="block text-white text-sm font-bold mb-2">Category:</label>
+    <select class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="exampleFormControlSelect1" wire:model="catagory_id">
+        <option value="">Select a Category</option>
+        @foreach ($catagories as $catagory)
+            <option value="{{ $catagory->id }}">{{ $catagory->name }}</option>
+        @endforeach
+    </select>
+    @error('catagory') <span class="text-red-500">{{ $message }}</span> @enderror
+</div>
               <div class="mb-4">
                   <label for="exampleFormControlInput2" class="block text-white text-sm font-bold mb-2">Detail:</label>
                   <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="exampleFormControlInput2" wire:model="detail" placeholder="Enter Detail"></textarea>

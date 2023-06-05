@@ -5,11 +5,12 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 use App\Models\Product;
 use Livewire\WithFileUploads;
+use App\Models\Catagory;
 
 class Products extends Component
 {
       use WithFileUploads;
-    public $products, $name, $detail, $price,$image, $product_id, $catagory, $stocks;
+    public $products, $name, $detail, $price,$image, $product_id, $catagory_id, $stocks;
     public $isOpen = 0;
 
     /**
@@ -17,6 +18,14 @@ class Products extends Component
      *
      * @var array
     */
+    public $catagory;
+    public $catagories;
+
+    public function mount()
+    {
+        $this->catagories = Catagory::all();
+    }
+
     public function render()
     {
         $this->products = Product::all();
@@ -65,7 +74,7 @@ class Products extends Component
         $this->price = '';
         $this->product_id = '';
         $this->image = '';
-        $this->catagory = '';
+        $this->catagory_id = '';
         $this->stocks = '';
     }
 
@@ -82,7 +91,7 @@ class Products extends Component
             'detail' => 'required',
             'price' => 'required',
             'image' => 'required|image',
-            'catagory' => 'required',
+            'catagory_id' => 'required',
             'stocks' => 'required',
 
         ]);
@@ -93,7 +102,7 @@ class Products extends Component
             'detail' => $this->detail,
             'price' => $this->price,
             'image' => $this->image->storePublicly('images', 'public'),
-            'catagory' => $this->catagory,
+            'catagory_id' => $this->catagory_id,
             'stocks' => $this->stocks,
         ]);
   
@@ -117,7 +126,7 @@ class Products extends Component
         $this->detail = $product->detail;
         $this->price = $product->price;
         $this->image = $product->image;
-        $this->catagory = $product->catagory;
+        $this->catagory_id = $product->catagory_id;
         $this->stocks = $product->stocks;
     
         $this->openModal();

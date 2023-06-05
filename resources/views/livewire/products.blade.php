@@ -37,7 +37,7 @@
                     <tr>
                         <td class="border px-4 py-2">{{ $product->id }}</td>
                         <td class="border px-4 py-2">{{ $product->name }}</td>
-                        <td class="border px-4 py-2">{{ $product->catagory }}</td>
+                        <td class="border px-4 py-2">{{ $product->catagory_id }}</td>
                         <td class="border px-4 py-2">{{ $product->detail }}</td>
                         <td class="border px-4 py-2">{{ $product->price }}</td>
                         <td class="border px-4 py-2">{{ $product->stocks }}</td>

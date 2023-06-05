@@ -63,18 +63,18 @@
               >
             </li>
             <li>
-              <a class="md:p-4 py-2 block hover:underline" href="#"
+              <a class="md:p-4 py-2 block hover:underline" href="{{url ('men-products')}}"
                 >Men</a
               >
             </li>
             <li>
-              <a class="md:p-4 py-2 block hover:underline" href="#"
+              <a class="md:p-4 py-2 block hover:underline" href="{{url ('women-products')}}"
                 >Women</a
               >
             </li>
             <li>
-              <a class="md:p-4 py-2 block hover:underline" href="#"
-                >Kids</a
+              <a class="md:p-4 py-2 block hover:underline" href="{{url ('top-selling-products')}}"
+                >Top Selling</a
               >
             </li>
           

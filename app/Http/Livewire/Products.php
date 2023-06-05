@@ -26,6 +26,7 @@ class Products extends Component
         $this->catagories = Catagory::all();
     }
 
+   
     public function render()
     {
         $this->products = Product::all();

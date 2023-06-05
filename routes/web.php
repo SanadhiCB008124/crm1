@@ -49,6 +49,7 @@ Route::get('/employee-dashboard', function () {
 ->middleware(['role:1']);
 
 
+
 Route::get('redirects', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
 
 Route::get('logout', [App\Http\Controllers\UserController::class, 'logout'])->name('logout');

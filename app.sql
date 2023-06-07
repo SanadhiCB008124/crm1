@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 21, 2023 at 06:52 AM
+-- Generation Time: Jun 07, 2023 at 06:27 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -20,6 +20,44 @@ SET time_zone = "+00:00";
 --
 -- Database: `app`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `catagories`
+--
+
+CREATE TABLE `catagories` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) NOT NULL DEFAULT 'men',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `catagories`
+--
+
+INSERT INTO `catagories` (`id`, `name`, `created_at`, `updated_at`) VALUES
+(1, 'Mens', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(2, 'Womens', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(3, 'Top-Selling', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `customers`
+--
+
+CREATE TABLE `customers` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `phone` varchar(255) NOT NULL,
+  `address` text NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -54,18 +92,21 @@ CREATE TABLE `migrations` (
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(13, '2014_10_12_000000_create_users_table', 1),
-(14, '2014_10_12_100000_create_password_reset_tokens_table', 1),
-(15, '2014_10_12_200000_add_two_factor_columns_to_users_table', 1),
-(16, '2019_08_19_000000_create_failed_jobs_table', 1),
-(17, '2019_12_14_000001_create_personal_access_tokens_table', 1),
-(18, '2020_05_21_100000_create_teams_table', 1),
-(19, '2020_05_21_200000_create_team_user_table', 1),
-(20, '2020_05_21_300000_create_team_invitations_table', 1),
-(21, '2023_05_13_080545_create_sessions_table', 1),
-(22, '2023_05_15_071031_create_customers_table', 1),
-(23, '2023_05_16_153008_create_posts_table', 1),
-(24, '2023_05_19_063936_create_roles_table', 1);
+(25, '2023_06_01_045015_create_products_table', 2),
+(109, '2014_10_12_000000_create_users_table', 3),
+(110, '2014_10_12_100000_create_password_reset_tokens_table', 3),
+(111, '2014_10_12_200000_add_two_factor_columns_to_users_table', 3),
+(112, '2019_08_19_000000_create_failed_jobs_table', 3),
+(113, '2019_12_14_000001_create_personal_access_tokens_table', 3),
+(114, '2020_05_21_100000_create_teams_table', 3),
+(115, '2020_05_21_200000_create_team_user_table', 3),
+(116, '2020_05_21_300000_create_team_invitations_table', 3),
+(117, '2023_05_13_080545_create_sessions_table', 3),
+(118, '2023_05_15_071031_create_customers_table', 3),
+(119, '2023_05_16_153008_create_posts_table', 3),
+(120, '2023_05_19_063936_create_roles_table', 3),
+(123, '2023_06_03_122821_create_products_table', 4),
+(126, '2023_06_05_054450_create_catagories_table', 5);
 
 -- --------------------------------------------------------
 
@@ -115,6 +156,34 @@ CREATE TABLE `posts` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `products`
+--
+
+CREATE TABLE `products` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `detail` text NOT NULL,
+  `price` double(8,2) NOT NULL,
+  `catagory_id` tinyint(4) NOT NULL DEFAULT 1,
+  `stocks` int(11) NOT NULL,
+  `image` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `products`
+--
+
+INSERT INTO `products` (`id`, `name`, `detail`, `price`, `catagory_id`, `stocks`, `image`, `created_at`, `updated_at`) VALUES
+(1, 'adidas chasker boots', 'leather ', 2300.00, 1, 12, 'images/VoVnNgzl8vipSbLgAiRkSAJRi00BHkmkaBuBm8Lp.jpg', '2023-06-05 00:26:49', '2023-06-07 03:33:09'),
+(3, 'Nike air max', 'leather', 4000.00, 3, 23, 'images/vBCryUIRZrhfAbWPBPUoEIU2W3e8q14lFZWySB1j.jpg', '2023-06-05 00:28:53', '2023-06-05 00:28:53'),
+(4, 'Puma Run XX Nitro', 'new arrival', 3000.00, 2, 32, 'images/GKWxIBXD3Wmn5vhwLPvvftIytq1Da3xUmYD9vgFa.jpg', '2023-06-06 23:13:36', '2023-06-06 23:13:36'),
+(5, 'Nike Run', 'Leather', 2400.00, 2, 12, 'images/g9l9C9UpNJ3NjHF7A5qko9br9DUjf16vVbjRlx5p.webp', '2023-06-07 10:53:13', '2023-06-07 10:53:13');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `roles`
 --
 
@@ -154,8 +223,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('k7EUZLDioXYCdso5pGC0q7HUHgtFwxJpibGuJtv3', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36', 'YTo1OntzOjM6InVybCI7YTowOnt9czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mjg6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9sb2dvdXQiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjY6Il90b2tlbiI7czo0MDoicVRYZVFyUVN6SWxFMlpVbXNXT1p5WDFseEZ1WGRPalpuOWd6eTA1VSI7czoyMToicGFzc3dvcmRfaGFzaF9zYW5jdHVtIjtzOjYwOiIkMnkkMTAkNVkwLjF1b3FNLmRLM0llRWQyWU5CdWhrN2hXTzdSL1R2U0xRM0hnTThtclRnVlRtZ2VhSTIiO30=', 1684643784),
-('yy7MtIFGvCUTEzEnEeIm9HYCmHjxSFaRjDtbExIh', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiN2JpVVlFMXRCYVZKS2lRSFpXTkNHVWQzTnZvN29DdVFYM29nM1ROciI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1684640287);
+('TgNXRow9V9l5QtiKZgY3ofJ97BjiMpMfGQFIbRg8', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiUmJUMkI5NjZJdTlSRnV1N05zVTIwWnlodTB2OUl2QlBscEtIelhMbiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NDI6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC90b3Atc2VsbGluZy1wcm9kdWN0cyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6MjE6InBhc3N3b3JkX2hhc2hfc2FuY3R1bSI7czo2MDoiJDJ5JDEwJC5HTEFtWlBVSnZRVzZHRFZGR0NNek9DdVB3cDBxQlJTOHNOd1BsUVZxUUVZYnRNYnVzcFBHIjt9', 1686155011);
 
 -- --------------------------------------------------------
 
@@ -177,18 +245,12 @@ CREATE TABLE `teams` (
 --
 
 INSERT INTO `teams` (`id`, `user_id`, `name`, `personal_team`, `created_at`, `updated_at`) VALUES
-(1, 1, 'sanadhi\'s Team', 1, '2023-05-19 02:58:32', '2023-05-19 02:58:32'),
-(2, 2, 'Admin\'s Team', 1, '2023-05-19 02:58:55', '2023-05-19 02:58:55'),
-(3, 3, 'employee\'s Team', 1, '2023-05-19 03:15:12', '2023-05-19 03:15:12'),
-(4, 4, 'Suga\'s Team', 1, '2023-05-19 06:21:25', '2023-05-19 06:21:25'),
-(5, 5, 'Sanduni\'s Team', 1, '2023-05-20 00:11:12', '2023-05-20 00:11:12'),
-(6, 6, 'Reed\'s Team', 1, '2023-05-20 00:12:57', '2023-05-20 00:12:57'),
-(7, 7, 'Admin\'s Team', 1, '2023-05-20 00:13:54', '2023-05-20 00:13:54'),
-(8, 8, 'Employee2\'s Team', 1, '2023-05-20 06:23:11', '2023-05-20 06:23:11'),
-(9, 14, 'Harry\'s Team', 1, '2023-05-20 08:16:12', '2023-05-20 08:16:12'),
-(10, 15, 'Poppy\'s Team', 1, '2023-05-20 08:29:52', '2023-05-20 08:29:52'),
-(11, 17, 'Customer\'s Team', 1, '2023-05-20 22:22:31', '2023-05-20 22:22:31'),
-(12, 18, 'Admin02\'s Team', 1, '2023-05-20 22:29:47', '2023-05-20 22:29:47');
+(1, 1, 'SANADHI\'s Team', 1, '2023-06-04 23:42:00', '2023-06-04 23:42:00'),
+(2, 2, 'Admin01\'s Team', 1, '2023-06-04 23:42:21', '2023-06-04 23:42:21'),
+(3, 3, 'employee01\'s Team', 1, '2023-06-04 23:42:48', '2023-06-04 23:42:48'),
+(4, 9, 'Dulangi\'s Team', 1, '2023-06-07 03:12:28', '2023-06-07 03:12:28'),
+(5, 10, 'Sanduni\'s Team', 1, '2023-06-07 03:13:03', '2023-06-07 03:13:03'),
+(6, 11, 'Thenuri\'s Team', 1, '2023-06-07 03:13:42', '2023-06-07 03:13:42');
 
 -- --------------------------------------------------------
 
@@ -248,23 +310,29 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `two_factor_secret`, `two_factor_recovery_codes`, `two_factor_confirmed_at`, `role_id`, `remember_token`, `current_team_id`, `profile_photo_path`, `created_at`, `updated_at`) VALUES
-(1, 'sanadhi', 'sanadhi2002@gmail.com', NULL, '$2y$10$EvJozZIDOnpQXlmezV8GRO4y29xRUh.xGESBuv8ELR6Qtp98dbhG.', NULL, NULL, NULL, 2, NULL, 1, NULL, '2023-05-19 02:58:32', '2023-05-20 08:40:26'),
-(3, 'employee1', 'employee1@gmail.com', NULL, '$2y$10$UpX1HHVtvMiLcMUYpLA7Muxad5RKfcGFfya4u5hROyOvCzHjAumUm', NULL, NULL, NULL, 1, NULL, 3, NULL, '2023-05-19 03:15:11', '2023-05-20 06:25:07'),
-(4, 'Suga', 'Suga@gmail.com', NULL, '$2y$10$nqwLVVVqUiLNObl.ySQnk.t8bEOjd5avDN/b79e2h.yMnLnYecIMi', NULL, NULL, NULL, 2, NULL, NULL, NULL, '2023-05-19 06:21:25', '2023-05-19 06:21:25'),
-(5, 'Sanduni', 'Sanaduni123@gmail.com', NULL, '$2y$10$x5AtKr1fnHUrfwXcCWWWGOi8fEgpxyo2RXqIHd3rFJiXvrrXO8Yj.', NULL, NULL, NULL, 2, NULL, NULL, NULL, '2023-05-20 00:11:12', '2023-05-20 00:11:12'),
-(6, 'Reed', 'Reed@gmail.com', NULL, '$2y$10$091mHugmd7baoPTiemjriumI/GqOr9yyUK/k8U6bQ02w3Fh8r9HNy', NULL, NULL, NULL, 2, NULL, NULL, NULL, '2023-05-20 00:12:57', '2023-05-20 00:12:57'),
-(7, 'Admin', 'Admin01@gmail.com', NULL, '$2y$10$Efeey8NDY8sEOyjINpmm9ewUT0h4bhw6dwjhjYEhF.hetVl3UrxuO', NULL, NULL, NULL, 0, NULL, NULL, NULL, '2023-05-20 00:13:54', '2023-05-20 00:13:54'),
-(8, 'Employee2', 'Employee2@gmail.com', NULL, '$2y$10$W7OLS62yxpYm7p/C1HL4veGjkOZkGLg4c3xKrej9nmioMHACajVPW', NULL, NULL, NULL, 1, NULL, NULL, NULL, '2023-05-20 06:23:10', '2023-05-20 06:23:10'),
-(9, 'jin', 'jin@gmail.com', NULL, '$2y$10$Efeey8NDY8sEOyjINpmm9ewUT0h4bhw6dwjhjYEhF.hetVl3UrxuO', NULL, NULL, NULL, 2, NULL, NULL, NULL, '2023-05-20 07:10:45', '2023-05-20 22:10:10'),
-(13, 'Employee3', 'Employee3@gmail.com', NULL, '$2y$10$Efeey8NDY8sEOyjINpmm9ewUT0h4bhw6dwjhjYEhF.hetVl3UrxuO', NULL, NULL, NULL, 1, NULL, NULL, NULL, '2023-05-20 07:13:31', '2023-05-20 22:13:56'),
-(15, 'Poppy', 'Poppy@gmail.com', NULL, '$2y$10$zqRyqqV3mmzQhOKNfUTR7.7tjTEwudsZBe6tWGVnWFyQGbJzGWi/e', NULL, NULL, NULL, 2, NULL, NULL, NULL, '2023-05-20 08:29:52', '2023-05-20 22:09:56'),
-(16, 'Employee4', 'Employee4@gmail.com', NULL, '$2y$10$Efeey8NDY8sEOyjINpmm9ewUT0h4bhw6dwjhjYEhF.hetVl3UrxuO', NULL, NULL, NULL, 1, NULL, NULL, NULL, '2023-05-20 22:14:20', '2023-05-20 22:14:20'),
-(17, 'Customer', 'Customer@gmail.com', NULL, '$2y$10$5Y0.1uoqM.dK3IeEd2YNBuhk7hWO7R/TvSLQ3HgM8mrTgVTmgeaI2', NULL, NULL, NULL, 2, NULL, NULL, NULL, '2023-05-20 22:22:31', '2023-05-20 22:22:31'),
-(18, 'Admin02', 'Admin02@gmail.com', NULL, '$2y$10$.KTxKpwLLENeMPrnyB6cFO9qw/RmNdWDh8pN5FBK0BsCv9EFoqmMi', NULL, NULL, NULL, 0, NULL, NULL, NULL, '2023-05-20 22:29:46', '2023-05-20 22:29:46');
+(2, 'Admin01', 'Admin01@gmail.com', NULL, '$2y$10$.GLAmZPUJvQW6GDVFGCMzOCuPwp0qBRS8sNwPlQVqQEYbtMbuspPG', NULL, NULL, NULL, 0, NULL, NULL, NULL, '2023-06-04 23:42:21', '2023-06-04 23:42:21'),
+(3, 'employee01', 'employee001@gmail.com', NULL, '$2y$10$tDfsnFB24YMY29tXkL2P2u1By/dr4P9UXD2ufE5sr6XTcXI3g.Ltu', NULL, NULL, NULL, 1, NULL, NULL, NULL, '2023-06-04 23:42:48', '2023-06-07 10:24:50'),
+(4, 'employee02', 'Employee02@gmail.com', NULL, '$2y$10$.GLAmZPUJvQW6GDVFGCMzOCuPwp0qBRS8sNwPlQVqQEYbtMbuspPG', NULL, NULL, NULL, 1, NULL, NULL, NULL, '2023-06-07 02:04:39', '2023-06-07 02:04:39'),
+(9, 'Dulangi', 'Dulangi2002@gmail.com', NULL, '$2y$10$gsy8IONiTLMbajDvvB3iS.4WynfN8OYzLsGKMEbErBHH4XzCipqLS', NULL, NULL, NULL, 2, NULL, NULL, NULL, '2023-06-07 03:12:28', '2023-06-07 10:24:35'),
+(10, 'Sanduni', 'Sanduni20@gmail.com', NULL, '$2y$10$YtL/71JMuwusN5tHFdmtHeGSYJBlOktTkJCxWnY4fEp5Yo512w/xq', NULL, NULL, NULL, 2, NULL, NULL, NULL, '2023-06-07 03:13:03', '2023-06-07 03:13:03'),
+(11, 'Thenuri', 'Thenuri20@gmail.com', NULL, '$2y$10$MgzNCkInaAXTvKv2fHOsx.3VN13NmJXuhoK/Jp.q4FD7xmZGonrpG', NULL, NULL, NULL, 2, NULL, NULL, NULL, '2023-06-07 03:13:42', '2023-06-07 03:13:42'),
+(12, 'Employee03', 'Employee03@gmail.com', NULL, '$2y$10$.GLAmZPUJvQW6GDVFGCMzOCuPwp0qBRS8sNwPlQVqQEYbtMbuspPG', NULL, NULL, NULL, 1, NULL, NULL, NULL, '2023-06-07 10:25:11', '2023-06-07 10:25:11');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `catagories`
+--
+ALTER TABLE `catagories`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `customers`
+--
+ALTER TABLE `customers`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `failed_jobs`
@@ -297,6 +365,12 @@ ALTER TABLE `personal_access_tokens`
 -- Indexes for table `posts`
 --
 ALTER TABLE `posts`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `products`
+--
+ALTER TABLE `products`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -346,6 +420,18 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `catagories`
+--
+ALTER TABLE `catagories`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `customers`
+--
+ALTER TABLE `customers`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
@@ -355,7 +441,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=127;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -370,6 +456,12 @@ ALTER TABLE `posts`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `products`
+--
+ALTER TABLE `products`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT for table `roles`
 --
 ALTER TABLE `roles`
@@ -379,7 +471,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `teams`
 --
 ALTER TABLE `teams`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `team_invitations`
@@ -397,7 +489,7 @@ ALTER TABLE `team_user`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Constraints for dumped tables

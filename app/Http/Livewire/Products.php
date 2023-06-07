@@ -143,4 +143,10 @@ class Products extends Component
         Product::find($id)->delete();
         session()->flash('message', 'Product Deleted Successfully.');
     }
+
+   
+
+
+
+
 }

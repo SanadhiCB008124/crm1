@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomerController;
 use App\Http\Livewire\Products;
 use App\Http\Controllers\ProductController;
+use Illuminate\Http\Response;
+use Illuminate\Auth\Access\AuthorizationException;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,7 +50,8 @@ Route::get('/employee-dashboard', function () {
 })
 ->middleware(['role:1']);
 
-
+Route::get('livewire/products', Products::class)->name('products')
+                 ->middleware('role:0' );
 
 Route::get('redirects', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
 
@@ -58,8 +61,6 @@ Route::get('logout', [App\Http\Controllers\UserController::class, 'logout'])->na
 Route::get('customer-list',[CustomerController::class,'customer'])
      ->middleware('role:0' );
    
-Route::get('products', Products::class);
-     
 
 Route::get('employee-list', [CustomerController::class, 'employee'])
     ->middleware('role:0');
@@ -98,9 +99,8 @@ Route::get('delete-employee',[CustomerController::class,'deleteEmployee'])
 Route::get('welcome',[CustomerController::class,'viewWelcome']);
 
 
-
-
-
 Route::get('men-products', [ProductController::class, 'men'])->name('men');
 Route::get('women-products', [ProductController::class, 'women'])->name('women');
 Route::get('top-selling-products', [ProductController::class, 'topSelling'])->name('topSelling');
+
+

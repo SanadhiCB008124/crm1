@@ -10,17 +10,17 @@
   
     <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full" role="dialog" aria-modal="true" aria-labelledby="modal-headline">
       <form enctype="multipart/formdata">
-      <div class="bg-black px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+      <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
       <x-validation-errors class="mb-4" />
         <div class="">
               <div class="mb-4">
-                  <label for="exampleFormControlInput1" class="block text-white text-sm font-bold mb-2">Name:</label>
+                  <label for="exampleFormControlInput1" class="block text-black text-sm font-bold mb-2">Name:</label>
                   <input type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="exampleFormControlInput1" placeholder="Enter Name" wire:model="name">
                   @error('name') <span class="text-red-500">{{ $message }}</span>@enderror
               </div>
               <div class="mb-4">
-    <label for="exampleFormControlSelect1" class="block text-white text-sm font-bold mb-2">Category:</label>
-    <select class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="exampleFormControlSelect1" wire:model="catagory_id">
+    <label for="exampleFormControlSelect1" class="block text-black text-sm font-bold mb-2">Category:</label>
+    <select class="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline" id="exampleFormControlSelect1" wire:model="catagory_id">
         <option value="">Select a Category</option>
         @foreach ($catagories as $catagory)
             <option value="{{ $catagory->id }}">{{ $catagory->name }}</option>
@@ -29,22 +29,22 @@
     @error('catagory') <span class="text-red-500">{{ $message }}</span> @enderror
 </div>
               <div class="mb-4">
-                  <label for="exampleFormControlInput2" class="block text-white text-sm font-bold mb-2">Detail:</label>
+                  <label for="exampleFormControlInput2" class="block text-black text-sm font-bold mb-2">Detail:</label>
                   <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="exampleFormControlInput2" wire:model="detail" placeholder="Enter Detail"></textarea>
                   @error('detail') <span class="text-red-500">{{ $message }}</span>@enderror
               </div>
               <div class="mb-4">
-                  <label for="exampleFormControlInput2" class="block text-white text-sm font-bold mb-2">Price:</label>
+                  <label for="exampleFormControlInput2" class="block text-black text-sm font-bold mb-2">Price:</label>
                   <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="exampleFormControlInput2" wire:model="price" placeholder="Enter Price"></input>
                   @error('price') <span class="text-red-500">{{ $message }}</span>@enderror
               </div>
               <div class="mb-4">
-                  <label for="exampleFormControlInput2" class="block text-white text-sm font-bold mb-2">No of stocks arrived:</label>
+                  <label for="exampleFormControlInput2" class="block text-black text-sm font-bold mb-2">No of stocks arrived:</label>
                   <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="exampleFormControlInput2" wire:model="stocks" placeholder="Enter Number of stocks"></input>
                   @error('stocks') <span class="text-red-500">{{ $message }}</span>@enderror
               </div>
               <div class="mb-4">
-                  <label for="exampleFormControlInput2" class="block text-white text-sm font-bold mb-2">Image:</label>
+                  <label for="exampleFormControlInput2" class="block text-black text-sm font-bold mb-2">Image:</label>
                   <input  type="file"   class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="exampleFormControlInput2" wire:model="image" placeholder="Add Image"></input>
                   @error('image') <span class="text-red-500">{{ $message }}</span>@enderror
               </div>
@@ -53,7 +53,7 @@
   
       <div class="bg-black px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
         <span class="flex w-full rounded-md shadow-sm sm:ml-3 sm:w-auto">
-          <button wire:click.prevent="store()" type="button" class="inline-flex justify-center w-full rounded-md border border-transparent px-4 py-2 bg-green-600 text-base leading-6 font-medium text-white shadow-sm hover:bg-green-500 focus:outline-none focus:border-green-700 focus:shadow-outline-green transition ease-in-out duration-150 sm:text-sm sm:leading-5">
+          <button wire:click.prevent="store()" type="button" class="inline-flex justify-center w-full rounded-md border border-transparent px-4 py-2 bg-amber-600 text-base leading-6 font-medium text-white shadow-sm hover:bg-amber-500 focus:outline-none focus:border-green-700 focus:shadow-outline-green transition ease-in-out duration-150 sm:text-sm sm:leading-5">
             Save
           </button>
         </span>

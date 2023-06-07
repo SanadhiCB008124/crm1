@@ -10,22 +10,22 @@
 
 <body class="bg-black">
 
-<div class="w-full max-w-xs flex justify-center mx-auto mt-10">
-
-  <form method="post" action="{{url ('update-customer') }}" class="bg-black shadow-md rounded px-8 pt-6 pb-8 mb-4">
-  <h2 class="text-white">Edit Customer</h2>
+<div class="container mx-auto py-8 mt-12">
+<h2 class="text-2xl font-bold mb-6 text-center text-white">Edit Customer</h2>
+  <form method="post" action="{{url ('update-customer') }}" class="w-full max-w-sm mx-auto bg-white p-8 rounded-md shadow-md" >
+  
   @csrf 
 
 <input type="hidden" name="id" value="{{$data->id}}" >
 <div >
   
-    <div class="mt-4">
-                <label  class="block text-white" for="name" >Name</label>
+    <div class="mb-4">
+                <label  class="block text-gray-700 text-sm font-bold mb-2" for="name" >Name</label>
                 <input   type="text"  name="name"  value="{{$data->name}}" class="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-purple-300 focus:bg-white focus:outline-none"/>
     </div>
 
-    <div class="mt-4">
-                <label  class="block text-white" for="email" >email</label>
+    <div class="mb-4">
+                <label  class="block text-gray-700 text-sm font-bold mb-2" for="email" >email</label>
                 <input type="email"  name="email"  value="{{$data->email}}"   class="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-purple-300 focus:bg-white focus:outline-none"/>
      </div>
 
@@ -34,11 +34,11 @@
 <br>
    
     <div class="flex items-center justify-around">
-      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+      <button class="bg-amber-500 hover:bg-amber-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
         Update
       </button>
       
-      <a href="{{ url('customer-list') }}" class="text-amber-100 no-underline hover:underline" >Back</a>
+      <a href="{{ url('customer-list') }}" class="text-black no-underline hover:underline" >Back</a>
    
     </div>
   </form>
@@ -47,3 +47,4 @@
 
 </body>
 </html>
+

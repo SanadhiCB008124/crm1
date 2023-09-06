@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use PhpParser\Node\Expr\PreDec;
 
 class HomeController extends Controller
 {
@@ -20,8 +22,9 @@ class HomeController extends Controller
     }
     else{
             $categories = Category::all();
+            $products=Product::all();
 
-            return view('welcome', compact('categories'));
+            return view('welcome', compact('categories','products'));
         }
     }
 

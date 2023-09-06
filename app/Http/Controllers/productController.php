@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Product;
 
+use Illuminate\Http\Request;
+
 
 class productController extends Controller
 {
@@ -15,6 +17,10 @@ class productController extends Controller
 
         return view('dynamic-product-page', compact('products', 'category','categories'));
     }
+
+
+
+
 
 
 }

@@ -8,129 +8,145 @@
         @livewireStyles
 </head>
 <body >
+<nav class="bg-black-800">
+    <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+        <div class="relative flex h-16 items-center justify-between">
+            <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+                <!-- Mobile menu button-->
+                <button type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+                    <span class="absolute -inset-0.5"></span>
+                    <span class="sr-only">Open main menu</span>
+                    <!--
+                      Icon when menu is closed.
 
+                      Menu open: "hidden", Menu closed: "block"
+                    -->
+                    <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                    <!--
+                      Icon when menu is open.
 
-    <nav
-        class="
-          flex flex-wrap
-          items-center
-          justify-between
-          w-full
-          py-4
-          md:py-0
-          px-4
-          text-lg text-gray-700
-          bg-black
-        "
-      >
-       <div>
-          <a href="#">
-          <img src="images\light.jpg" class=" h-10 w-18" alt="image"></img>
-          </a>
-        </div>
-
-
-         <svg
-            xmlns="http://www.w3.org/2000/svg"
-            id="menu-button"
-            class="h-6 w-6 cursor-pointer md:hidden block"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-          </svg>
-
-       <div class="hidden w-full md:flex md:items-center md:w-auto" id="menu">
-          <ul
-            class="
-              pt-4
-              text-xl text-amber-100
-              no-underline
-              font-bold
-              md:flex
-              md:justify-between
-              md:pt-0"
-          >
-            <li>
-              <a class="md:p-4 py-2 block hover:underline" href="#"
-                >Home</a
-              >
-            </li>
-
-
-    @foreach ($categories as $category)
-        <li>
-            <a class="md:p-4 py-2 block hover:underline" href="{{ route('products.by.category', ['category_id' => $category->id]) }}">
-                {{ ucfirst($category->category_name) }}
-            </a>
-        </li>
-    @endforeach
-
-          </ul>
-          @if (Route::has('login'))
-          <div class="block text-md px-4 py-2 rounded text-amber-100 ml-2 font-bold  mt-4  lg:mt-0 ">
-           @auth
-           <ul class="list-unstyled flex flex-wrap place-content-between space-around">
-           <li>
-           <a href="{{ route('cart', ['id' => auth()->user()->id]) }}" class="text-sm text-white">
-<!--cart-->
-           <svg width="25px" height="35px" viewBox="0 0 24 24" class="mt-2"  fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M8 12L8 8C8 5.79086 9.79086 4 12 4V4C14.2091 4 16 5.79086 16 8L16 12" stroke="#ffffff" stroke-width="2" stroke-linecap="round"></path> <path d="M3.69435 12.6678C3.83942 10.9269 3.91196 10.0565 4.48605 9.52824C5.06013 9 5.9336 9 7.68053 9H16.3195C18.0664 9 18.9399 9 19.514 9.52824C20.088 10.0565 20.1606 10.9269 20.3057 12.6678L20.8195 18.8339C20.904 19.8474 20.9462 20.3542 20.6491 20.6771C20.352 21 19.8435 21 18.8264 21H5.1736C4.15655 21 3.64802 21 3.35092 20.6771C3.05382 20.3542 3.09605 19.8474 3.18051 18.8339L3.69435 12.6678Z" stroke="#ffffff" stroke-width="2"></path> </g></svg>
-           </a></li>&nbsp
-           <li>
-           <a href ="#"class="text-sm text-white "><!--favourites-->
-           <svg fill="#ffffff" height="35px" width="20px" class="mt-2" version="1.1" id="XMLID_298_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" xml:space="preserve" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="favorite"> <path d="M12,23.2l-0.6-0.5C8.7,20.7,0,13.5,0,7.3C0,3.8,2.9,1,6.5,1c2.2,0,4.3,1.1,5.5,2.9l0,0l0,0C13.2,2.1,15.3,1,17.5,1 C21.1,1,24,3.8,24,7.3c0,6.3-8.7,13.4-11.4,15.5L12,23.2z M6.5,2.9C4,2.9,2,4.8,2,7.2c0,4.1,5.1,9.5,10,13.4 c4.9-3.9,10-9.3,10-13.4c0-2.4-2-4.3-4.5-4.3c-1.6,0-3,0.8-3.8,2L12,7.6L10.3,5C9.5,3.7,8.1,2.9,6.5,2.9z"></path> </g> </g></svg>
-           </a></li>&nbsp
-           <li>
-
-           <a href="{{ route('profile.show') }}"  class="text-sm text-white ">  <!--profile-->
-           <svg fill="#ffffff"  height="35px" width="20px" class="mt-2" viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><title></title><path d="M69.3677,51.0059a30,30,0,1,0-42.7354,0A41.9971,41.9971,0,0,0,0,90a5.9966,5.9966,0,0,0,6,6H90a5.9966,5.9966,0,0,0,6-6A41.9971,41.9971,0,0,0,69.3677,51.0059ZM48,12A18,18,0,1,1,30,30,18.02,18.02,0,0,1,48,12ZM12.5977,84A30.0624,30.0624,0,0,1,42,60H54A30.0624,30.0624,0,0,1,83.4023,84Z"></path></g></svg>
-           </a></li>
-
-
-
-
-           &nbsp&nbsp&nbsp
-
-           <form method="POST" action="{{ route('logout') }}" x-data class="mt-4" >
-                                @csrf
-                                <span class="text-white text-sm">
-           Hi  {{ Auth::user()->name }} !
-</span>
-                                <a href="{{ route('logout') }}" class="block mt-2 lg:inline-block lg:mt-0 text-amber-100 mr-4  no-underline hover:underline  sm:block"
-                                         @click.prevent="$root.submit();">
-                                    {{ __('Log Out') }}
-                                </a>
-           </form>
-
-
-
-           @else
-                    <a href="{{ route('login') }}" class="block mt-4 lg:inline-block lg:mt-0 text-amber-100 mr-4  no-underline hover:underline ">Log in</a>
-                    @if (Route::has('register'))
-                        <a href="{{ route('register') }}" class="block mt-4 lg:inline-block lg:mt-0 text-amber-100 mr-4  no-underline hover:underline ">Register</a>
-                    @endif
-                @endauth
+                      Menu open: "block", Menu closed: "hidden"
+                    -->
+                    <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
             </div>
-           @endif
+            <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+                <div class="flex flex-shrink-0 items-center">
+                    <img class="h-8 w-auto" src="images\light.jpg" alt="Your Company">
+                </div>
+                <div class="hidden sm:ml-6 sm:block">
+                    <div class="flex space-x-4">
+                        <li>
+                            <a
+                                class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium"
+                                href="{{ url('welcome') }}"
+                            >
+                                Home
+                            </a>
+                        </li>
+                        <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                        @foreach ($categories as $category)
+                            <li>
+                                <a
+                                    class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium"
+                                    href="{{ route('products.by.category', ['category_id' => $category->id]) }}"
+                                >
+                                    {{ ucfirst($category->category_name) }}
+                                </a>
+                            </li>
+                        @endforeach
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex items-center justify-center mt-4 mb-2">
+                <div class="flex border-2 rounded border-black">
+
+                    <form method="POST" action="{{ route('products.search') }} " class="m-0 p-0">
+                        @csrf
+                        <input type="text" name="search" class="px-4 py-2 w-40 " placeholder="Search ..">
+                        <button type="submit" class="flex items-center justify-center px-4 border-l">
+                            <svg class="w-6 h-6 text-gray-600 " fill="black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M16.32 14.9l5.39 5.4a1 1 0 0 1-1.42 1.4l-5.38-5.38a8 8 0 1 1 1.41-1.41zM10 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12z" />
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            @if (Route::has('login'))
+                <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                    @auth
+                        <button type="button" class="relative rounded-full bg-white-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                            <span class="absolute -inset-1.5"></span>
+                            <span class="sr-only">View Cart</span>
+                            <a
+                                href="{{ route('cart', ['id' => auth()->user()->id]) }}"
+                                class="text-sm text-white relative"
+                            >
+                                <!-- Cart Icon -->
+                                <svg width="25px" height="35px" viewBox="0 0 24 24" class="mt-2"  fill="#00000" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M8 12L8 8C8 5.79086 9.79086 4 12 4V4C14.2091 4 16 5.79086 16 8L16 12" stroke="#ffffff" stroke-width="2" stroke-linecap="round"></path> <path d="M3.69435 12.6678C3.83942 10.9269 3.91196 10.0565 4.48605 9.52824C5.06013 9 5.9336 9 7.68053 9H16.3195C18.0664 9 18.9399 9 19.514 9.52824C20.088 10.0565 20.1606 10.9269 20.3057 12.6678L20.8195 18.8339C20.904 19.8474 20.9462 20.3542 20.6491 20.6771C20.352 21 19.8435 21 18.8264 21H5.1736C4.15655 21 3.64802 21 3.35092 20.6771C3.05382 20.3542 3.09605 19.8474 3.18051 18.8339L3.69435 12.6678Z" stroke="#ffffff" stroke-width="2"></path> </g></svg>
+                            </a>
+                        </button>
+
+                        <button type="button" class="relative rounded-full bg-white-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                            <span class="absolute -inset-1.5"></span>
+                            <span class="sr-only">View Wishlift</span>
+                            <a href="#" class="text-sm text-white">
+                                <svg fill="#00000" height="35px" width="20px" class="mt-2" version="1.1" id="XMLID_298_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" xml:space="preserve" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="favorite"> <path d="M12,23.2l-0.6-0.5C8.7,20.7,0,13.5,0,7.3C0,3.8,2.9,1,6.5,1c2.2,0,4.3,1.1,5.5,2.9l0,0l0,0C13.2,2.1,15.3,1,17.5,1 C21.1,1,24,3.8,24,7.3c0,6.3-8.7,13.4-11.4,15.5L12,23.2z M6.5,2.9C4,2.9,2,4.8,2,7.2c0,4.1,5.1,9.5,10,13.4 c4.9-3.9,10-9.3,10-13.4c0-2.4-2-4.3-4.5-4.3c-1.6,0-3,0.8-3.8,2L12,7.6L10.3,5C9.5,3.7,8.1,2.9,6.5,2.9z"></path> </g> </g></svg>
+                            </a>
+                        </button>
+                        <button type="button" class="relative rounded-full bg-white-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                            <span class="absolute -inset-1.5"></span>
+                            <span class="sr-only">View profile </span>
+                            <a
+                                href="{{ route('profile.show') }}"
+                                class="text-sm text-white relative"
+                            >
+                                <svg fill="#00000"  height="35px" width="20px" class="mt-2" viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><title></title><path d="M69.3677,51.0059a30,30,0,1,0-42.7354,0A41.9971,41.9971,0,0,0,0,90a5.9966,5.9966,0,0,0,6,6H90a5.9966,5.9966,0,0,0,6-6A41.9971,41.9971,0,0,0,69.3677,51.0059ZM48,12A18,18,0,1,1,30,30,18.02,18.02,0,0,1,48,12ZM12.5977,84A30.0624,30.0624,0,0,1,42,60H54A30.0624,30.0624,0,0,1,83.4023,84Z"></path></g>
+                                </svg>
+                            </a>
+                        </button>
+
+                    @else
+                        <a href="{{ route('login') }}" class="block mt-4 lg:inline-block lg:mt-0 text-amber-100 mr-4 no-underline hover:underline">Log in</a>
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}" class="block mt-4 lg:inline-block lg:mt-0 text-amber-100 mr-4 no-underline hover:underline">Register</a>
+                        @endif
+                    @endauth
+                </div>
+            @endif
+
+
         </div>
-    </nav>
-    <script>
+    </div>
 
 
-    const button = document.querySelector('#menu-button');
-const menu = document.querySelector('#menu');
+    <!-- Mobile menu, show/hide based on menu state. -->
+    <div class="sm:hidden" id="mobile-menu">
+        <div class="space-y-1 px-2 pb-3 pt-2">
+            <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+            <a href="#" class="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium" aria-current="page">Dashboard</a>
+            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Team</a>
+            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Projects</a>
+            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Calendar</a>
+        </div>
+    </div>
+</nav>
 
+<script>
+        const button = document.querySelector('#menu-button');
+        const menu = document.querySelector('#menu');
 
-button.addEventListener('click', () => {
-  menu.classList.toggle('hidden');
-});
-</script>
+        button.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+            });
+    </script>
 
 
 <section class="w-full ">
@@ -145,19 +161,22 @@ button.addEventListener('click', () => {
 
 </section>
 
-
-<div class="flex items-center justify-center mt-6">
-    <div class="flex border-2 rounded border-black">
-        <input type="text" class="px-4 py-2 w-80" placeholder="Search for products...">
-        <button class="flex items-center justify-center px-4 border-l">
-            <svg class="w-6 h-6 text-gray-600 " fill="black" xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24">
-                <path
-                    d="M16.32 14.9l5.39 5.4a1 1 0 0 1-1.42 1.4l-5.38-5.38a8 8 0 1 1 1.41-1.41zM10 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12z" />
-            </svg>
-        </button>
-    </div>
-</div><br>
+<div class="container mx-auto mt-10">
+    @if(request()->has('search'))
+        <h2 class="text-2xl font-semibold mb-4">Search Results for: "{{ request('search') }}"</h2>
+        <ul class="flex flex-wrap -mx-4">
+            @foreach($products as $product)
+                <li class="w-full md:w-1/2 lg:w-1/4 px-4 mb-8 mt-3 ml-3">
+                    <!-- Product Card HTML -->
+                    <!-- ... Your product card code here ... -->
+                </li>
+            @endforeach
+        </ul>
+    @else
+        <p class="text-xl"></p>
+    @endif
+</div>
+<br>
 <div class="relative overflow-hidden bg-white">
   <div class="pb-80 pt-16 sm:pb-40 sm:pt-24 lg:pb-48 lg:pt-40">
     <div class="relative mx-auto max-w-7xl px-4 sm:static sm:px-6 lg:px-8">

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Customer;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -205,9 +206,11 @@ class CustomerController extends Controller
         return redirect('employee-list');
     }
 
-    public function viewWelcome(){
-       $categories = Category::all();
-        return view('welcome',compact('categories'));
+    public function viewWelcome()
+    {
+        $categories = Category::all();
+        $products=Product::all();
+        return view('welcome', compact('categories','products'));
     }
 
      public function  viewAddressBook(){

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\ProductAddedToCart;
 use App\Models\CartItem;
 use App\Models\Product;
 use Illuminate\Http\Request;
@@ -36,6 +37,7 @@ class CartController extends Controller
                 'quantity' => 1,
             ]);
         }
+        event(new ProductAddedToCart(auth()->user(), $product));
 
         return redirect()->back()->with('success', 'Product added to cart.');
     }
@@ -47,6 +49,7 @@ class CartController extends Controller
 
         // Retrieve cart items for the user
         $cartItems = CartItem::where('user_id', $customerId)->get();
+
 
 
         // Initialize variables for calculating totals
@@ -98,6 +101,7 @@ class CartController extends Controller
             ->where('id', $cartItem)
             ->increment('quantity');
 
+
         return redirect()->back()->with('success', 'Quantity increased.');
     }
 
@@ -118,5 +122,8 @@ class CartController extends Controller
 
         return redirect()->back()->with('success', 'Quantity decreased.');
     }
+
+
+
 
 }

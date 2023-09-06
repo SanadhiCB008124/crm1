@@ -10,6 +10,8 @@
     <h1>Shopping Cart</h1>
     <a href="{{ route('my-order', ['id' => $customerId]) }}">My Orders</a>
 
+
+
     @if ($cartItems->isEmpty())
         <div class="text-center">
 
@@ -84,6 +86,7 @@
                 <a href="{{ url('welcome') }}" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Continue Shopping</a>
 
     @endif
+
 
 
 </body>

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\SearchController;
 use App\Http\Controllers\UserController;
 use Illuminate\Routing\Controllers\Middleware;
 use Illuminate\Support\Facades\Route;
@@ -140,3 +141,5 @@ Route::post('/orders/place', [OrderController::class,'placeOrder'])->name('order
 
 Route::get('my-order/{id}',[OrderController::class,'viewOrder'])->name('my-order');
 Route::get('address-book',[CustomerController::class,'viewAddressBook'])->name('address-book');
+
+Route::match(['get', 'post'], 'search-results', [SearchController::class, 'searchProduct'])->name('products.search');

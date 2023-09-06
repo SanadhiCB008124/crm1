@@ -47,8 +47,8 @@
                     <td class="px-6 py-4 text-sm text-white">{{$cust -> name}}</td>
                     <td class="px-6 py-4 text-sm text-white"> {{$cust -> email}}</td>
                    
-                    <td class="px-6 py-4 text-sm text-amber-500"><a href="{{ url ('edit-employee/'.$cust->email)}}">Edit</a></td>
-                    <td class="px-6 py-4 text-sm text-red-600"><a href="{{ url ('delete-employee/'.$cust->email)}}">Delete</a></td>
+                    <td class="px-6 py-4 text-sm text-amber-500"><a href="{{ url ('edit-employee/'.$cust->id)}}">Edit</a></td>
+                    <td class="px-6 py-4 text-sm text-red-600"><a href="{{ url ('delete-employee/'.$cust->id)}}">Delete</a></td>
                 </tr>
                 @endforeach
    

@@ -81,6 +81,17 @@
                 @endif
             @endif
         </div>
+        <div class="col-span-6 sm:col-span-4">
+            <x-label for="contact" value="{{ __('Contact') }}" />
+            <x-input id="contact" type="text" class="mt-1 block w-full" wire:model.defer="state.contact" autocomplete="contact" />
+            <x-input-error for="contact" class="mt-2" />
+        </div>
+
+        <div class="col-span-6 sm:col-span-4">
+            <x-label for="address" value="{{ __('Address') }}" />
+            <x-input id="address" type="text" class="mt-1 block w-full" wire:model.defer="state.address" autocomplete="address" />
+            <x-input-error for="address" class="mt-2" />
+        </div>
     </x-slot>
 
     <x-slot name="actions">

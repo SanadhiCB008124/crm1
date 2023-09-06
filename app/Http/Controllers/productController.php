@@ -1,30 +1,20 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Category;
 use App\Models\Product;
 
-use Illuminate\Http\Request;
 
 class productController extends Controller
 {
-    public function men()
+    public function showProductsByCategory($category_id)
     {
-        $menProducts = Product::where('catagory_id', 1)->get();
+        $category = Category::find($category_id);
+        $categories=Category::all();
+        $products = Product::with('category')->where('category_id', $category_id)->get();
 
-        return view('men-products', compact('menProducts'));
+        return view('dynamic-product-page', compact('products', 'category','categories'));
     }
 
-    public function women()
-    {
-        $womenProducts = Product::where('catagory_id', 2)->get();
 
-        return view('women-products', compact('womenProducts'));
-    }
-
-    public function topSelling()
-    {
-        $topSellingProducts = Product::where('catagory_id', 3)->get();
-
-        return view('top-selling-products', compact('topSellingProducts'));
-    }
 }

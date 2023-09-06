@@ -15,12 +15,14 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->text('detail');
-            $table->float('price');
-            
-            $table->tinyInteger('catagory_id')->default(1)->constrained('catagory');
+            $table->float('unit_price');
+            $table->string('slug')->unique();
             $table->integer('stocks');
             $table->string('image')->nullable();
+            $table->string('color');
+            $table->string('size');
             $table->timestamps();
+            $table->foreignId('category_id')->constrained('categories')->onDelete('cascade');
         });
     }
 

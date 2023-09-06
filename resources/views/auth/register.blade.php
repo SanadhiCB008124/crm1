@@ -35,6 +35,15 @@
                 <label  class="block text-amber-100" for="email" value="{{ __('Email') }}">Email</label>
                 <input id="email"  type="email" name="email"  required autocomplete="username" class="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-purple-300 focus:bg-white focus:outline-none" />
             </div>
+            <div class="mt-4">
+                <label  class="block text-amber-100" for="contact" value="{{ __('Contact') }}">Contact No:</label>
+                <input id="contact"  type="string" name="contact"   class="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-purple-300 focus:bg-white focus:outline-none" />
+            </div>
+
+            <div class="mt-4">
+                <label  class="block text-amber-100" for="address" value="{{ __('Address') }}">Address:</label>
+                <input id="address"  type="string" name="address"   class="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-purple-300 focus:bg-white focus:outline-none" />
+            </div>
 
             <div class="mt-4">
                 <label  class="block text-amber-100" for="password" value="{{ __('Password') }}">Password</label>

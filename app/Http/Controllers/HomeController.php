@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
@@ -10,9 +11,7 @@ class HomeController extends Controller
 {
     public function index(){
     $role_id=Auth::user()->role_id;
-   
-    
-   
+
     if($role_id==0){
         return view('dashboard');
     }
@@ -20,15 +19,15 @@ class HomeController extends Controller
         return view('employee-dashboard');
     }
     else{
-        return view('welcome');
+            $categories = Category::all();
+
+            return view('welcome', compact('categories'));
+        }
     }
 
- 
-}
 
-public function view(){
-    return view('welcome');
-}
+
+
 
 
 

@@ -2,15 +2,16 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Category;
 use Livewire\Component;
 use App\Models\Product;
 use Livewire\WithFileUploads;
-use App\Models\Catagory;
+
 
 class Products extends Component
 {
       use WithFileUploads;
-    public $products, $name, $detail, $price,$image, $product_id, $catagory_id, $stocks;
+    public $products, $name, $detail, $unit_price,$image, $product_id, $category_id, $stocks,$color,$size;
     public $isOpen = 0;
 
     /**
@@ -18,19 +19,22 @@ class Products extends Component
      *
      * @var array
     */
-    public $catagory;
-    public $catagories;
+    public $category;
+    public $categories;
 
     public function mount()
     {
-        $this->catagories = Catagory::all();
+        $this->categories = Category::all();
+        
     }
 
-   
+
     public function render()
     {
-        $this->products = Product::all();
-        return view('livewire.products');
+        $product = Product::all();
+        $category=Category::all();
+
+        return view('livewire.products',['product' => $product],[ 'category' => $category]);
     }
 
     /**
@@ -72,11 +76,13 @@ class Products extends Component
     private function resetInputFields(){
         $this->name = '';
         $this->detail = '';
-        $this->price = '';
+        $this->unit_price = '';
         $this->product_id = '';
         $this->image = '';
-        $this->catagory_id = '';
+        $this->category_id = '';
         $this->stocks = '';
+        $this->color = '';
+        $this->size = '';
     }
 
     /**
@@ -88,28 +94,32 @@ class Products extends Component
     {
         $this->validate([
             'name' => 'required',
-            
+
             'detail' => 'required',
-            'price' => 'required',
+            'unit_price' => 'required',
             'image' => 'required|image',
-            'catagory_id' => 'required',
+            'category_id' => 'required',
             'stocks' => 'required',
+            'color' => 'required',
+            'size' => 'required',
 
         ]);
-   
+
         Product::updateOrCreate(['id' => $this->product_id], [
             'name' => $this->name,
-            
+
             'detail' => $this->detail,
-            'price' => $this->price,
+            'unit_price' => $this->unit_price,
             'image' => $this->image->storePublicly('images', 'public'),
-            'catagory_id' => $this->catagory_id,
+            'category_id' => $this->category_id,
             'stocks' => $this->stocks,
+            'color' => $this->color,
+            'size' => $this->size,
         ]);
-  
-        session()->flash('message', 
+
+        session()->flash('message',
             $this->product_id ? 'Product Updated Successfully.' : 'Product Created Successfully.');
-  
+
         $this->closeModal();
         $this->resetInputFields();
     }
@@ -125,11 +135,14 @@ class Products extends Component
         $this->product_id = $id;
         $this->name = $product->name;
         $this->detail = $product->detail;
-        $this->price = $product->price;
+        $this->unit_price = $product->unit_price;
         $this->image = $product->image;
-        $this->catagory_id = $product->catagory_id;
+        $this->category_id = $product->category_id;
         $this->stocks = $product->stocks;
-    
+        $this->color = $product->color;
+        $this->size = $product->size;
+
+
         $this->openModal();
     }
 
@@ -144,7 +157,7 @@ class Products extends Component
         session()->flash('message', 'Product Deleted Successfully.');
     }
 
-   
+
 
 
 

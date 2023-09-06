@@ -17,8 +17,10 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
+            $table->string('password')->default(Hash::make('password'));
             $table->tinyInteger('role_id')->default(2)->constrained('role');//0 employee 1 admin 2 customer
+            $table->string('contact')->nullable();
+            $table->string('address')->nullable();  
             $table->rememberToken();
             $table->foreignId('current_team_id')->nullable();
             $table->string('profile_photo_path', 2048)->nullable();

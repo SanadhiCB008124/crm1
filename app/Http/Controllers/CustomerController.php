@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Customer;
 use Illuminate\Http\Request;
 use App\Models\User;
@@ -12,18 +13,16 @@ class CustomerController extends Controller
 
 
     public function customer(){
-
-    
      // $totalCustomers=User::where('role',2)->count();
       // $data= User::get();
        $data= User::where('role_id',2)->get();
       // return $data;
        return view('customer-list',compact('data'));
- 
+
     }
 
-  
-    
+
+
     public function employee(){
        $totalEmployees=User::where('role_id',1)->count();
         // $data= User::get();
@@ -32,6 +31,9 @@ class CustomerController extends Controller
          return view('employee-list',compact('data'));
     }
 
+    public function addCustomer(){
+        return view('add-customer');
+    }
 
 
 
@@ -40,45 +42,66 @@ class CustomerController extends Controller
     }
 
     public function saveCustomer(Request $request){
-       
+
+        $request->validate([
+            'name'=> 'required',
+            'email'=>'required|email',
+            'contact'=>'required',
+            'address'=>'required',
+
+
+        ]);
          $name=$request->name;
          $email=$request->email;
-        
+         $contact=$request->contact;
+         $address=$request->address;
+
+
+
 
          $cust= new User();
          $cust->name=$name;
          $cust->email=$email;
-        
+         $cust->role_id=2;
+          $cust->contact=$contact;
+          $cust->address=$address;
+
+
 
          $cust->save();
 
          return redirect()->back()->with('success','custimer added succesfully');
 
 
-       
+
     }
 
     public function saveEmployee(Request $request){
-    
+
 
       $request->validate([
           'name'=> 'required',
           'email'=>'required|email',
+          'contact'=>'required',
+          'address'=>'required',
+
 
       ]);
 
 
       $name=$request->name;
       $email=$request->email;
-     
-     
+      $contact=$request->contact;
+      $address=$request->address;
+
 
       $cust= new User();
       $cust->name=$name;
       $cust->email=$email;
       $cust->role_id=1;
-      $cust->password = $request->password?$request->password:Auth::user()->password;
-     
+      $cust->contact=$contact;
+      $cust->address=$address;
+
 
       $cust->save();
 
@@ -86,16 +109,16 @@ class CustomerController extends Controller
 
     }
 
-    public function editCustomer($email){
+    public function editCustomer($id){
 
-        $data= User::where('email','=',$email)->first();
+        $data= User::where('id','=',$id)->first();
         return view('edit-customer',compact('data'));
 
     }
 
-    public function editEmployee($email){
+    public function editEmployee($id){
 
-        $data= User::where('email','=',$email)->first();
+        $data= User::where('id','=',$id)->first();
         return view('edit-employee',compact('data'));
 
     }
@@ -103,14 +126,29 @@ class CustomerController extends Controller
 
     public function updateCustomer(Request $request){
 
-       $id=$request->id;
+        $request->validate([
+            'name'=> 'required',
+            'email'=>'required|email',
+            'contact'=>'required',
+            'address'=>'required',
+
+
+        ]);
+
+        $id=$request->id;
         $name=$request->name;
         $email=$request->email;
-       
+        $contact=$request->contact;
+        $address=$request->address;
+
+
       User::where('id','=',$id)->update([
 
         'name'=>$name,
-        'email'=>$email
+        'email'=>$email,
+        'contact'=>$contact,
+        'address'=>$address
+
 
       ]);
 
@@ -120,41 +158,63 @@ class CustomerController extends Controller
 
     public function updateEmployee(Request $request){
 
+        $request->validate([
+            'name'=> 'required',
+            'email'=>'required|email',
+            'contact'=>'required',
+            'address'=>'required',
+
+
+        ]);
+
         $id=$request->id;
          $name=$request->name;
          $email=$request->email;
-        
+         $contact=$request->contact;
+        $address=$request->address;
+
+
        User::where('id','=',$id)->update([
- 
+
          'name'=>$name,
-         'email'=>$email
- 
+         'email'=>$email,
+         'contact'=>$contact,
+        'address'=>$address
+
        ]);
- 
+
        //return redirect()->back()->with('success','custimer added succesfully');
        return redirect('employee-list');
      }
- 
 
 
 
 
 
-    public function deleteCustomer($email){
-        $data= User::where('email','=',$email)->delete();
+
+    public function deleteCustomer($id){
+
+        $data= User::where('id','=',$id)->delete();
 
         return redirect('customer-list');
     }
 
-    public function deleteEmployee($email){
-        $data= User::where('email','=',$email)->delete();
+    public function deleteEmployee($id){
+        $data= User::where('id','=',$id)->delete();
 
         return redirect('employee-list');
     }
 
-public function viewWelcome(){
-  return view('welcome');
-}
+    public function viewWelcome(){
+       $categories = Category::all();
+        return view('welcome',compact('categories'));
+    }
+
+     public function  viewAddressBook(){
+
+         $customers = User::where('role_id', 2)->get();
+         return view('address-book', compact('customers'));
+     }
 
 
 }

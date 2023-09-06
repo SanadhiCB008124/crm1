@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        
+
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <script src="https://cdn.tailwindcss.com"></script>
 
@@ -24,7 +24,7 @@
         <x-banner />
 
         <div class="min-h-screen bg-gray-100">
-        
+
             <div class="flex h-screen">
             <div class="px-4 py-2  bg-black lg:w-1/4 border border-r-amber-100  border-y-black">
                 <svg xmlns="http://www.w3.org/2000/svg" class="inline w-8 h-8 text-white lg:hidden" fill="none"
@@ -39,7 +39,7 @@
                         <h1 class="text-2xl font-bold text-white">Admin Dashboard</h1>
                     </div>
                     <div>
-                   
+
 </div>
                     <ul >
                         <li class="mb-6">
@@ -57,55 +57,55 @@
                                     class="w-full px-4 py-2 pl-12 rounded shadow outline-none  focus:border-amber-100       " placeholder="Search...">
                         </li>
                         <li class="mb-2 rounded hover:shadow hover:bg-amber-100 ">
-                            <a href="#" class="inline-block w-full h-full px-3 py-2 font-bold text-white hover:text-black">
-                               
+                            <a href="{{url ('catagory-list')}}" class="inline-block w-full h-full px-3 py-2 font-bold text-white hover:text-black">
+
                                 Stocks
                             </a>
                         </li>
                         <li class="mb-2 rounded hover:shadow hover:bg-amber-100  ">
-                            <a href="#" class="inline-block w-full h-full px-3 py-2 font-bold text-white hover:text-black">
-                               
-                                Customers
+                            <a href="{{route('address-book')}}" class="inline-block w-full h-full px-3 py-2 font-bold text-white hover:text-black">
+
+                                Address Book
                             </a>
                         </li>
                         <li class="mb-2 rounded hover:shadow hover:bg-amber-100 ">
                             <a href="#" class="inline-block w-full h-full px-3 py-2 font-bold text-white hover:text-black">
-                              
+
                                 Sales
                             </a>
                         </li>
                         <li class="mb-2 rounded hover:shadow hover:bg-amber-100 ">
                             <a href="#" class="inline-block w-full h-full px-3 py-2 font-bold text-white hover:text-black">
-                                
+
                                 Leads
                             </a>
                         </li>
                         <li class="mb-2 rounded hover:shadow hover:bg-amber-100 ">
                             <a href="#" class="inline-block w-full h-full px-3 py-2 font-bold text-white hover:text-black">
-                                
+
                                Analytics
                             </a>
                         </li>
                         <li class="mb-2 rounded hover:shadow hover:bg-amber-100 ">
                             <a href="#" class="inline-block w-full h-full px-3 py-2 font-bold text-white hover:text-black">
-                                
+
                                Setting
                             </a>
                         </li>
                         <li class="mb-2 rounded hover:shadow hover:bg-amber-100 ">
                             <a href="{{ route('profile.show') }}"  class="inline-block w-full h-full px-3 py-2 font-bold text-white hover:text-black">
-                                
+
                                Profile
                             </a>
                         </li>
                         <li class="mb-2 rounded hover:shadow hover:bg-amber-100 ">
                             <a href="{{ url('welcome') }}" class="inline-block w-full h-full px-3 py-2 font-bold text-white hover:text-black">
-                                
+
                                view homepage
-                             
+
                             </a>
                         </li>
-                       
+
                         <li >
                         <a href="{{ route('logout') }}" class="block mt-4 lg:inline-block lg:mt-0 text-amber-100 mr-4 px-3 py-2 no-underline hover:underline  sm:block"
                                          @click.prevent="$root.submit();">
@@ -115,16 +115,16 @@
                     </ul>
                 </div>
                 <script>
-      
-    
+
+
       const button = document.querySelector('#menu-button');
   const menu = document.querySelector('#menu');
-  
-  
+
+
   button.addEventListener('click', () => {
     menu.classList.toggle('hidden');
   });
-  </script>  
+  </script>
 
             </div>
             <div class="w-full px-4 py-2 bg-black lg:w-full">
@@ -139,10 +139,10 @@
                                 </svg>
                             </div>
                             <div class="mx-4">
-                               
-                               
+
+
                                 <div class="text-gray-500">Total customers</div>
-                               
+
                                 <div class="text-black"><a href="{{url ('customer-list')}}">view customer registered</a></div>
                             </div>
                         </div>
@@ -158,7 +158,7 @@
                                 </svg>
                             </div>
                             <div class="mx-4">
-                               
+
                                 <div class="text-gray-500">Total Employees</div>
                                 <div class="text-black"><a href="{{url ('employee-list')}}">View registered employees</a></div>
                             </div>
@@ -175,12 +175,12 @@
                                 </svg>
                             </div>
                             <div class="mx-4">
-                         
+
                                 <div class="text-gray-500">Products</div>
                                 <div class="text-black"><a href="{{ url('livewire/products') }}">View Products</a></div>
                             </div>
                         </div>
-                        
+
                         <div class="flex items-center px-4 py-6 bg-white rounded-md shadow-md">
                             <div class="p-3 bg-indigo-600 rounded">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none"
@@ -193,15 +193,15 @@
                                 <h4 class="text-2xl font-semibold text-gray-700">$0.00</h4>
                                 <div class="text-gray-500">Total Sales</div>
                             </div>
-                           
+
                         </div>
                     </div>
-     
+
                 </div>
-                  
+
             </div>
-            
-      
+
+
         </div>
 </div>
 </body>

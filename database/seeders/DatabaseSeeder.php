@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
 {
@@ -20,34 +21,25 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         $roles = [
-            [
-                'name' => 'Admin',
-                'status' => true,
-            ],
-            [
-                'name' => 'Moderator',
-                'status' => true,
-            ],
-            [
-                'name' => 'User',
-                'status' => true,
-            ],
+            ['name' => 'Admin'],
+            ['name' => 'Employee'],
+            ['name' => 'Customer'],
         ];
 
-        foreach ($roles as $role) {
-            \App\Models\Role::create($role);
-        }
+        DB::table('roles')->insert($roles);
 
-        // create a user model with the role_id as 2
-        (new \App\Models\User)->create([
-            'name' => 'Admin',
-            'email' => 'admin@admin.com',
-            'password' => \Illuminate\Support\Facades\Hash::make('password'),
-            'role_id' => 1,
-        ]);
+        $payments=[
+           [ 'payment_method'=>'Cash'],
+            ['payment_method'=>'Debit/Credit Card'],
+           [ 'payment_method'=>'Voucher'],
+            ['payment_method'=>'Paypal'],
+            ['payment_method'=>'MasterCard'],
+        
+        ];
+        DB::table('payments')->insert($payments);
 
 
-
+    
 
 
 

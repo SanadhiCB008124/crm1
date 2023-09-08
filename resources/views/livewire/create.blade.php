@@ -18,6 +18,7 @@
                   <input type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="exampleFormControlInput1" placeholder="Enter Name" wire:model="name">
                   @error('name') <span class="text-red-500">{{ $message }}</span>@enderror
               </div>
+
               <div class="mb-4">
     <label for="exampleFormControlSelect1" class="block text-black text-sm font-bold mb-2">Category:</label>
     <select class="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline" id="exampleFormControlSelect1" wire:model="category_id">
@@ -28,6 +29,7 @@
     </select>
     @error('category') <span class="text-red-500">{{ $message }}</span> @enderror
 </div>
+
               <div class="mb-4">
                   <label for="exampleFormControlInput2" class="block text-black text-sm font-bold mb-2">Detail:</label>
                   <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="exampleFormControlInput2" wire:model="detail" placeholder="Enter Detail"></textarea>
@@ -38,12 +40,19 @@
                   <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="exampleFormControlInput2" wire:model="unit_price" placeholder="Enter Price"></input>
                   @error('unit_price') <span class="text-red-500">{{ $message }}</span>@enderror
               </div>
-              <div class="mb-4">
-                  <label for="exampleFormControlInput2" class="block text-black text-sm font-bold mb-2">COLOR:</label>
-                  <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="exampleFormControlInput2" wire:model="color" placeholder="Enter Price"></input>
-                  @error('color') <span class="text-red-500">{{ $message }}</span>@enderror
-              </div>
-              <div class="mb-4">
+
+            <div class="mb-4">
+            <label for="exampleFormControlSelect1" class="block text-black text-sm font-bold mb-2">Color:</label>
+            <select class="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline" id="exampleFormControlSelect1" wire:model="color_id">
+                <option value="">Select a Color</option>
+                @foreach ($colors as $color)
+                    <option value="{{ $color->id }}">{{ $color->color }}</option>
+                @endforeach
+            </select>
+            @error('color_id') <span class="text-red-500">{{ $message }}</span> @enderror
+            </div>
+
+            <div class="mb-4">
                   <label for="exampleFormControlInput2" class="block text-black text-sm font-bold mb-2">Size:</label>
                   <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="exampleFormControlInput2" wire:model="size" placeholder="Enter Price"></input>
                   @error('size') <span class="text-red-500">{{ $message }}</span>@enderror
@@ -73,6 +82,7 @@
             Cancel
           </button>
         </span>
+      </div>
         </form>
       </div>
 

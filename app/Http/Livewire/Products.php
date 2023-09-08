@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Models\Category;
+use App\Models\Color;
 use Livewire\Component;
 use App\Models\Product;
 use Livewire\WithFileUploads;
@@ -11,7 +12,7 @@ use Livewire\WithFileUploads;
 class Products extends Component
 {
       use WithFileUploads;
-    public $products, $name, $detail, $unit_price,$image, $product_id, $category_id, $stocks,$color,$size;
+    public $products, $name, $detail, $unit_price,$image, $product_id, $category_id, $stocks,$color_id,$size;
     public $isOpen = 0;
 
     /**
@@ -21,11 +22,13 @@ class Products extends Component
     */
     public $category;
     public $categories;
+    public  $color;
 
     public function mount()
     {
         $this->categories = Category::all();
-        
+        $this->colors=Color::all();
+
     }
 
 
@@ -33,8 +36,10 @@ class Products extends Component
     {
         $product = Product::all();
         $category=Category::all();
+        $color=Color::all();
 
-        return view('livewire.products',['product' => $product],[ 'category' => $category]);
+
+        return view('livewire.products',['product' => $product],[ 'category' => $category],['color'=>$color]);
     }
 
     /**
@@ -81,7 +86,7 @@ class Products extends Component
         $this->image = '';
         $this->category_id = '';
         $this->stocks = '';
-        $this->color = '';
+        $this->color_id = '';
         $this->size = '';
     }
 
@@ -100,7 +105,7 @@ class Products extends Component
             'image' => 'required|image',
             'category_id' => 'required',
             'stocks' => 'required',
-            'color' => 'required',
+            'color_id' => 'required',
             'size' => 'required',
 
         ]);
@@ -113,7 +118,7 @@ class Products extends Component
             'image' => $this->image->storePublicly('images', 'public'),
             'category_id' => $this->category_id,
             'stocks' => $this->stocks,
-            'color' => $this->color,
+            'color_id' => $this->color_id,
             'size' => $this->size,
         ]);
 
@@ -139,7 +144,7 @@ class Products extends Component
         $this->image = $product->image;
         $this->category_id = $product->category_id;
         $this->stocks = $product->stocks;
-        $this->color = $product->color;
+        $this->color_id = $product->color_id;
         $this->size = $product->size;
 
 

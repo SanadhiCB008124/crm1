@@ -114,9 +114,13 @@
                         </button>
 
                     @else
-                        <a href="{{ route('login') }}" class="block mt-4 lg:inline-block lg:mt-0 text-amber-100 mr-4 no-underline hover:underline">Log in</a>
+
+                        <a href="{{ route('login') }}" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium">Log in</a>
+                         <br>
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="block mt-4 lg:inline-block lg:mt-0 text-amber-100 mr-4 no-underline hover:underline">Register</a>
+
+                            <a href="{{ route('register') }}" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium">Register</a>
+
                         @endif
                     @endauth
                 </div>
@@ -147,7 +151,6 @@
         menu.classList.toggle('hidden');
             });
     </script>
-
 
 <section class="w-full ">
 

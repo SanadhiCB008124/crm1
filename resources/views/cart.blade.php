@@ -36,7 +36,7 @@
             <h2 class="title-font text-lg font-medium text-gray-900">{{ $item->product->name}}</h2>
             <h2 class="title-font text-lg font-medium text-rose-500">LKR {{$item->product->unit_price}}</h2><br>
 
-            <h2 class="title-font text-lg font-medium text-gray-900">color: {{ $item->product->color }}</h2>
+              <h2 class="title-font text-lg font-medium text-gray-900">color: {{ $item->product->color->color}}</h2>
             <h2 class="title-font text-lg font-medium text-gray-900">size: {{ $item->product->size}}</h2>
             <h2 class="title-font text-lg font-medium text-gray-900">Quantity: {{ $item->quantity}}</h2>
               <form method="post" action="{{ route('cart.remove', $item->id) }}">

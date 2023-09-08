@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AnalyticsController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\SearchController;
@@ -143,3 +144,5 @@ Route::get('my-order/{id}',[OrderController::class,'viewOrder'])->name('my-order
 Route::get('address-book',[CustomerController::class,'viewAddressBook'])->name('address-book');
 
 Route::match(['get', 'post'], 'search-results', [SearchController::class, 'searchProduct'])->name('products.search');
+Route::get('analytics',[AnalyticsController::class,'showCartEvents'])->name('Analytics');
+

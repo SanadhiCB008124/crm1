@@ -3,7 +3,12 @@
 namespace App\Providers;
 
 use App\Events\ProductAddedToCart;
+use App\Events\UserRegistrations;
+use App\Listeners\LogLogins;
+use App\Listeners\LogRegistration;
 use App\Listeners\TrackProductAddedToCart;
+use Illuminate\Auth\Events\Authenticated;
+use Illuminate\Auth\Events\Login;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -19,6 +24,12 @@ class EventServiceProvider extends ServiceProvider
     protected $listen = [
         ProductAddedToCart::class => [
             TrackProductAddedToCart::class,
+        ],
+        Authenticated::class => [
+            LogLogins::class,
+        ],
+        UserRegistrations::class => [
+            LogRegistration::class,
         ],
 
         Registered::class => [

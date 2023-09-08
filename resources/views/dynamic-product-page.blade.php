@@ -86,17 +86,15 @@
         @if (Route::has('login'))
                 <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                     @auth
-                        <button type="button" class="relative rounded-full bg-white-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                        <button type="button"  id="dropdown-button" class="relative rounded-full bg-white-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" aria-expanded="false">
                             <span class="absolute -inset-1.5"></span>
                             <span class="sr-only">View Cart</span>
-                            <a
-                                href="{{ route('cart', ['id' => auth()->user()->id]) }}"
-                                class="text-sm text-white relative"
-                            >
 
-                                <svg width="25px" height="35px" viewBox="0 0 24 24" class="mt-2"  fill="#00000" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M8 12L8 8C8 5.79086 9.79086 4 12 4V4C14.2091 4 16 5.79086 16 8L16 12" stroke="#ffffff" stroke-width="2" stroke-linecap="round"></path> <path d="M3.69435 12.6678C3.83942 10.9269 3.91196 10.0565 4.48605 9.52824C5.06013 9 5.9336 9 7.68053 9H16.3195C18.0664 9 18.9399 9 19.514 9.52824C20.088 10.0565 20.1606 10.9269 20.3057 12.6678L20.8195 18.8339C20.904 19.8474 20.9462 20.3542 20.6491 20.6771C20.352 21 19.8435 21 18.8264 21H5.1736C4.15655 21 3.64802 21 3.35092 20.6771C3.05382 20.3542 3.09605 19.8474 3.18051 18.8339L3.69435 12.6678Z" stroke="#ffffff" stroke-width="2"></path> </g></svg>
-                            </a>
+
+                                <svg width="25px" height="35px" viewBox="0 0 24 24" class="mt-2"  fill="#00000" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M8 12L8 8C8 5.79086 9.79086 4 12 4V4C14.2091 4 16 5.79086 16 8L16 12" stroke="#ffffff" stroke-width="2" stroke-linecap="round"></path> <path d="M3.69435 12.6678C3.83942 10.9269 3.91196 10.0565 4.48605 9.52824C5.06013 9 5.9336 9 7.68053 9H16.3195C18.0664 9 18.9399 9 19.514 9.52824C20.088 10.0565 20.1606 10.9269 20.3057 12.6678L20.8195 18.8339C20.904 19.8474 20.9462 20.3542 20.6491 20.6771C20.352 21 19.8435 21 18.8264 21H5.1736C4.15655 21 3.64802 21 3.35092 20.6771C3.05382 20.3542 3.09605 19.8474 3.18051 18.8339L3.69435 12.6678Z" stroke="#ffffff" stroke-width="2"></path> </g></svg>
+
                         </button>
+
 
                         <button type="button" class="relative rounded-full bg-white-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                             <span class="absolute -inset-1.5"></span>
@@ -166,6 +164,41 @@
     </div>
 </div>
 
+<div class="relative">
+
+    <!-- Flyout menu -->
+    <div class="absolute left-1/2 z-10 mt-5 transform -translate-x-1/2 hidden" id="dropdown-menu">
+        <div class="w-screen max-w-md overflow-hidden rounded-3xl bg-white text-sm leading-6 shadow-lg ring-1 ring-gray-900/5">
+            <div class="p-4">
+                <div class="group relative flex flex-col gap-y-4 p-4 hover:bg-gray-50 " >
+                    <!-- Place your dropdown content here -->
+                    @if ($cartItems->isEmpty())
+                        <p class="text-gray-900">your Cart is empty :(</p>
+                    @else
+                    @foreach ($cartItems as $item)
+                        <div class="flex gap-x-6 rounded-lg items-center">
+                            <div class="w-11 h-11 flex-none">
+                                <img src="{{ asset('images/'.$item->product->image) }}" alt="product image" class="w-full h-full object-cover object-center rounded-lg">
+                            </div>
+                            <div class="flex-grow">
+                                <h2 class="title-font text-lg font-medium text-gray-900">{{ $item->product->name}}</h2>
+                                <h2 class="title-font text-lg font-medium text-rose-500">LKR {{$item->product->unit_price}}</h2>
+                                <h2 class="title-font text-lg font-medium text-gray-900">color: {{ $item->product->color->color}}</h2>
+
+                                <h2 class="title-font text-lg font-medium text-gray-900">size: {{ $item->product->size}}</h2>
+                                <h2 class="title-font text-lg font-medium text-gray-900">Quantity: {{ $item->quantity}}</h2>
+                            </div>
+                        </div>
+
+                    @endforeach
+                    @endif
+                    <a href="{{ route('cart', ['id' => auth()->user()->id]) }}">View Cart</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!--<h1>Products in {{ $category->category_name }} Category</h1>-->
 
 
@@ -182,13 +215,13 @@
                     <h2 class="text-lg font-medium text-rose-500">LKR {{ $product->unit_price }}</h2>
                     <br>
                     <h2 class="text-lg font-medium text-gray-900">{{ $product->detail }}</h2>
-                    <h2 class="text-lg font-medium text-gray-900">COLOR: {{ $product->color }}</h2>
+                    <h2 class="title-font text-lg font-medium text-gray-900">color: {{ $product->color->color}}</h2>
                     <h2 class="text-lg font-medium text-gray-900">SIZE: {{ $product->size }}</h2>
                     <div class="flex items-center space-x-1.5 mt-4">
 
                         <form method="post" action="{{ route('cart.add', ['productSlug' => $product->slug]) }}">
                             @csrf
-                            <button type="submit" class="text-white bg-black rounded-lg w-5/5 px-4 py-1.5 hover:bg-gray-800 transition duration-200">
+                            <button type="submit" onclick="addToCart()" class="text-white bg-black rounded-lg w-5/5 px-4 py-1.5 hover:bg-gray-800 transition duration-200">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-4 w-4">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
                                 </svg>Add to Cart</button>
@@ -203,6 +236,55 @@
         </li>
     @endforeach
 </ul>
+<!-- Modal HTML -->
+<div id="cart-modal" class="fixed inset-0 flex items-center justify-center z-50 hidden">
+    <div class="modal-overlay absolute inset-0 bg-gray-500 opacity-75"></div>
+    <div class="modal-container bg-white w-96 mx-auto rounded-lg shadow-lg z-50 overflow-y-auto">
+        <!-- Add your modal content here -->
+        <div class="modal-content p-4">
+            <h2 class="text-lg font-bold">Product Added to Cart</h2>
+            <p>Your selected product has been added to the cart.</p>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    const dropdownButton = document.getElementById("dropdown-button");
+    const dropdownMenu = document.getElementById("dropdown-menu");
+
+    dropdownButton.addEventListener("click", () => {
+        dropdownMenu.classList.toggle("hidden"); // Toggle the "hidden" class to show/hide the menu.
+    });
+</script>
+<script>
+    const cartModal = document.getElementById('cart-modal');
+    const closeModalButton = document.getElementById('close-modal');
+
+    // Function to show the modal
+    function showModal() {
+        cartModal.classList.remove('hidden');
+    }
+
+    // Function to hide the modal
+    function hideModal() {
+        cartModal.classList.add('hidden');
+    }
+
+    // Add a product to the cart (simulated)
+    function addToCart() {
+        // Simulate adding the product to the cart here
+        // You can trigger this function when the "Add to Cart" button is clicked
+
+        // Show the modal when the product is added
+        showModal();
+    }
+
+    // Close the modal when the "Close" button is clicked
+    closeModalButton.addEventListener('click', hideModal);
+
+    // You can call the addToCart() function when a product is added to the cart
+</script>
 
 </body>
 </html>

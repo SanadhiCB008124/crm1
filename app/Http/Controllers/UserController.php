@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CartItem;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
@@ -23,6 +24,7 @@ class UserController extends Controller
          Auth::logout();
          $categories = Category::all();
          $products=Product::all();
+
 
          return view('welcome', compact('categories','products'));
 

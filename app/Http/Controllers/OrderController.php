@@ -8,6 +8,7 @@ use App\Models\Order;
 use App\Models\OrderItem;
 use App\Models\Payment;
 use App\Models\Product;
+use App\Notifications\OrderPlaced;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -61,6 +62,8 @@ class OrderController extends Controller
 
         // Create order items associated with the current order
         $this->createOrderItems($order, $cartItems);
+
+        auth()->user()->notify(new OrderPlaced($order));
 
         return redirect()->back()->with('success', 'Order placed successfully.');
     }

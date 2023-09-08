@@ -76,12 +76,45 @@
 
                 </div>
                 <div>
-                    <button type="submit" class="px-4 w-4/5 ml-16 py-2 text-sm bg-black hover:bg-amber-200 hover:text-black text-white">Confirm Order</button>
+                    <button type="submit" onclick="checkoutSuccessful()" class="px-4 w-4/5 ml-16 py-2 text-sm bg-black hover:bg-amber-200 hover:text-black text-white">Confirm Order</button>
                     <button class="px-4 w-4/5 ml-16 mt-2 py-2 text-sm bg-red-200 text-black"><a href="{{ url('welcome{id}') }}">Continue shopping</a></button>
                 </div>
             </form>
         </div>
     </div>
 </div>
+
+<div id="cart-modal" class="fixed inset-0 flex items-center justify-center z-50 hidden">
+    <div class="modal-overlay absolute inset-0 bg-gray-500 opacity-75"></div>
+    <div class="modal-container bg-white w-96 mx-auto rounded-lg shadow-lg z-50 overflow-y-auto">
+
+        <div class="modal-content p-4">
+            <svg fill="#2ccb2a" viewBox="0 0 35 35" xmlns="http://www.w3.org/2000/svg" stroke="#2ccb2a"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M12,1A11,11,0,1,0,23,12,11.013,11.013,0,0,0,12,1Zm0,20a9,9,0,1,1,9-9A9.011,9.011,0,0,1,12,21ZM17.737,8.824a1,1,0,0,1-.061,1.413l-6,5.5a1,1,0,0,1-1.383-.03l-3-3a1,1,0,0,1,1.415-1.414l2.323,2.323,5.294-4.853A1,1,0,0,1,17.737,8.824Z"></path></g></svg>
+            <h2 class="text-lg font-bold text-green-600">Your Order has been placed Successfully ! :)</h2>
+
+
+        </div>
+    </div>
+</div>
+<script>
+    const cartModal = document.getElementById('cart-modal');
+    const closeModalButton = document.getElementById('close-modal');
+
+    function showModal() {
+        cartModal.classList.remove('hidden');
+    }
+
+    function hideModal() {
+        cartModal.classList.add('hidden');
+    }
+
+    function checkoutSuccessful() {
+
+        showModal();
+    }
+
+    closeModalButton.addEventListener('click', hideModal);
+</script>
+
 </body>
 </html>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\UserRegistrations;
 use App\Models\Category;
 use App\Models\Customer;
 use App\Models\Product;
@@ -71,7 +72,9 @@ class CustomerController extends Controller
 
          $cust->save();
 
-         return redirect()->back()->with('success','custimer added succesfully');
+        event(new UserRegistrations(auth()->user(), $cust));
+
+         return redirect()->back()->with('success','customer added succesfully');
 
 
 
@@ -105,6 +108,7 @@ class CustomerController extends Controller
 
 
       $cust->save();
+      event(new UserRegistrations(auth()->user(), $cust));
 
       return redirect()->back()->with('success','employee added succesfully');
 

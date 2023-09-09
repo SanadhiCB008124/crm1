@@ -2,10 +2,12 @@
 
 namespace App\Providers;
 
+use App\Events\Checkouts;
 use App\Events\ProductAddedToCart;
 use App\Events\UserRegistrations;
 use App\Listeners\LogLogins;
 use App\Listeners\LogRegistration;
+use App\Listeners\TrackCheckouts;
 use App\Listeners\TrackProductAddedToCart;
 use Illuminate\Auth\Events\Authenticated;
 use Illuminate\Auth\Events\Login;
@@ -28,8 +30,9 @@ class EventServiceProvider extends ServiceProvider
         Authenticated::class => [
             LogLogins::class,
         ],
-        UserRegistrations::class => [
-            LogRegistration::class,
+
+        Checkouts::class => [
+            TrackCheckouts::class,
         ],
 
         Registered::class => [

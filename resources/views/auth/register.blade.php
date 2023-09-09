@@ -37,12 +37,12 @@
             </div>
             <div class="mt-4">
                 <label  class="block text-amber-100" for="contact" value="{{ __('Contact') }}">Contact No:</label>
-                <input id="contact"  type="string" name="contact"   class="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-purple-300 focus:bg-white focus:outline-none" />
+                <input id="contact"  type="text" name="contact"   class="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-purple-300 focus:bg-white focus:outline-none" />
             </div>
 
             <div class="mt-4">
                 <label  class="block text-amber-100" for="address" value="{{ __('Address') }}">Address:</label>
-                <input id="address"  type="string" name="address"   class="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-purple-300 focus:bg-white focus:outline-none" />
+                <input id="address"  type="text" name="address"   class="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-purple-300 focus:bg-white focus:outline-none" />
             </div>
 
             <div class="mt-4">
@@ -77,15 +77,15 @@
                     {{ __('Already registered?') }}
                 </a>
 
-             
-      
+
+
             </div>
-          
+
 
             <button type="submit" class="w-full block bg-black text-amber-100   hover:text-white  border border-amber-100  font-semibold rounded-lg
               px-4 py-3 mt-6">  {{ __('Register') }}</button>
         </form>
-      
+
     </div>
   </div>
 

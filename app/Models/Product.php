@@ -12,7 +12,7 @@ class Product extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name', 'detail','unit_price','image','category_id','stocks','slug','color_id','size'
+        'name', 'detail','unit_price','image','category_id','stocks','slug','color_id','size_id'
     ];
 
     protected static function booted()
@@ -35,6 +35,9 @@ class Product extends Model
     public function color()
     {
         return $this->belongsTo(Color::class, 'color_id');
+    }
+    public function  size(){
+        return $this->belongsTo(Size::class,'size_id');
     }
 
 

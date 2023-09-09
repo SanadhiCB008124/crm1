@@ -10,8 +10,11 @@
       <a href="{{route ('category-list')}}" class="text-white">Categories</a>
 
 
-        <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg px-4 py-4">
 
+
+        <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg px-4 py-4">
+          <livewire:size-manager />
+          <livewire:colors-manager />
             @if (session()->has('message'))
                 <div class="bg-teal-100 border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-3 shadow-md my-3" role="alert">
                   <div class="flex">
@@ -49,7 +52,7 @@
                         <td class="border px-4 py-2">{{ $product->category->category_name}}</td>
                         <td class="border px-4 py-2">{{ $product->detail }}</td>
                         <td class="border px-4 py-2">{{ $product->unit_price }}</td>
-                        <td class="border px-4 py-2">{{ $product->size }}</td>
+                        <td class="border px-4 py-2">{{ $product->size->name }}</td>
                         <td class="border px-4 py-2">{{ $product->color->color}}</td>
                         <td class="border px-4 py-2">{{ $product->stocks }}</td>
                         <td class="border px-4 py-2">

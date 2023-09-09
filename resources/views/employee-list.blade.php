@@ -17,7 +17,7 @@
         <div class="w-full">
             <div class="border-b border-gray-200 shadow">
             <a href="{{ url('add-employee') }}"  class="bg-amber-500 hover:bg-amber-700 text-white py-1 mb-6 px-3 rounded my-3 mt-1"> Add New Employee</a>
-            
+
  <table class="table-auto ">
     <thead class="bg-black divide-y divide-gray-300">
        <tr>
@@ -30,7 +30,13 @@
                             <th class="px-6 py-2 text-xs text-gray-500">
                                 Email
                             </th>
-                           
+           <th class="px-6 py-2 text-xs text-gray-500">
+             Contact
+           </th>
+           <th class="px-6 py-2 text-xs text-gray-500">
+              Address
+           </th>
+
                             <th class="px-6 py-2 text-xs text-gray-500">
                                 Edit
                             </th>
@@ -40,18 +46,20 @@
         </tr>
   </thead>
   <tbody class="bg-black divide-y divide-gray-300">
-                @foreach(  $data as $cust)
-                
+                @foreach(  $users as $user)
+
                 <tr class="whitespace-nowrap">
-                    <td class="px-6 py-4 text-sm text-white">{{ $cust-> id}}</td>
-                    <td class="px-6 py-4 text-sm text-white">{{$cust -> name}}</td>
-                    <td class="px-6 py-4 text-sm text-white"> {{$cust -> email}}</td>
-                   
-                    <td class="px-6 py-4 text-sm text-amber-500"><a href="{{ url ('edit-employee/'.$cust->id)}}">Edit</a></td>
-                    <td class="px-6 py-4 text-sm text-red-600"><a href="{{ url ('delete-employee/'.$cust->id)}}">Delete</a></td>
+                    <td class="px-6 py-4 text-sm text-white">{{ $user-> id}}</td>
+                    <td class="px-6 py-4 text-sm text-white">{{$user -> name}}</td>
+                    <td class="px-6 py-4 text-sm text-white"> {{$user -> email}}</td>
+                    <td class="px-6 py-4 text-sm text-white">{{$user -> contact}}</td>
+                    <td class="px-6 py-4 text-sm text-white"> {{$user -> address}}</td>
+
+                    <td class="px-6 py-4 text-sm text-amber-500"><a href="{{ url ('edit-employee/'.$user->id)}}">Edit</a></td>
+                    <td class="px-6 py-4 text-sm text-red-600"><a href="{{ url ('delete-employee/'.$user->id)}}">Delete</a></td>
                 </tr>
                 @endforeach
-   
+
  </tbody>
 </table>
 

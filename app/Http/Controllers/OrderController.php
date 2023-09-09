@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\Checkouts;
 use App\Models\Cart;
 use App\Models\CartItem;
 use App\Models\Order;
@@ -64,6 +65,7 @@ class OrderController extends Controller
         $this->createOrderItems($order, $cartItems);
 
         auth()->user()->notify(new OrderPlaced($order));
+        event(new Checkouts(auth()->user(), $order));
 
         return redirect()->back()->with('success', 'Order placed successfully.');
     }
@@ -99,6 +101,48 @@ class OrderController extends Controller
         $orders= Order::where('customer_id', $customerId)->get();
         return view('my-order',compact('orders'));
 
+    }
+    public function reorder($order_id)
+    {
+        // Retrieve the original order by ID
+        $originalOrder = Order::find($order_id);
+
+        if (!$originalOrder) {
+            return redirect()->back()->with('error', 'Order not found.');
+        }
+
+        // Create a new order with the same customer information
+        $newOrder = new Order([
+            'customer_id' => auth()->user()->id,
+            'order_number' => 'ORD-' . strtoupper(uniqid()),
+            'total_amount' => $originalOrder->total_amount,
+            'status' => 'pending',
+            'payment_id' => $originalOrder->payment_id,
+            'payment_status' => 'Processed',
+            'first_name' => $originalOrder->first_name,
+            'last_name' => $originalOrder->last_name,
+            'shipping_address' => $originalOrder->shipping_address,
+            'contact' => $originalOrder->contact,
+            'notes' => $originalOrder->notes,
+            'billing_address' => $originalOrder->billing_address,
+            'date_of_order' => now(),
+
+
+        ]);
+        $newOrder->save();
+
+        // Copy items from the original order to the new order
+        foreach ($originalOrder->orderItems as $item) {
+            $newOrderItem = new OrderItem([
+                'order_id' => $newOrder->id, // Associate the item with the new order
+                'product_slug' => $item->product_slug,
+                'quantity' => $item->quantity,
+                // Copy other item details as needed
+            ]);
+            $newOrderItem->save();
+        }
+
+        return redirect()->route('my-orders')->with('success', 'Order has been reordered.');
     }
 
 

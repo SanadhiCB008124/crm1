@@ -140,9 +140,15 @@ Route::get('checkout/{id}',[OrderController::class,'checkout'])->name('checkout'
 
 Route::post('/orders/place', [OrderController::class,'placeOrder'])->name('orders.place');
 
-Route::get('my-order/{id}',[OrderController::class,'viewOrder'])->name('my-order');
+Route::get('/my-orders', [OrderController::class, 'viewOrder'])->name('my-orders');
+
 Route::get('address-book',[CustomerController::class,'viewAddressBook'])->name('address-book');
 
 Route::match(['get', 'post'], 'search-results', [SearchController::class, 'searchProduct'])->name('products.search');
-Route::get('analytics',[AnalyticsController::class,'showCartEvents'])->name('Analytics');
 
+Route::get('analytics', [AnalyticsController::class, 'showCartEvents'])->name('showCartEvents');
+
+
+Route::get('/get-cart-count', [CartController::class,'getCartCount']);
+
+Route::get('/reorder/{order_id}', [OrderController::class, 'reorder'])->name('reorder');

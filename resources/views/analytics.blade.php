@@ -100,9 +100,11 @@
                         <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm w-2/5">
                             <div class="flex items-center float-right">
                                 <div class="mr-3">
+
                                     <p class="text-gray-900 whitespace-no-wrap text-right">
                                         Team 4
                                     </p>
+
                                 </div>
                                 <div class="flex-shrink-0 w-10 h-10 hidden sm:table-cell">
                                     <img class="w-full h-full rounded-full"
@@ -147,10 +149,39 @@
             <div class="ml-3">
                 <p class="text-gray-900 whitespace-no-wrap">{{ $leastAddedProduct->name }}</p>
             </div>
+
         </div>
     </div>
 @else
     <p>No product has been added to the cart yet.</p>
+    @endif
+</div>
+<div>
+    <h2>Most Sold Color</h2>
+    @if($mostSoldByColor)
+        <p>Color ID: {{ $mostSoldByColor->color}}</p>
+        <p>Total Quantity Sold: {{ $mostSoldByColor->total_sold }}</p>
+    @else
+        <p>No data available for most sold color.</p>
+    @endif
+</div>
+<div>
+    <h2>Most Sold Size</h2>
+    @if($mostSoldBySize)
+        <p>Size: {{ $mostSoldBySize->size_name }}</p>
+        <p>Total Quantity Sold: {{ $mostSoldBySize->total_sold }}</p>
+    @else
+        <p>No data available for most sold size.</p>
+    @endif
+</div>
+
+<div>
+    <h2>Most Sold Category</h2>
+    @if($mostSoldByCategory)
+        <p>Category: {{ $mostSoldByCategory->category_name }}</p>
+        <p>Total Quantity Sold: {{ $mostSoldByCategory->total_sold }}</p>
+    @else
+        <p>No data available for most sold category.</p>
     @endif
 </div>
 
@@ -169,6 +200,31 @@
                 <dt class="text-base leading-7 text-gray-600">Profit Margin</dt>
                 <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">{{ number_format($profitMargin, 2) }}%</dd>
             </div>
+        </dl>
+    </div>
+</div>
+<div class="bg-white py-24 sm:py-32">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <dl class="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-3">
+            <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+                <dt class="text-base leading-7 text-gray-600">Checkouts Per day</dt>
+                @if($checkoutsPerDay==null)
+                    <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">{{ $checkoutsPerDay}}</dd>
+               @else
+                    <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">No checkouts </dd>
+                @endif
+
+            </div>
+            <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+                <dt class="text-base leading-7 text-gray-600">Checkouts Per Month</dt>
+                @if($checkoutsPerMonth==null)
+                    <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">{{ $checkoutsPerMonth}}</dd>
+                @else
+                    <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">No checkouts </dd>
+                @endif
+
+            </div>
+
         </dl>
     </div>
 </div>

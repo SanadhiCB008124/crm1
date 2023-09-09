@@ -12,25 +12,22 @@ use Illuminate\Support\Facades\Auth;
 
 class CustomerController extends Controller
 {
-
+ public $user;
 
     public function customer(){
-     // $totalCustomers=User::where('role',2)->count();
-      // $data= User::get();
-       $data= User::where('role_id',2)->get();
-      // return $data;
-       return view('customer-list',compact('data'));
+       $users= User::where('role_id',2)->get();
+       return view('customer-list',compact('users'));
 
     }
 
 
 
     public function employee(){
-       $totalEmployees=User::where('role_id',1)->count();
-        // $data= User::get();
-         $data= User::where('role_id',1)->get();
-        // return $data;
-         return view('employee-list',compact('data'));
+
+
+         $users= User::where('role_id',1)->get();
+
+         return view('employee-list',compact('users'));
     }
 
     public function addCustomer(){
@@ -61,18 +58,19 @@ class CustomerController extends Controller
 
 
 
-         $cust= new User();
-         $cust->name=$name;
-         $cust->email=$email;
-         $cust->role_id=2;
-          $cust->contact=$contact;
-          $cust->address=$address;
+         $user= new User();
+         $user->name=$name;
+         $user->email=$email;
+         $user->role_id=2;
+          $user->contact=$contact;
+          $user->address=$address;
 
 
 
-         $cust->save();
+         $user->save();
 
-        event(new UserRegistrations(auth()->user(), $cust));
+        event(new UserRegistrations(auth()->user(), $user));
+
 
          return redirect()->back()->with('success','customer added succesfully');
 
@@ -99,16 +97,16 @@ class CustomerController extends Controller
       $address=$request->address;
 
 
-      $cust= new User();
-      $cust->name=$name;
-      $cust->email=$email;
-      $cust->role_id=1;
-      $cust->contact=$contact;
-      $cust->address=$address;
+      $user= new User();
+      $user->name=$name;
+      $user->email=$email;
+      $user->role_id=1;
+      $user->contact=$contact;
+      $user->address=$address;
 
 
-      $cust->save();
-      event(new UserRegistrations(auth()->user(), $cust));
+      $user->save();
+      event(new UserRegistrations(auth()->user(), $user));
 
       return redirect()->back()->with('success','employee added succesfully');
 
@@ -116,15 +114,15 @@ class CustomerController extends Controller
 
     public function editCustomer($id){
 
-        $data= User::where('id','=',$id)->first();
-        return view('edit-customer',compact('data'));
+        $user= User::where('id','=',$id)->first();
+        return view('edit-customer',compact('user'));
 
     }
 
     public function editEmployee($id){
 
-        $data= User::where('id','=',$id)->first();
-        return view('edit-employee',compact('data'));
+        $user= User::where('id','=',$id)->first();
+        return view('edit-employee',compact('user'));
 
     }
 
@@ -199,13 +197,13 @@ class CustomerController extends Controller
 
     public function deleteCustomer($id){
 
-        $data= User::where('id','=',$id)->delete();
+        $user= User::where('id','=',$id)->delete();
 
         return redirect('customer-list');
     }
 
     public function deleteEmployee($id){
-        $data= User::where('id','=',$id)->delete();
+        $user= User::where('id','=',$id)->delete();
 
         return redirect('employee-list');
     }

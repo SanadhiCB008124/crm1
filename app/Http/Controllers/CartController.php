@@ -176,6 +176,16 @@ class CartController extends Controller
         return redirect()->back()->with('success', 'Quantity decreased.');
     }
 
+    public function getCartCount()
+    {
+        $customerId = auth()->user()->id;
+
+
+        $cartCount = CartItem::where('user_id', $customerId)->count();
+
+
+        return $cartCount;
+    }
 
 
 

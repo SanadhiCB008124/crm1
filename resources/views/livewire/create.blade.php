@@ -53,10 +53,15 @@
             </div>
 
             <div class="mb-4">
-                  <label for="exampleFormControlInput2" class="block text-black text-sm font-bold mb-2">Size:</label>
-                  <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="exampleFormControlInput2" wire:model="size" placeholder="Enter Price"></input>
-                  @error('size') <span class="text-red-500">{{ $message }}</span>@enderror
-              </div>
+                <label for="exampleFormControlSelect1" class="block text-black text-sm font-bold mb-2">Size:</label>
+                <select class="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline" id="exampleFormControlSelect1" wire:model="size_id">
+                    <option value="">Select a Size</option>
+                    @foreach ($sizes as $size)
+                        <option value="{{ $size->id }}">{{ $size->name }}</option>
+                    @endforeach
+                </select>
+                @error('size_id') <span class="text-red-500">{{ $message }}</span> @enderror
+            </div>
               <div class="mb-4">
                   <label for="exampleFormControlInput2" class="block text-black text-sm font-bold mb-2">No of stocks arrived:</label>
                   <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="exampleFormControlInput2" wire:model="stocks" placeholder="Enter Number of stocks"></input>

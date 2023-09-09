@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use App\Models\Category;
 use App\Models\Color;
+use App\Models\Size;
 use Livewire\Component;
 use App\Models\Product;
 use Livewire\WithFileUploads;
@@ -12,7 +13,7 @@ use Livewire\WithFileUploads;
 class Products extends Component
 {
       use WithFileUploads;
-    public $products, $name, $detail, $unit_price,$image, $product_id, $category_id, $stocks,$color_id,$size;
+    public $products, $name, $detail, $unit_price,$image, $product_id, $category_id, $stocks,$color_id,$size_id;
     public $isOpen = 0;
 
     /**
@@ -23,11 +24,13 @@ class Products extends Component
     public $category;
     public $categories;
     public  $color;
+    public $size;
 
     public function mount()
     {
         $this->categories = Category::all();
         $this->colors=Color::all();
+        $this->sizes=Size::all();
 
     }
 
@@ -37,9 +40,10 @@ class Products extends Component
         $product = Product::all();
         $category=Category::all();
         $color=Color::all();
+        $size=Size::all();
 
 
-        return view('livewire.products',['product' => $product],[ 'category' => $category],['color'=>$color]);
+        return view('livewire.products',['product' => $product],[ 'category' => $category],['color'=>$color],['size'=>$size]);
     }
 
     /**
@@ -87,7 +91,7 @@ class Products extends Component
         $this->category_id = '';
         $this->stocks = '';
         $this->color_id = '';
-        $this->size = '';
+        $this->size_id = '';
     }
 
     /**
@@ -106,7 +110,7 @@ class Products extends Component
             'category_id' => 'required',
             'stocks' => 'required',
             'color_id' => 'required',
-            'size' => 'required',
+            'size_id' => 'required',
 
         ]);
 
@@ -119,7 +123,7 @@ class Products extends Component
             'category_id' => $this->category_id,
             'stocks' => $this->stocks,
             'color_id' => $this->color_id,
-            'size' => $this->size,
+            'size_id' => $this->size_id,
         ]);
 
         session()->flash('message',
@@ -145,7 +149,7 @@ class Products extends Component
         $this->category_id = $product->category_id;
         $this->stocks = $product->stocks;
         $this->color_id = $product->color_id;
-        $this->size = $product->size;
+        $this->size_id = $product->size_id;
 
 
         $this->openModal();

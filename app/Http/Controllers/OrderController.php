@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Events\Checkouts;
+use App\Events\ReOrder;
 use App\Models\Cart;
 use App\Models\CartItem;
 use App\Models\Order;
@@ -10,6 +11,7 @@ use App\Models\OrderItem;
 use App\Models\Payment;
 use App\Models\Product;
 use App\Notifications\OrderPlaced;
+use App\Notifications\ReOrderNotification;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -64,7 +66,7 @@ class OrderController extends Controller
         // Create order items associated with the current order
         $this->createOrderItems($order, $cartItems);
 
-        auth()->user()->notify(new OrderPlaced($order));
+        auth()->user()->notify(new OrderPlaced($order, auth()->user()));
         event(new Checkouts(auth()->user(), $order));
 
         return redirect()->back()->with('success', 'Order placed successfully.');
@@ -129,7 +131,11 @@ class OrderController extends Controller
 
 
         ]);
+        event(new Reorder($originalOrder, $newOrder, auth()->user()));
+        auth()->user()->notify(new ReOrderNotification($newOrder,$originalOrder, auth()->user()));
+
         $newOrder->save();
+
 
         // Copy items from the original order to the new order
         foreach ($originalOrder->orderItems as $item) {
@@ -144,6 +150,7 @@ class OrderController extends Controller
 
         return redirect()->route('my-orders')->with('success', 'Order has been reordered.');
     }
+
 
 
 

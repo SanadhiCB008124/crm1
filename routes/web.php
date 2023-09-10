@@ -4,6 +4,7 @@ use App\Http\Controllers\AnalyticsController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\StockController;
 use App\Http\Controllers\UserController;
 use Illuminate\Routing\Controllers\Middleware;
 use Illuminate\Support\Facades\Route;
@@ -146,9 +147,15 @@ Route::get('address-book',[CustomerController::class,'viewAddressBook'])->name('
 
 Route::match(['get', 'post'], 'search-results', [SearchController::class, 'searchProduct'])->name('products.search');
 
-Route::get('analytics', [AnalyticsController::class, 'showCartEvents'])->name('showCartEvents');
+Route::get('analytics', [AnalyticsController::class, 'showCartEvents'])->name('Analytics');
 
 
 Route::get('/get-cart-count', [CartController::class,'getCartCount']);
 
 Route::get('/reorder/{order_id}', [OrderController::class, 'reorder'])->name('reorder');
+Route::get('all-orders', [AnalyticsController::class, 'allOrders'])->name('all-orders');
+Route::get('stocks',[StockController::class,'stocks'])->name('stocks');
+
+Route::get('filter-products', [ProductController::class,'filter'])->name('products.filter');
+
+Route::get('/count', [CustomerController::class,'getCount']);

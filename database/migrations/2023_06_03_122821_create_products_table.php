@@ -20,7 +20,7 @@ return new class extends Migration
             $table->integer('stocks');
             $table->string('image')->nullable();
             $table->string('color');
-            $table->string('size');
+            $table->string('size_id');
             $table->timestamps();
             $table->foreignId('category_id')->constrained('categories')->onDelete('cascade');
         });

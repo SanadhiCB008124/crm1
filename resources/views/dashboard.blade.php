@@ -57,7 +57,7 @@
                                     class="w-full px-4 py-2 pl-12 rounded shadow outline-none  focus:border-amber-100       " placeholder="Search...">
                         </li>
                         <li class="mb-2 rounded hover:shadow hover:bg-amber-100 ">
-                            <a href="{{url ('catagory-list')}}" class="inline-block w-full h-full px-3 py-2 font-bold text-white hover:text-black">
+                            <a href="{{route('stocks')}}" class="inline-block w-full h-full px-3 py-2 font-bold text-white hover:text-black">
 
                                 Stocks
                             </a>
@@ -75,9 +75,9 @@
                             </a>
                         </li>
                         <li class="mb-2 rounded hover:shadow hover:bg-amber-100 ">
-                            <a href="#" class="inline-block w-full h-full px-3 py-2 font-bold text-white hover:text-black">
+                            <a href="{{route('all-orders')}}" class="inline-block w-full h-full px-3 py-2 font-bold text-white hover:text-black">
 
-                                Leads
+                                Purchase history
                             </a>
                         </li>
                         <li class="mb-2 rounded hover:shadow hover:bg-amber-100 ">
@@ -141,7 +141,7 @@
                             <div class="mx-4">
 
 
-                                <div class="text-gray-500">Total customers</div>
+                                <div class="text-gray-500">Total customers:  {{$customerCount}}</div>
 
                                 <div class="text-black"><a href="{{url ('customer-list')}}">view customer registered</a></div>
                             </div>
@@ -159,7 +159,7 @@
                             </div>
                             <div class="mx-4">
 
-                                <div class="text-gray-500">Total Employees</div>
+                                <div class="text-gray-500">Total Employees:  {{$employeeCount}}</div>
                                 <div class="text-black"><a href="{{url ('employee-list')}}">View registered employees</a></div>
                             </div>
                         </div>

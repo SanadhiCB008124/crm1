@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\LowStock;
 use App\Events\ProductAddedToCart;
 use App\Models\CartItem;
 use App\Models\Product;
 
 
+use App\Notifications\LowStockNotification;
 use Illuminate\Http\Request;
 
 class CartController extends Controller
@@ -34,15 +36,23 @@ class CartController extends Controller
             // If the product is already in the cart, update the quantity and decrease stocks
             $cartItem->increment('quantity');
             $cartItem->product->decrement('stocks');
-        } else {
-            // If it's a new product, create a new cart item
+        }
+        elseif ($product->stocks > 0) {
+            // If the product is not in the cart, create a new cart item
             CartItem::create([
                 'user_id' => $customerId,
                 'product_slug' => $productSlug,
                 'quantity' => 1,
             ]);
+            // Decrease the product's stock
+            $product->decrement('stocks');
+        }
+        else {
+            auth()->user()->notify(new LowStockNotification($product));
+            return redirect()->back()->with('error', 'Product is out of stock.');
         }
         event(new ProductAddedToCart(auth()->user(), $product));
+        event(new LowStock($product));
 
 
         return redirect()->back()->with('success', 'Product added to cart.');
@@ -128,20 +138,30 @@ class CartController extends Controller
             return redirect()->back()->with('error', 'Cart item not found.');
         }
 
+        // Retrieve the product associated with the cart item
+        $product = Product::where('slug', $cartItem->product_slug)->first();
+
+        if (!$product) {
+            return redirect()->back()->with('error', 'Product not found.');
+        }
+
+        // Check if the product is in stock
+        if ($product->stocks <= 0) {
+            auth()->user()->notify(new LowStockNotification($product));
+            return redirect()->back()->with('error', 'Product is out of stock.');
+        }
+
         // Increment the quantity for the user's cart item
         $cartItem->increment('quantity');
 
         // Decrement the product's stock
-        $product = Product::where('slug', $cartItem->product_slug)->first();
+        $product->decrement('stocks');
 
-        if ($product) {
-            $product->decrement('stocks');
-        } else {
-            return redirect()->back()->with('error', 'Product not found.');
-        }
+        event(new LowStock($product));
 
         return redirect()->back()->with('success', 'Quantity increased.');
     }
+
 
     public function decreaseQuantity($cartItemId)
     {

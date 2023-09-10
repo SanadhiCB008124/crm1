@@ -34,12 +34,43 @@ class DatabaseSeeder extends Seeder
            [ 'payment_method'=>'Voucher'],
             ['payment_method'=>'Paypal'],
             ['payment_method'=>'MasterCard'],
-        
+
         ];
         DB::table('payments')->insert($payments);
 
+        $colors=   [
+          [ 'color'=>'Red'],
+           [ 'color'=>'Blue'],
+            ['color'=>'Green'],
+            ['color'=>'Yellow'],
+            ['color'=>'Black'],
+            ['color'=>'White'],
+            ['color'=>'Multicolored'],
 
-    
+        ];
+        DB::table('colors')->insert($colors);
+
+
+        $sizes=   [
+            [ 'name'=>'UK 6'],
+            [ 'name'=>'UK 4'],
+            ['name'=>'UK 8'],
+            ['name'=>'UK 10'],
+            ['name'=>'US 4'],
+
+            ['name'=>'US 6'],
+
+            ['name'=>'US 8'],
+
+            ['name'=>'US 10'],
+
+
+
+        ];
+        DB::table('sizes')->insert($sizes);
+
+
+
 
 
 

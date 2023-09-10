@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Events\UserRegistrations;
+
+use App\Models\CartItem;
 use App\Models\Category;
 use App\Models\Customer;
 use App\Models\Product;
@@ -45,32 +46,22 @@ class CustomerController extends Controller
         $request->validate([
             'name'=> 'required',
             'email'=>'required|email',
-            'contact'=>'required',
+            'contact'=>'required|numeric',
             'address'=>'required',
 
 
+
+
         ]);
-         $name=$request->name;
-         $email=$request->email;
-         $contact=$request->contact;
-         $address=$request->address;
 
-
-
-
-         $user= new User();
-         $user->name=$name;
-         $user->email=$email;
-         $user->role_id=2;
-          $user->contact=$contact;
-          $user->address=$address;
-
-
+        $user = new User();
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->role_id = 2;
+        $user->contact = $request->contact;
+        $user->address = $request->address;
 
          $user->save();
-
-        event(new UserRegistrations(auth()->user(), $user));
-
 
          return redirect()->back()->with('success','customer added succesfully');
 
@@ -84,29 +75,21 @@ class CustomerController extends Controller
       $request->validate([
           'name'=> 'required',
           'email'=>'required|email',
-          'contact'=>'required',
+          'contact'=>'required|numeric',
           'address'=>'required',
 
 
       ]);
 
-
-      $name=$request->name;
-      $email=$request->email;
-      $contact=$request->contact;
-      $address=$request->address;
-
-
-      $user= new User();
-      $user->name=$name;
-      $user->email=$email;
-      $user->role_id=1;
-      $user->contact=$contact;
-      $user->address=$address;
-
+        $user = new User();
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->role_id = 2;
+        $user->contact = $request->contact;
+        $user->address = $request->address;
 
       $user->save();
-      event(new UserRegistrations(auth()->user(), $user));
+
 
       return redirect()->back()->with('success','employee added succesfully');
 
@@ -127,30 +110,24 @@ class CustomerController extends Controller
     }
 
 
-    public function updateCustomer(Request $request){
+    public function updateCustomer(Request $request,$id){
 
         $request->validate([
             'name'=> 'required',
             'email'=>'required|email',
-            'contact'=>'required',
+            'contact'=>'required|numeric',
             'address'=>'required',
 
 
         ]);
 
-        $id=$request->id;
-        $name=$request->name;
-        $email=$request->email;
-        $contact=$request->contact;
-        $address=$request->address;
-
 
       User::where('id','=',$id)->update([
 
-        'name'=>$name,
-        'email'=>$email,
-        'contact'=>$contact,
-        'address'=>$address
+        'name'=>$request->name,
+        'email'=>$request->email,
+        'contact'=>$request->contact,
+        'address'=>$request->address
 
 
       ]);
@@ -159,30 +136,23 @@ class CustomerController extends Controller
       return redirect('customer-list');
     }
 
-    public function updateEmployee(Request $request){
+    public function updateEmployee(Request $request,$id){
 
         $request->validate([
             'name'=> 'required',
             'email'=>'required|email',
-            'contact'=>'required',
+            'contact'=>'required|numeric',
             'address'=>'required',
 
 
         ]);
 
-        $id=$request->id;
-         $name=$request->name;
-         $email=$request->email;
-         $contact=$request->contact;
-        $address=$request->address;
-
-
        User::where('id','=',$id)->update([
 
-         'name'=>$name,
-         'email'=>$email,
-         'contact'=>$contact,
-        'address'=>$address
+         'name'=>$request->name,
+         'email'=>$request->email,
+         'contact'=>$request->contact,
+        'address'=>$request->address
 
        ]);
 
@@ -212,7 +182,8 @@ class CustomerController extends Controller
     {
         $categories = Category::all();
         $products=Product::all();
-        return view('welcome', compact('categories','products'));
+        $cartItems = CartItem::where('user_id', auth()->user()->id)->get();
+        return view('welcome', compact('categories','products','cartItems'));
     }
 
      public function  viewAddressBook(){
@@ -220,6 +191,18 @@ class CustomerController extends Controller
          $customers = User::where('role_id', 2)->get();
          return view('address-book', compact('customers'));
      }
+
+    public function getCount()
+    {
+
+
+
+        $customerCount = User::where('role_id', 2)->count();
+        $employeeCount = User::where('role_id', 1)->count();
+
+        return view('dashboard', compact('customerCount','employeeCount'));
+    }
+
 
 
 }

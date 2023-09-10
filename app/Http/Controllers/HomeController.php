@@ -16,7 +16,10 @@ class HomeController extends Controller
     $role_id=Auth::user()->role_id;
 
     if($role_id==0){
-        return view('dashboard');
+
+        $customerCount = User::where('role_id', 2)->count();
+        $employeeCount = User::where('role_id', 1)->count();
+        return view('dashboard', compact('customerCount', 'employeeCount'));
     }
     else if($role_id==1){
         return view('employee-dashboard');
@@ -24,7 +27,8 @@ class HomeController extends Controller
     else{
             $categories = Category::all();
             $products=Product::all();
-            return view('welcome', compact('categories','products'));
+            $cartItems = CartItem::where('user_id', auth()->user()->id)->get();
+            return view('welcome', compact('categories','products','cartItems'));
         }
     }
 

@@ -46,7 +46,7 @@
                     <div class="flex space-x-4">
                         <li>
                             <a
-                                class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium"
+                                class="bg-white text-black no-underline hover:underline rounded-md px-3 py-2 text-sm font-medium"
                                 href="{{ url('welcome') }}"
                             >
                                 Home
@@ -56,13 +56,14 @@
                         @foreach ($categories as $category)
                             <li>
                                 <a
-                                    class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium"
+                                    class="bg-white text-black no-underline hover:underline rounded-md px-3 py-2 text-sm font-medium"
                                     href="{{ route('products.by.category', ['category_id' => $category->id]) }}"
                                 >
                                     {{ ucfirst($category->category_name) }}
                                 </a>
                             </li>
                         @endforeach
+
 
                     </div>
                 </div>
@@ -192,5 +193,6 @@
         </div>
     </div>
 </nav>
+
 </body>
 </html>

@@ -65,6 +65,15 @@ class productController extends Controller
         return view('filter-products',compact('filteredProducts','categories','colors','sizes','cartItems'));
     }
 
+    public function productDescription($productSlug)
+    {
+        $product = Product::where('slug', $productSlug)->first();
+        $sizes=Size::all();
+        return view('product-description',compact('sizes','product'));
+    }
+
+
+
 
 
 

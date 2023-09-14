@@ -3,6 +3,7 @@
 use App\Http\Controllers\AnalyticsController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\PageViewController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\StockController;
 use App\Http\Controllers\UserController;
@@ -159,3 +160,7 @@ Route::get('stocks',[StockController::class,'stocks'])->name('stocks');
 Route::get('filter-products', [ProductController::class,'filter'])->name('products.filter');
 
 Route::get('/count', [CustomerController::class,'getCount']);
+
+Route::get('/register-count',[AnalyticsController::class,'registerCount'])->name('register-count');
+
+Route::get('product-description/{productSlug}',[productController::class,'productDescription'])->name('product-description');

@@ -2,6 +2,7 @@
 
 namespace App\Actions\Fortify;
 
+use App\Events\SiteRegister;
 use App\Models\Team;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
@@ -27,6 +28,9 @@ class CreateNewUser implements CreatesNewUsers
             'password' => $this->passwordRules(),
             'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature() ? ['accepted', 'required'] : '',
         ])->validate();
+
+
+
 
         return DB::transaction(function () use ($input) {
             return tap(User::create([

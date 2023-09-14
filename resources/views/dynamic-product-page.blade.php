@@ -87,6 +87,7 @@
                     <h2 class="title-font text-lg font-medium text-gray-900">color: {{ $product->color->color}}</h2>
                     <h2 class="text-lg font-medium text-gray-900">SIZE: {{ $product->size->name }}</h2>
                     <div class="flex items-center space-x-1.5 mt-4">
+                        <a href="{{ route('product-description', ['productSlug' => $product->slug]) }}">View Details</a>
 
                         <form method="post" action="{{ route('cart.add', ['productSlug' => $product->slug]) }}">
                             @csrf

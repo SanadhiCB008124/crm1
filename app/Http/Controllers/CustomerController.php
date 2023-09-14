@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Events\SiteRegister;
 use App\Models\CartItem;
 use App\Models\Category;
 use App\Models\Customer;
@@ -46,7 +47,7 @@ class CustomerController extends Controller
         $request->validate([
             'name'=> 'required',
             'email'=>'required|email',
-            'contact'=>'required|numeric',
+            'contact'=>'required',
             'address'=>'required',
 
 
@@ -61,6 +62,7 @@ class CustomerController extends Controller
         $user->contact = $request->contact;
         $user->address = $request->address;
 
+         event(new SiteRegister(auth()->user()));
          $user->save();
 
          return redirect()->back()->with('success','customer added succesfully');
@@ -97,8 +99,9 @@ class CustomerController extends Controller
 
     public function editCustomer($id){
 
-        $user= User::where('id','=',$id)->first();
-        return view('edit-customer',compact('user'));
+        $user = User::findOrFail($id);
+
+        return view('edit-customer', compact('user'));
 
     }
 
@@ -110,7 +113,7 @@ class CustomerController extends Controller
     }
 
 
-    public function updateCustomer(Request $request,$id){
+    public function updateCustomer(Request $request){
 
         $request->validate([
             'name'=> 'required',
@@ -122,21 +125,23 @@ class CustomerController extends Controller
         ]);
 
 
-      User::where('id','=',$id)->update([
+        $id = $request->input('id'); // Get the user's ID from the input
 
-        'name'=>$request->name,
-        'email'=>$request->email,
-        'contact'=>$request->contact,
-        'address'=>$request->address
+        // Update the user's record in the database
+        User::where('id', $id)->update([
+            'name' => $request->input('name'),
+            'email' => $request->input('email'),
+            'contact' => $request->input('contact'),
+            'address' => $request->input('address'),
+        ]);
 
 
-      ]);
 
-      //return redirect()->back()->with('success','custimer added succesfully');
-      return redirect('customer-list');
+
+        return redirect()->back()->with('success','customer updated succesfully');
     }
 
-    public function updateEmployee(Request $request,$id){
+    public function updateEmployee(Request $request){
 
         $request->validate([
             'name'=> 'required',
@@ -146,6 +151,7 @@ class CustomerController extends Controller
 
 
         ]);
+        $id = $request->input('id'); // Get the user's ID from the input
 
        User::where('id','=',$id)->update([
 
@@ -156,8 +162,8 @@ class CustomerController extends Controller
 
        ]);
 
-       //return redirect()->back()->with('success','custimer added succesfully');
-       return redirect('employee-list');
+       return redirect()->back()->with('success','employee updated succesfully');
+
      }
 
 

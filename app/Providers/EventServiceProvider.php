@@ -6,6 +6,7 @@ use App\Events\Checkouts;
 use App\Events\LowStock;
 use App\Events\ProductAddedToCart;
 use App\Events\ReOrder;
+use App\Events\SiteRegister;
 use App\Events\UserRegistered;
 use App\Events\UserRegistrations;
 use App\Listeners\LogLogins;
@@ -13,6 +14,7 @@ use App\Listeners\LogRegistration;
 use App\Listeners\LogUserRegistration;
 use App\Listeners\LowStockAlert;
 use App\Listeners\ReorderEventListener;
+use App\Listeners\SiteRegisterListener;
 use App\Listeners\TrackCheckouts;
 use App\Listeners\TrackProductAddedToCart;
 use Illuminate\Auth\Events\Authenticated;
@@ -49,6 +51,9 @@ class EventServiceProvider extends ServiceProvider
         ],
         Reorder::class => [
             ReorderEventListener::class,
+        ],
+        SiteRegister::class => [
+           SiteRegisterListener::class,
         ],
 
     ];

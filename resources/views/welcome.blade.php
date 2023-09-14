@@ -23,7 +23,7 @@
 <section class="w-full ">
 
 <img
-    src="images/homee.webp"
+    src="images/shoeee.jpg"
     class="object-center w-full h-4/5 shadow-lg "
     alt="Homepage image"
   />

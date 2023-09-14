@@ -2,6 +2,7 @@
 
 namespace App\Actions\Fortify;
 
+use App\Events\OnlineRegister;
 use App\Events\SiteRegister;
 use App\Models\Team;
 use App\Models\User;
@@ -39,6 +40,8 @@ class CreateNewUser implements CreatesNewUsers
                 'password' => Hash::make($input['password']),
             ]), function (User $user) {
                 $this->createTeam($user);
+
+                event(new OnlineRegister($user));
             });
         });
     }

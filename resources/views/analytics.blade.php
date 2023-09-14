@@ -24,8 +24,16 @@
         <div class="max-w-sm rounded overflow-hidden shadow-lg m-2">
 
             <div class="px-6 py-4">
-                <div class="font-bold text-xl mb-2">  Registration count per day: </div>
+                <div class="font-bold text-xl mb-2">Manual  Registration count per day: </div>
               {{$siteRegistrationCountPerday ->count()}}
+            </div>
+
+        </div>
+        <div class="max-w-sm rounded overflow-hidden shadow-lg m-2">
+
+            <div class="px-6 py-4">
+                <div class="font-bold text-xl mb-2">Online Registration count : </div>
+                {{$onlineRegistrations ->count()}}
             </div>
 
         </div>

@@ -92,6 +92,11 @@ class AnalyticsController extends Controller
             ->groupBy('date')
             ->get();
 
+        $onlineRegistrations = DB::table('online_registrations')
+            ->select(DB::raw('DATE(register_date) as date'), DB::raw('COUNT(*) as registration_count'))
+            ->groupBy('date')
+            ->get();
+
         // Get the least viewed product page and its view count
         $leastViewed = Product::orderBy('views', 'asc')->first();
         $leastViewedCount = $leastViewed ? $leastViewed->views : 0;
@@ -115,7 +120,7 @@ class AnalyticsController extends Controller
         return view('analytics',compact('cart_event','product',
             'leastAddedProduct','totalRevenue', 'totalCOGS', 'profitMargin',
             'checkoutsPerMonth','checkoutsPerDay','mostSoldByColor','mostSoldBySize',
-            'mostSoldByCategory','loginCountPerDay','averageSessionRate','siteRegistrationCountPerday','leastViewed','mostViewed','leastViewedCount','mostViewedCount','pageViewsPerDay'));
+            'mostSoldByCategory','loginCountPerDay','averageSessionRate','siteRegistrationCountPerday','leastViewed','mostViewed','leastViewedCount','mostViewedCount','pageViewsPerDay','onlineRegistrations'));
 
     }
 

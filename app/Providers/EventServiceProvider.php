@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Events\Checkouts;
 use App\Events\LowStock;
+use App\Events\OnlineRegister;
 use App\Events\ProductAddedToCart;
 use App\Events\ReOrder;
 use App\Events\SiteRegister;
@@ -13,6 +14,7 @@ use App\Listeners\LogLogins;
 use App\Listeners\LogRegistration;
 use App\Listeners\LogUserRegistration;
 use App\Listeners\LowStockAlert;
+use App\Listeners\RegistrationLogger;
 use App\Listeners\ReorderEventListener;
 use App\Listeners\SiteRegisterListener;
 use App\Listeners\TrackCheckouts;
@@ -54,6 +56,9 @@ class EventServiceProvider extends ServiceProvider
         ],
         SiteRegister::class => [
            SiteRegisterListener::class,
+        ],
+        OnlineRegister::class => [
+            RegistrationLogger::class,
         ],
 
     ];

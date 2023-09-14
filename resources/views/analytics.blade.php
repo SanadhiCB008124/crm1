@@ -141,11 +141,7 @@
                 @if($checkoutsPerDay->isEmpty())
                     <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">No checkouts</dd>
                 @else
-                    @foreach($checkoutsPerDay as $checkout)
-                        <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
-                            {{ $checkout->count }}
-                        </dd>
-                    @endforeach
+                    <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">     {{$checkoutsPerDay->count()}}</dd>
                 @endif
             </div>
 

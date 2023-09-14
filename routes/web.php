@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AnalyticsController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PageViewController;
 use App\Http\Controllers\SearchController;
@@ -47,9 +48,6 @@ Route::middleware([
 
 
 
-
-
-
 Route::get('/employee-dashboard', function () {
     return view('employee-dashboard');
 
@@ -59,9 +57,9 @@ Route::get('/employee-dashboard', function () {
 Route::get('livewire/products', Products::class)->name('products')
                  ->middleware('role:0' );
 
-Route::get('redirects', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
+Route::get('redirects', [HomeController::class, 'index'])->name('index');
 
-Route::get('logout', [App\Http\Controllers\UserController::class, 'logout'])->name('logout');
+Route::get('/logout', [UserController::class, 'logout']);
 
 
 Route::get('customer-list',[CustomerController::class,'customer'])

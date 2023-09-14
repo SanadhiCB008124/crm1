@@ -8,115 +8,37 @@
 </head>
 <body>
 <div class="container mx-auto px-4 sm:px-8">
-    <div class="py-8">
-        <div>
-            <h2 class="text-2xl font-semibold leading-tight">Matches Schedule</h2>
-        </div>
-        <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
-            <div class="inline-block min-w-full shadow rounded-lg overflow-hidden">
-                <table class="min-w-full leading-normal">
-                    <thead>
-                    <tr>
-                        <th
-                            class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                            Home
-                        </th>
-                        <th
-                            class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                            Res.
-                        </th>
-                        <th
-                            class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                            Res.
-                        </th>
-                        <th
-                            class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                            Away
-                        </th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm w-2/5">
-                            <div class="flex items-center">
-                                <div class="flex-shrink-0 w-10 h-10 hidden sm:table-cell">
-                                    <img class="w-full h-full rounded-full"
-                                         src="https://images.unsplash.com/photo-1601046668428-94ea13437736?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2167&q=80"
-                                         alt="" />
-                                </div>
-                                <div class="ml-3">
-                                    <p class="text-gray-900 whitespace-no-wrap">
-                                        Team 1
-                                    </p>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                            <p class="text-gray-900 whitespace-no-wrap text-center">0</p>
-                        </td>
-                        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                            <p class="text-gray-900 whitespace-no-wrap text-center">
-                                3
-                            </p>
-                        </td>
-                        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm w-2/5">
-                            <div class="flex items-center float-right">
-                                <div class="mr-3">
-                                    <p class="text-gray-900 whitespace-no-wrap text-right">
-                                        Team 2
-                                    </p>
-                                </div>
-                                <div class="flex-shrink-0 w-10 h-10 hidden sm:table-cell">
-                                    <img class="w-full h-full rounded-full"
-                                         src="https://images.unsplash.com/photo-1601046668428-94ea13437736?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2167&q=80"
-                                         alt="" />
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm w-2/5">
-                            <div class="flex items-center">
-                                <div class="flex-shrink-0 w-10 h-10 hidden sm:table-cell">
-                                    <img class="w-full h-full rounded-full"
-                                         src="https://images.unsplash.com/photo-1601046668428-94ea13437736?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2167&q=80"
-                                         alt="" />
-                                </div>
-                                <div class="ml-3">
-                                    <p class="text-gray-900 whitespace-no-wrap"> Average Session Rate: {{ number_format($averageSessionRate, 2) }} minutes
-                                    </p>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                            <p class="text-gray-900 whitespace-no-wrap text-center">0</p>
-                        </td>
-                        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                            <p class="text-gray-900 whitespace-no-wrap text-center">
-                           Registration count per day: {{$siteRegistrationCountPerday ->count()}}
-                            </p>
-                        </td>
-                        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm w-2/5">
-                            <div class="flex items-center float-right">
-                                <div class="mr-3">
+    <h3 class="font-bold ">Analytics</h3>
+    <div class="py-8 grid grid-rows-3">
+        <div class="max-w-sm rounded overflow-hidden shadow-lg m-2">
 
-                                    <p class="text-gray-900 whitespace-no-wrap text-right">
-                                        Logins per day:    {{$loginCountPerDay->count()}}
-                                    </p>
+            <div class="px-6 py-4">
+                <div class="font-bold text-xl mb-2">Average Session Rate:</div>
+                <p class="text-gray-900 whitespace-no-wrap">  {{ number_format($averageSessionRate, 2) }} minutes
 
-                                </div>
-                                <div class="flex-shrink-0 w-10 h-10 hidden sm:table-cell">
-                                    <img class="w-full h-full rounded-full"
-                                         src="https://images.unsplash.com/photo-1601046668428-94ea13437736?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2167&q=80"
-                                         alt="" />
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
             </div>
+
         </div>
+
+
+        <div class="max-w-sm rounded overflow-hidden shadow-lg m-2">
+
+            <div class="px-6 py-4">
+                <div class="font-bold text-xl mb-2">  Registration count per day: </div>
+              {{$siteRegistrationCountPerday ->count()}}
+            </div>
+
+        </div>
+
+        <div class="max-w-sm rounded overflow-hidden shadow-lg m-2">
+
+            <div class="px-6 py-4">
+                <div class="font-bold text-xl mb-2"> Logins per day: </div>
+                  {{$loginCountPerDay->count()}}
+            </div>
+
+        </div>
+
     </div>
 </div>
 <div class="container mx-auto px-4 sm:px-8">
@@ -232,6 +154,42 @@
 
         </dl>
     </div>
+    <div>
+        <h2>Least Viewed Product</h2>
+        @if ($leastViewed)
+            <p>Product Name: {{ $leastViewed->name }}</p>
+            <div class="flex-shrink-0 w-10 h-10">
+                <img class="w-full h-full rounded-full" src="{{ asset('images/'.$leastViewed->image) }}" alt="" />
+            </div>
+            <p>Size: {{ $leastViewed->size->name }}</p>
+            <p>Color: {{ $leastViewed->color->color }}</p>
+
+            <p>View Count: {{ $leastViewedCount }}</p>
+        @else
+            <p>No products found.</p>
+        @endif
+    </div><br>
+
+    <div>
+        <h2>Most Viewed Product</h2>
+        @if ($mostViewed)
+            <p>Product Name: {{ $mostViewed->name }}</p>
+            <div class="flex-shrink-0 w-10 h-10">
+                <img class="w-full h-full rounded-full" src="{{ asset('images/'.$mostViewed->image) }}" alt="" />
+            </div>
+            <p>Size: {{ $mostViewed->size->name }}</p>
+            <p>Color: {{ $mostViewed->color->color }}</p>
+            <p>View Count: {{ $mostViewedCount }}</p>
+        @else
+            <p>No products found.</p>
+        @endif
+    </div>
+    <div>
+        <h2>Page views per day :</h2>
+      {{$pageViewsPerDay->count()}}
+    </div>
+
+
 </div>
 
 </body>

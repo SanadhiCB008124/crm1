@@ -92,11 +92,30 @@ class AnalyticsController extends Controller
             ->groupBy('date')
             ->get();
 
+        // Get the least viewed product page and its view count
+        $leastViewed = Product::orderBy('views', 'asc')->first();
+        $leastViewedCount = $leastViewed ? $leastViewed->views : 0;
+
+        // Get the most viewed product page and its view count
+        $mostViewed = Product::orderBy('views', 'desc')->first();
+        $mostViewedCount = $mostViewed ? $mostViewed->views : 0;
+
+
+
+            // Calculate overall page views per day
+            $pageViewsPerDay = DB::table('products')
+                ->select(DB::raw('DATE(created_at) as date'), DB::raw('SUM(views) as views_per_day'))
+                ->groupBy(DB::raw('DATE(created_at)'))
+                ->orderBy('date', 'asc')
+                ->get();
 
 
 
 
-        return view('analytics',compact('cart_event','product','leastAddedProduct','totalRevenue', 'totalCOGS', 'profitMargin','checkoutsPerMonth','checkoutsPerDay','mostSoldByColor','mostSoldBySize','mostSoldByCategory','loginCountPerDay','averageSessionRate','siteRegistrationCountPerday'));
+        return view('analytics',compact('cart_event','product',
+            'leastAddedProduct','totalRevenue', 'totalCOGS', 'profitMargin',
+            'checkoutsPerMonth','checkoutsPerDay','mostSoldByColor','mostSoldBySize',
+            'mostSoldByCategory','loginCountPerDay','averageSessionRate','siteRegistrationCountPerday','leastViewed','mostViewed','leastViewedCount','mostViewedCount','pageViewsPerDay'));
 
     }
 
@@ -113,6 +132,8 @@ class AnalyticsController extends Controller
 
         return $siteRegistrationCountPerday;
     }
+
+
 
 
 

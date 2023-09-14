@@ -72,9 +72,14 @@ class productController extends Controller
         return view('product-description',compact('sizes','product'));
     }
 
+    public function trackViews(Product $product)
+    {
+        // Increment the product's view count
+        $product->increment('views');
 
-
-
+        // You can optionally return a response, like a JSON response
+        return response()->json(['message' => 'View count updated successfully']);
+    }
 
 
 

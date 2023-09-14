@@ -164,3 +164,8 @@ Route::get('/count', [CustomerController::class,'getCount']);
 Route::get('/register-count',[AnalyticsController::class,'registerCount'])->name('register-count');
 
 Route::get('product-description/{productSlug}',[productController::class,'productDescription'])->name('product-description');
+
+Route::post('/track-views/{product}', [ProductController::class,'trackViews'])->name('track.views');
+
+Route::get('/least-most-viewed', [AnalyticsController::class,'getLeastMostViewed']);
+Route::get('/page-views-per-day', [AnalyticsController::class,'getPageViewsPerDay']);

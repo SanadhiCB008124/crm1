@@ -14,6 +14,7 @@ use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\CartController;
 use App\Http\Livewire\Products;
 use App\Http\Controllers\ProductController;
+use App\Http\Middleware\ValidateRole;
 use Illuminate\Http\Response;
 use Illuminate\Auth\Access\AuthorizationException;
 
@@ -45,12 +46,13 @@ Route::middleware([
 ->name('dashboard');
 
 });
-
-
-
+Route::middleware(['role:1'])->group(function () {
+    Route::get('/employee-dashboard', function () {
+        return view('employee-dashboard');
+    });
+});
 Route::get('/employee-dashboard', function () {
     return view('employee-dashboard');
-
 })
 ->middleware(['role:1']);
 
@@ -165,5 +167,8 @@ Route::get('product-description/{productSlug}',[productController::class,'produc
 
 Route::post('/track-views/{product}', [ProductController::class,'trackViews'])->name('track.views');
 
-Route::get('/least-most-viewed', [AnalyticsController::class,'getLeastMostViewed']);
-Route::get('/page-views-per-day', [AnalyticsController::class,'getPageViewsPerDay']);
+
+Route::get('/page-views', [AnalyticsController::class,'productViews'])->name('product-views');
+
+Route::get('/more-analytics', [AnalyticsController::class,'moreAnalytics'])->name('more-analytics');
+

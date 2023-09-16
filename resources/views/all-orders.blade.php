@@ -10,7 +10,6 @@
 </head>
 <body class="ml-4">
 
-
 @if(count($orders) > 0)
     <ul>
         @foreach($orders as $order)
@@ -91,7 +90,7 @@
 
         @endforeach
     </ul>
-    <hr/>
+
 @else
     <p>No orders found.</p>
 @endif

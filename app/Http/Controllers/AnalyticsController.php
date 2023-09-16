@@ -34,16 +34,6 @@ class AnalyticsController extends Controller
         $leastAddedProduct = Product::find($leastAddedProduct->product_id);
 
 
-        // Calculate Total Revenue
-        $totalRevenue = Order::sum('total_amount');
-
-
-        $totalCOGS = OrderItem::join('products', 'order_items.product_slug', '=', 'products.slug')
-            ->sum(DB::raw('order_items.quantity * products.unit_price'));
-
-
-        // Calculate Profit Margin
-        $profitMargin = ($totalRevenue - $totalCOGS) / $totalRevenue * 100;
 
         $checkoutsPerDay = CheckOutEvent::selectRaw('DATE(checkout_date) as date, COUNT(*) as count')
             ->groupBy('date')
@@ -87,40 +77,54 @@ class AnalyticsController extends Controller
             ->select(DB::raw('AVG(session_duration) as avg_session_rate'))
             ->value('avg_session_rate');
 
-        $siteRegistrationCountPerday = DB::table('site_registrations')
+        $siteRegistrationCountPerday = DB::table('site_registrations')//when the admin registers the customers
             ->select(DB::raw('DATE(register_date) as date'), DB::raw('COUNT(*) as registration_count'))
             ->groupBy('date')
             ->get();
 
-        $onlineRegistrations = DB::table('online_registrations')
+        $onlineRegistrations = DB::table('online_registrations')// registers done through the site
             ->select(DB::raw('DATE(register_date) as date'), DB::raw('COUNT(*) as registration_count'))
             ->groupBy('date')
             ->get();
 
-        // Get the least viewed product page and its view count
-        $leastViewed = Product::orderBy('views', 'asc')->first();
-        $leastViewedCount = $leastViewed ? $leastViewed->views : 0;
+        $totalRegistrationCount= $onlineRegistrations->sum('registration_count') + $siteRegistrationCountPerday->sum('registration_count');
 
-        // Get the most viewed product page and its view count
-        $mostViewed = Product::orderBy('views', 'desc')->first();
-        $mostViewedCount = $mostViewed ? $mostViewed->views : 0;
+        $productViews = DB::table('products')
+            ->select(DB::raw('DATE(created_at) as date'), DB::raw('SUM(views) as views_per_day'))
+            ->groupBy(DB::raw('DATE(created_at)'))
+            ->orderBy('date', 'asc')
+            ->get();
 
-
-
-            // Calculate overall page views per day
-            $pageViewsPerDay = DB::table('products')
-                ->select(DB::raw('DATE(created_at) as date'), DB::raw('SUM(views) as views_per_day'))
-                ->groupBy(DB::raw('DATE(created_at)'))
-                ->orderBy('date', 'asc')
-                ->get();
+        $leastViewedProduct = Product::orderBy('views', 'asc')->first();
 
 
+        $mostViewedProduct = Product::orderBy('views', 'desc')->first();
 
 
-        return view('analytics',compact('cart_event','product',
-            'leastAddedProduct','totalRevenue', 'totalCOGS', 'profitMargin',
-            'checkoutsPerMonth','checkoutsPerDay','mostSoldByColor','mostSoldBySize',
-            'mostSoldByCategory','loginCountPerDay','averageSessionRate','siteRegistrationCountPerday','leastViewed','mostViewed','leastViewedCount','mostViewedCount','pageViewsPerDay','onlineRegistrations'));
+        return view('analytics', compact(
+            'cart_event',
+            'product',
+            'leastAddedProduct',
+
+            'checkoutsPerMonth',
+            'checkoutsPerDay',
+            'mostSoldByColor',
+            'mostSoldBySize',
+            'mostSoldByCategory',
+            'loginCountPerDay',
+            'averageSessionRate',
+            'siteRegistrationCountPerday',
+            'onlineRegistrations',
+            'productViews',
+            'leastViewedProduct',
+            'mostViewedProduct',
+            'totalRegistrationCount'
+        ));
+
+
+
+
+
 
     }
 
@@ -136,6 +140,22 @@ class AnalyticsController extends Controller
             ->get();
 
         return $siteRegistrationCountPerday;
+    }
+    public function moreAnalytics(){
+
+        // Calculate Total Revenue
+        $totalRevenue = Order::sum('total_amount');
+
+
+        $totalCOGS = OrderItem::join('products', 'order_items.product_slug', '=', 'products.slug')
+            ->sum(DB::raw('order_items.quantity * products.unit_price'));
+
+
+        // Calculate Profit Margin
+        $profitMargin = ($totalRevenue - $totalCOGS) / $totalRevenue * 100;
+
+        return view('dashboard', compact('totalRevenue', 'totalCOGS', 'profitMargin'));
+
     }
 
 

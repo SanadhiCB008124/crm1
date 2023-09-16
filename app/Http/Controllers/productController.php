@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Jobs\ProductViews;
 use App\Models\CartItem;
 use App\Models\Category;
 use App\Models\Color;
@@ -68,18 +69,12 @@ class productController extends Controller
     public function productDescription($productSlug)
     {
         $product = Product::where('slug', $productSlug)->first();
+
+        dispatch(new ProductViews($product));
         $sizes=Size::all();
         return view('product-description',compact('sizes','product'));
     }
 
-    public function trackViews(Product $product)
-    {
-        // Increment the product's view count
-        $product->increment('views');
-
-        // You can optionally return a response, like a JSON response
-        return response()->json(['message' => 'View count updated successfully']);
-    }
 
 
 

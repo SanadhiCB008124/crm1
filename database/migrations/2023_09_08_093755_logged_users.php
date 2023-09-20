@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->integer('session_duration');
-            $table->timestamp('login_timestamp');
+            $table->timestamp('login_timestamp')->default(now());
 
             $table->timestamps();
 

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\Checkouts;
+use App\Events\ProductAddedToCart;
 use App\Models\CartEvent;
 use App\Models\CheckOutEvent;
 use App\Models\Order;
@@ -100,6 +102,16 @@ class AnalyticsController extends Controller
 
         $mostViewedProduct = Product::orderBy('views', 'desc')->first();
 
+        $totalCartsStarted = CartEvent::count();
+        $totalCheckouts = CheckOutEvent::count();
+        if ($totalCartsStarted > 0) {
+            $abandonedCartRate = (($totalCartsStarted - $totalCheckouts) / $totalCartsStarted) * 100;
+        } else {
+            $abandonedCartRate = 0; // Prevent division by zero.
+        }
+
+
+
 
         return view('analytics', compact(
             'cart_event',
@@ -118,7 +130,11 @@ class AnalyticsController extends Controller
             'productViews',
             'leastViewedProduct',
             'mostViewedProduct',
-            'totalRegistrationCount'
+            'totalRegistrationCount',
+            'totalCartsStarted',
+            'totalCheckouts',
+            'abandonedCartRate'
+
         ));
 
 
@@ -157,6 +173,8 @@ class AnalyticsController extends Controller
         return view('dashboard', compact('totalRevenue', 'totalCOGS', 'profitMargin'));
 
     }
+
+
 
 
 

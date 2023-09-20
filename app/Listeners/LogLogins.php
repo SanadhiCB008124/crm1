@@ -33,6 +33,6 @@ class LogLogins
 
         ]);
 
-        Log::info('User authenticated: ' . $event->user->name .'at '. now());
+        Log::info('User authenticated: ' . $event->user->name .'at  with'.$event->user->id.' '. now());
     }
 }

@@ -8,193 +8,395 @@
     <title>Analytics</title>
 </head>
 <body>
-<div class="container mx-auto px-4 sm:px-8">
+<div class="container mx-auto px-4 sm:px-8 mt-4">
     <h3 class="font-bold ">Analytics</h3>
-    <div class="py-8 grid grid-rows-3">
-        <div class="max-w-sm rounded overflow-hidden shadow-lg m-2">
+    <div class="container mx-auto mt-12">
+        <div class="grid gap-4 lg:grid-cols-3">
+            <div class="flex items-center px-4 py-6 bg-white rounded-md shadow-md">
+                <div class="p-3 bg-indigo-600 rounded">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none"
+                         viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                </div>
+                <div class="mx-4">
 
-            <div class="px-6 py-4">
-                <div class="font-bold text-xl mb-2">Average Session Rate:</div>
-                <p class="text-gray-900 whitespace-no-wrap">  {{ number_format($averageSessionRate, 2) }} minutes
 
+                    <div class="text-gray-500">Average Session Rate  </div>
+
+                    <div class="text-black">{{ number_format($averageSessionRate, 2) }} minutes</div>
+                </div>
             </div>
 
-        </div>
+            <div class="flex items-center px-4 py-6 bg-white rounded-md shadow-md">
+                <div class="p-3 bg-indigo-600 rounded">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none"
+                         viewBox="0 0 24 24" stroke="currentColor">
+                        <path d="M12 14l9-5-9-5-9 5 9 5z" />
+                        <path
+                            d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
+                    </svg>
+                </div>
+                <div class="mx-4">
 
-
-        <div class="max-w-sm rounded overflow-hidden shadow-lg m-2">
-
-            <div class="px-6 py-4">
-                <div class="font-bold text-xl mb-2">Manual  Registration count per day: </div>
-              {{$siteRegistrationCountPerday ->count()}}
+                    <div class="text-gray-500">Manual  Registration count :</div>
+                    <div class="text-black"> {{$siteRegistrationCountPerday ->count()}}</div>
+                </div>
             </div>
 
-        </div>
-        <div class="max-w-sm rounded overflow-hidden shadow-lg m-2">
+            <div class="flex items-center px-4 py-6 bg-white rounded-md shadow-md">
+                <div class="p-3 bg-indigo-600 rounded">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none"
+                         viewBox="0 0 24 24" stroke="currentColor">
+                        <path d="M12 14l9-5-9-5-9 5 9 5z" />
+                        <path
+                            d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
+                    </svg>
+                </div>
+                <div class="mx-4">
 
-            <div class="px-6 py-4">
-                <div class="font-bold text-xl mb-2">Online Registration count : </div>
-                {{$onlineRegistrations ->count()}}
+                    <h4 class="text-gray-500">Online Registration count :</h4>
+                    <div class="text-gray-500">  {{$onlineRegistrations ->count()}}</div>
+                </div>
             </div>
 
-        </div>
 
-        <div class="max-w-sm rounded overflow-hidden shadow-lg m-2">
+            <div class="flex items-center px-4 py-6 bg-white rounded-md shadow-md">
+                <div class="p-3 bg-indigo-600 rounded">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none"
+                         viewBox="0 0 24 24" stroke="currentColor">
+                        <path d="M12 14l9-5-9-5-9 5 9 5z" />
+                        <path
+                            d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
+                    </svg>
+                </div>
+                <div class="mx-4">
 
-            <div class="px-6 py-4">
-                <div class="font-bold text-xl mb-2">Total Registration count : </div>
-                {{$totalRegistrationCount}}
+                    <h4 class="text-gray-500">Total Registration count : </h4>
+                    <div class="text-gray-500"> {{$totalRegistrationCount}}</div>
+                </div>
             </div>
 
-        </div>
+            <div class="flex items-center px-4 py-6 bg-white rounded-md shadow-md">
+                <div class="p-3 bg-indigo-600 rounded">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none"
+                         viewBox="0 0 24 24" stroke="currentColor">
+                        <path d="M12 14l9-5-9-5-9 5 9 5z" />
+                        <path
+                            d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
+                    </svg>
+                </div>
+                <div class="mx-4">
 
-        <div class="max-w-sm rounded overflow-hidden shadow-lg m-2">
 
-            <div class="px-6 py-4">
-                <div class="font-bold text-xl mb-2"> Logins per day: </div>
-                  {{$loginCountPerDay->count()}}
+                    <h4 class="text-gray-500">Logins per day:</h4>
+                    <div class="text-gray-500">{{$loginCountPerDay->count()}}</div>
+                </div>
             </div>
+
+            <div class="flex items-center px-4 py-6 bg-white rounded-md shadow-md">
+                <div class="p-3 bg-indigo-600 rounded">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none"
+                         viewBox="0 0 24 24" stroke="currentColor">
+                        <path d="M12 14l9-5-9-5-9 5 9 5z" />
+                        <path
+                            d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
+                    </svg>
+                </div>
+                <div class="mx-4">
+
+
+                    <h4 class="text-gray-500">Checkouts this Month</h4>
+
+                    @if($checkoutsPerMonth->isEmpty())
+                        <div class="text-gray-500">No checkouts</div>
+                    @else
+                        <div class="text-gray-500">{{ $checkoutsPerMonth[0]->count }}</div>
+                    @endif
+                </div>
+            </div>
+
+            <div class="flex items-center px-4 py-6 bg-white rounded-md shadow-md">
+                <div class="p-3 bg-indigo-600 rounded">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none"
+                         viewBox="0 0 24 24" stroke="currentColor">
+                        <path d="M12 14l9-5-9-5-9 5 9 5z" />
+                        <path
+                            d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
+                    </svg>
+                </div>
+                <div class="mx-4">
+                    <h4 class="text-gray-500">Abandoned Cart Rae</h4>
+                    <div class="text-gray-500"> {{ $abandonedCartRate}}%</div>
+                </div>
+            </div>
+
 
         </div>
 
     </div>
+
 </div>
+
+<div class="container mx-auto mt-12 ml-10">
+    <div class="grid gap-4 lg:grid-cols-3">
+        <div class="flex items-center px-4 py-6 bg-purple-200 rounded-md shadow-md ">
+
+            <canvas id="registrationCountsChart" style="width: 400px; height: 200px;"></canvas>
+        </div>
+        <div class="flex items-center px-4 py-6 bg-purple-200 rounded-md shadow-md">
+            <canvas id="onlineRegistrationsCountsChart" style="width: 400px; height: 200px;"></canvas>
+
+        </div>
+
+
+    </div>
+</div>
+
+
 <div class="container mx-auto px-4 sm:px-8">
-    <!-- Add your analytics content here -->
-    <h2 class="text-2xl font-semibold leading-tight">Most Added-to-Cart Item</h2>
-    @if(isset($product))
-        <div class="py-4">
-            <div class="flex items-center">
-                <div class="flex-shrink-0 w-10 h-10">
-                    <img class="w-full h-full rounded-full" src="{{ asset('images/'.$product->image) }}" alt="" />
-                </div>
-                <div class="ml-3">
-                    <p class="text-gray-900 whitespace-no-wrap">{{ $product->name }}</p>
-                </div>
+    <div class="py-8">
+        <div>
+            <h2 class="text-2xl font-semibold leading-tight">Product Hits</h2>
+        </div>
+        <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
+            <div class="inline-block  shadow rounded-lg overflow-hidden">
+                <table class="w-full leading-normal">
+                    <thead>
+                    <tr>
+                        <th
+                            class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                           Date
+                        </th>
+                        <th
+                            class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                            Views
+                        </th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    @foreach ($productViews as $productView)
+ <tr>
+                        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm w-2/3">
+                            <div class="flex items-center">
+
+                                <div class="ml-3">
+                                    <p class="text-gray-900 whitespace-no-wrap">
+                                        {{ $productView->date }}
+                                    </p>
+                                </div>
+                            </div>
+                        </td>
+
+                        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                            <p class="text-black whitespace-no-wrap text-center">
+                                {{ $productView->views_per_day }}
+                            </p>
+                        </td>
+                     </tr>
+                    @endforeach
+                    </tbody>
+                </table>
             </div>
+        </div>
+    </div>
+</div>
+
+<div class="flex flex-wrap">
+    <div class="w-1/2 p-4 rounded-lg ">
+        <h2 class="text-2xl font-semibold leading-tight">Most Added-to-Cart Item</h2>
+        <div class="w-full p-4 rounded-lg border border-gray-300 shadow-lg">
+            @if(isset($product))
+                <a class="block h-48 overflow-hidden rounded">
+                    <img src="{{ asset('images/'.$product->image) }}" alt="{{ $product->name }}" class="h-full w-2/5 object-cover object-center">
+                </a>
+                <div class="mt-4">
+                    <h2 class="text-lg font-medium text-gray-900">{{ $product->name }}</h2>
+                    <h2 class="text-lg font-medium text-rose-500">LKR {{ $product->unit_price }}</h2>
+                    <br>
+                    <h2 class="text-lg font-medium text-gray-900">{{ $product->detail }}</h2>
+                    <h2 class="title-font text-lg font-medium text-gray-900">color: {{ $product->color->color}}</h2>
+                    <h2 class="text-lg font-medium text-gray-900">SIZE: {{ $product->size->name }}</h2>
+                </div>
+            @else
+                <p>No product has been added to the cart yet.</p>
+            @endif
+        </div>
+    </div>
+
+
+    <div class="w-1/2 p-4 rounded-lg ">
+<h2 class="text-2xl font-semibold leading-tight">Least Added-to-Cart Item</h2>
+
+<div class="w-full p-4 rounded-lg border border-gray-300 shadow-lg">
+    @if(isset($leastAddedProduct))
+        <a class="block h-48 overflow-hidden rounded">
+            <img src="{{ asset('images/'.$leastAddedProduct->image) }}" alt="{{ $leastAddedProduct->name }}" class="h-full w-2/5 object-cover object-center">
+        </a>
+        <div class="mt-4">
+            <h2 class="text-lg font-medium text-gray-900">{{ $leastAddedProduct->name }}</h2>
+            <h2 class="text-lg font-medium text-rose-500">LKR {{ $leastAddedProduct->unit_price }}</h2>
+            <br>
+            <h2 class="text-lg font-medium text-gray-900">{{ $leastAddedProduct->detail }}</h2>
+            <h2 class="title-font text-lg font-medium text-gray-900">color: {{ $leastAddedProduct->color->color}}</h2>
+            <h2 class="text-lg font-medium text-gray-900">SIZE: {{ $leastAddedProduct->size->name }}</h2>
         </div>
     @else
         <p>No product has been added to the cart yet.</p>
     @endif
 </div>
-<div class="container mx-auto px-4 sm:px-8">
-<h2 class="text-2xl font-semibold leading-tight">Least Added-to-Cart Item</h2>
-@if(isset($leastAddedProduct))
-    <div class="py-4">
-        <div class="flex items-center">
-            <div class="flex-shrink-0 w-10 h-10">
-                <img class="w-full h-full rounded-full" src="{{ asset('images/'.$leastAddedProduct->image) }}" alt="" />
-            </div>
-            <div class="ml-3">
-                <p class="text-gray-900 whitespace-no-wrap">{{ $leastAddedProduct->name }}</p>
-            </div>
+    </div>
 
+</div>
+
+<div class="container mx-auto px-4 sm:px-8 mt-4">
+    <div class="container mx-auto mt-12">
+        <div class="grid gap-4 lg:grid-cols-3">
+            <div class="flex items-center px-4 py-6 bg-white rounded-md shadow-md">
+                <div class="p-3 bg-indigo-600 rounded">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none"
+                         viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                </div>
+                <div class="mx-4">
+                    <div class="text-gray-500">Most Sold Color</div>
+
+                    @if($mostSoldByColor)
+                        <p class="text-black">Color ID: {{ $mostSoldByColor->color}}</p>
+                        <p class="text-black">Total Quantity Sold: {{ $mostSoldByColor->total_sold }}</p>
+                    @else
+                        <p class="text-black">No data available for most sold color.</p>
+                    @endif
+
+                </div>
+
+            </div>
         </div>
     </div>
-@else
-    <p>No product has been added to the cart yet.</p>
-    @endif
-</div>
-<div>
-    <h2>Most Sold Color</h2>
-    @if($mostSoldByColor)
-        <p>Color ID: {{ $mostSoldByColor->color}}</p>
-        <p>Total Quantity Sold: {{ $mostSoldByColor->total_sold }}</p>
-    @else
-        <p>No data available for most sold color.</p>
-    @endif
-</div>
-<div>
-    <h2>Most Sold Size</h2>
-    @if($mostSoldBySize)
-        <p>Size: {{ $mostSoldBySize->size_name }}</p>
-        <p>Total Quantity Sold: {{ $mostSoldBySize->total_sold }}</p>
-    @else
-        <p>No data available for most sold size.</p>
-    @endif
-</div>
-
-<div>
-    <h2>Most Sold Category</h2>
-    @if($mostSoldByCategory)
-        <p>Category: {{ $mostSoldByCategory->category_name }}</p>
-        <p>Total Quantity Sold: {{ $mostSoldByCategory->total_sold }}</p>
-    @else
-        <p>No data available for most sold category.</p>
-    @endif
 </div>
 
 
-<div class="bg-white py-24 sm:py-32">
-    <div class="mx-auto max-w-7xl px-6 lg:px-8">
-        <dl class="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-3">
-            <div class="mx-auto flex max-w-xs flex-col gap-y-4">
-                <dt class="text-base leading-7 text-gray-600">Checkouts Per day</dt>
+<div class="container mx-auto px-4 sm:px-8 mt-4">
+    <div class="container mx-auto mt-12">
+        <div class="grid gap-4 lg:grid-cols-3">
+            <div class="flex items-center px-4 py-6 bg-white rounded-md shadow-md">
+                <div class="p-3 bg-indigo-600 rounded">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none"
+                         viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                </div>
+                <div class="mx-4">
+                    <div class="text-gray-500">Most Sold Size</div>
 
-                @if($checkoutsPerDay->isEmpty())
-                    <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">No checkouts</dd>
-                @else
-                    <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">     {{$checkoutsPerDay->count()}}</dd>
-                @endif
+                    @if($mostSoldBySize)
+                        <p>Size: {{ $mostSoldBySize->size_name }}</p>
+                        <p>Total Quantity Sold: {{ $mostSoldBySize->total_sold }}</p>
+                    @else
+                        <p>No data available for most sold size.</p>
+                    @endif
+
+                </div>
+
             </div>
-
-            <div class="mx-auto flex max-w-xs flex-col gap-y-4">
-                <dt class="text-base leading-7 text-gray-600">Checkouts Per Month</dt>
-
-                @if($checkoutsPerMonth->isEmpty())
-                    <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">No checkouts</dd>
-                @else
-                    <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">{{ $checkoutsPerMonth[0]->count }}</dd>
-                @endif
-            </div>
-
-
-        </dl>
-    </div>
-
-
-    <h1>Product Views</h1>
-    <table>
-        <thead>
-        <tr>
-            <th>Date</th>
-            <th>Views</th>
-        </tr>
-        </thead>
-        <tbody>
-        @foreach ($productViews as $productView)
-            <tr>
-                <td>{{ $productView->date }}</td>
-                <td>{{ $productView->views_per_day }}</td>
-            </tr>
-        @endforeach
-        </tbody>
-    </table>
-    <div>
-        <h1>Least Viewed</h1>
-        {{ $leastViewedProduct->name }}
-        {{ $leastViewedProduct->views }}
-        <div class="flex-shrink-0 w-10 h-10">
-            <img class="w-full h-full rounded-full" src="{{ asset('images/'.$leastViewedProduct->image) }}" alt="" />
         </div>
     </div>
-    <div>
-        <h2>Most Viewed</h2>
-        {{ $mostViewedProduct->name }}
-        {{ $mostViewedProduct->views }}
-        <div class="flex-shrink-0 w-10 h-10">
-            <img class="w-full h-full rounded-full" src="{{ asset('images/'.$mostViewedProduct->image) }}" alt="" />
-        </div>
-    </div>
-    <canvas id="registrationCountsChart"></canvas>
-
-    <canvas id="onlineRegistrationsCountsChart"></canvas>
-
-
-
 </div>
 
-<script>
+
+<div class="container mx-auto px-4 sm:px-8 mt-4">
+    <div class="container mx-auto mt-12">
+        <div class="grid gap-4 lg:grid-cols-3">
+            <div class="flex items-center px-4 py-6 bg-white rounded-md shadow-md">
+                <div class="p-3 bg-indigo-600 rounded">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none"
+                         viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                </div>
+                <div class="mx-4">
+                    <div class="text-gray-500">Most Sold Category</div>
+                    @if($mostSoldByCategory)
+                        <p>Category: {{ $mostSoldByCategory->category_name }}</p>
+                        <p>Total Quantity Sold: {{ $mostSoldByCategory->total_sold }}</p>
+                    @else
+                        <p>No data available for most sold category.</p>
+                    @endif
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <div class="flex flex-wrap">
+        <div class="w-1/2 p-4 rounded-lg ">
+            <h2 class="text-2xl font-semibold leading-tight">Most Viewed Product</h2>
+            <div class="w-full p-4 rounded-lg border border-gray-300 shadow-lg">
+<div> view count:  {{ $mostViewedProduct->views }}</div>
+                    <a class="block h-48 overflow-hidden rounded">
+                        <img src="{{ asset('images/'.$mostViewedProduct->image) }}" alt="{{ $mostViewedProduct->name }}" class="h-full w-2/5 object-cover object-center">
+                    </a>
+                    <div class="mt-4">
+                        <h2 class="text-lg font-medium text-gray-900">{{ $mostViewedProduct->name  }}</h2>
+                        <h2 class="text-lg font-medium text-rose-500">LKR {{ $mostViewedProduct->unit_price }}</h2>
+
+                        <h2 class="text-lg font-medium text-gray-500">{{ $mostViewedProduct->detail }}</h2>
+                        <h2 class="title-font text-lg font-medium text-gray-500">color: {{ $mostViewedProduct->color->color}}</h2>
+                        <h2 class="text-lg font-medium text-gray-500">size: {{ $mostViewedProduct->size->name }}</h2>
+                    </div>
+
+            </div>
+        </div>
+
+
+        <div class="w-1/2 p-4 rounded-lg ">
+            <h2 class="text-2xl font-semibold leading-tight">Least Viewed Product</h2>
+
+            <div class="w-full p-4 rounded-lg border border-gray-300 shadow-lg">
+                <div> view count:  {{ $leastViewedProduct->views }}</div>
+                    <a class="block h-48 overflow-hidden rounded">
+                        <img src="{{ asset('images/'.$leastViewedProduct->image) }}" alt="{{ $leastViewedProduct->name }}" class="h-full w-2/5 object-cover object-center">
+                    </a>
+                    <div class="mt-4">
+                        <h2 class="text-lg font-medium text-gray-900">{{ $leastViewedProduct->name }}</h2>
+                        <h2 class="text-lg font-medium text-rose-500">LKR {{ $leastViewedProduct->unit_price }}</h2>
+
+                        <h2 class=" font-medium text-gray-500">{{ $leastViewedProduct->detail }}</h2>
+                        <h2 class="title-font text-lg font-medium text-gray-500">color: {{ $leastViewedProduct->color->color}}</h2>
+                        <h2 class="text-lg font-medium text-gray-500">sizeE: {{ $leastViewedProduct->size->name }}</h2>
+                    </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <script>
     document.addEventListener("DOMContentLoaded", function () {
         const registrationCountsData = {!! json_encode($siteRegistrationCountPerday) !!};
 
@@ -211,12 +413,17 @@
                 borderWidth: 1,
 
 
+
             }]
         };
 
         const config = {
             type: 'line',
             data: data,
+            options: {
+                maintainAspectRatio: false, // Add this option to disable aspect ratio scaling
+                responsive: false, // Add this option to disable responsiveness
+            },
 
         };
 
@@ -247,6 +454,10 @@
         const config = {
             type: 'line',
             data: data,
+            options: {
+                maintainAspectRatio: false, // Add this option to disable aspect ratio scaling
+                responsive: false, // Add this option to disable responsiveness
+            },
         };
 
         const ctx = document.getElementById('onlineRegistrationsCountsChart').getContext('2d'); // Use the new id here

@@ -11,7 +11,7 @@
 <div class="container mx-auto py-8 mt-12">
     <h2 class="text-2xl font-bold mb-6 text-center text-white">Add Category</h2> <!-- Corrected heading text -->
 
-    <form class="w-full max-w-sm mx-auto bg-white p-8 rounded-md shadow-md" method="post" action="{{ url('save-category') }}"> <!-- Corrected action URL -->
+    <form class="w-full max-w-sm mx-auto bg-white p-8 rounded-md shadow-md" method="post" action="{{ route('save-category') }}"> <!-- Corrected action URL -->
         @csrf
 
         <div class="mb-4">

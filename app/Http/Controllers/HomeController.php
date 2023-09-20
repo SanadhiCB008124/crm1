@@ -21,7 +21,7 @@ class HomeController extends Controller
     if($role_id==0){
 
         $customerCount = User::where('role_id', 2)->count();
-        $employeeCount = User::where('role_id', 1)->count();
+
         $totalRevenue = Order::sum('total_amount');
 
 
@@ -31,11 +31,9 @@ class HomeController extends Controller
 
         // Calculate Profit Margin
         $profitMargin = ($totalRevenue - $totalCOGS) / $totalRevenue * 100;
-        return view('dashboard', compact('customerCount', 'employeeCount', 'totalRevenue', 'totalCOGS', 'profitMargin'));
+        return view('dashboard', compact('customerCount', 'totalRevenue', 'totalCOGS', 'profitMargin'));
     }
-    else if($role_id==1){
-        return view('employee-dashboard');
-    }
+
     else{
             $categories = Category::all();
             $products=Product::all();

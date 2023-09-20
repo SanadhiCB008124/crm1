@@ -11,7 +11,7 @@
 <body class="bg-black">
 
 <div class="container flex justify-center mx-auto mt-10">
-    <a href="{{ url('add-category') }}" class="bg-amber-500 hover:bg-amber-700 text-white py-1 mb-6 px-3 rounded my-3 mt-1">Add Category</a> <!-- Corrected view name -->
+    <a href="{{ route('add-category') }}" class="bg-amber-500 hover:bg-amber-700 text-white py-1 mb-6 px-3 rounded my-3 mt-1">Add Category</a> <!-- Corrected view name -->
     <div class="flex flex-col">
         <div class="w-full">
             <div class="border-b border-gray-200 shadow">
@@ -38,8 +38,8 @@
                     <tr class="whitespace-nowrap">
                         <td class="px-6 py-4 text-sm text-white">{{ $category->id }}</td> <!-- Corrected variable name -->
                         <td class="px-6 py-4 text-sm text-white">{{ $category->category_name }}</td> <!-- Corrected variable name -->
-                        <td class="px-6 py-4 text-sm text-amber-500"><a href="{{ url('edit-category', $category->id) }}">Edit</a></td> <!-- Corrected view name -->
-                        <td class="px-6 py-4 text-sm text-red-600"><a href="{{ url('delete-category',$category->id) }}">Delete</a></td> <!-- Corrected view name -->
+                        <td class="px-6 py-4 text-sm text-amber-500"><a href="{{ route('edit-category', $category->id) }}">Edit</a></td> <!-- Corrected view name -->
+                        <td class="px-6 py-4 text-sm text-red-600"><a href="{{ route('delete-category',$category->id) }}">Delete</a></td> <!-- Corrected view name -->
                     </tr>
                     @endforeach
                     </tbody>

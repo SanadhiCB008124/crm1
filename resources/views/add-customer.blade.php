@@ -20,7 +20,7 @@
 
     <h2 class="text-2xl font-bold mb-6 text-center text-white">Add Customer</h2>
 
-    <form  class="w-full max-w-sm mx-auto bg-white p-8 rounded-md shadow-md" method="post" action="{{ url('save-Customer') }}">
+    <form  class="w-full max-w-sm mx-auto bg-white p-8 rounded-md shadow-md" method="post" action="{{ route('save-Customer') }}">
         @csrf
 
         <div class="mb-4">

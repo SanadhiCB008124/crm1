@@ -16,7 +16,7 @@
     <div class="flex flex-col">
         <div class="w-full">
             <div class="border-b border-gray-200 shadow">
-            <a href="{{ url('add-customer') }}"  class="bg-amber-500 hover:bg-amber-700 text-white py-1 mb-6 px-3 rounded my-3 mt-1"> Add Customer</a>
+            <a href="{{ route('add-customer') }}"  class="bg-amber-500 hover:bg-amber-700 text-white py-1 mb-6 px-3 rounded my-3 mt-1"> Add Customer</a>
 
  <table class="table-auto ">
     <thead class="bg-black divide-y divide-gray-300">
@@ -56,8 +56,8 @@
                     <td class="px-6 py-4 text-sm text-white">{{$user -> contact}}</td>
                     <td class="px-6 py-4 text-sm text-white"> {{$user -> address}}</td>
 
-                    <td class="px-6 py-4 text-sm text-amber-500"><a href="{{ url ('edit-customer/'.$user->id)}}">Edit</a></td>
-                    <td class="px-6 py-4 text-sm text-red-600"><a href="{{ url ('delete-customer/'.$user->id)}}">Delete</a></td>
+                    <td class="px-6 py-4 text-sm text-amber-500"><a href="{{ route ('edit-customer/'.$user->id)}}">Edit</a></td>
+                    <td class="px-6 py-4 text-sm text-red-600"><a href="{{ route ('delete-customer/'.$user->id)}}">Delete</a></td>
                 </tr>
                 @endforeach
 

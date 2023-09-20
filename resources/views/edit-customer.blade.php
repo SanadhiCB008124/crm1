@@ -20,7 +20,7 @@
         {{ session('error') }}
     </div>
 <h2 class="text-2xl font-bold mb-6 text-center text-white">Edit Customer</h2>
-  <form method="post" action="{{url ('update-customer') }}" class="w-full max-w-sm mx-auto bg-white p-8 rounded-md shadow-md" >
+  <form method="post" action="{{route ('update-customer') }}" class="w-full max-w-sm mx-auto bg-white p-8 rounded-md shadow-md" >
 
   @csrf
 

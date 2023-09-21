@@ -14,32 +14,31 @@ use Illuminate\Support\Facades\Auth;
 
 class CustomerController extends Controller
 {
- public $user;
+    public $user;
 
-    public function customer(){
+    public function customer()
+    {
 
-       $users= User::where('role_id',2)->get();
-       return view('customer-list',compact('users'));
+        $users = User::where('role_id', 2)->get();
+        return view('customer-list', compact('users'));
 
     }
 
 
-    public function addCustomer(){
+    public function addCustomer()
+    {
         return view('add-customer');
     }
 
 
-
-
-    public function saveCustomer(Request $request){
+    public function saveCustomer(Request $request)
+    {
 
         $request->validate([
-            'name'=> 'required',
-            'email'=>'required|email',
-            'contact'=>'required',
-            'address'=>'required',
-
-
+            'name' => 'required',
+            'email' => 'required|email',
+            'contact' => 'required',
+            'address' => 'required',
 
 
         ]);
@@ -51,18 +50,17 @@ class CustomerController extends Controller
         $user->contact = $request->contact;
         $user->address = $request->address;
 
-         event(new SiteRegister(auth()->user()));
-         $user->save();
+        event(new SiteRegister(auth()->user()));
+        $user->save();
 
-         return redirect()->back()->with('success','customer added succesfully');
-
+        return redirect()->back()->with('success', 'customer added succesfully');
 
 
     }
 
 
-
-    public function editCustomer($id){
+    public function editCustomer($id)
+    {
 
         $user = User::findOrFail($id);
 
@@ -71,22 +69,23 @@ class CustomerController extends Controller
     }
 
 
-    public function updateCustomer(Request $request){
+    public function updateCustomer(Request $request)
+    {
 
         $request->validate([
-            'name'=> 'required',
-            'email'=>'required|email',
-            'contact'=>'required|numeric',
-            'address'=>'required',
+            'name' => 'required',
+            'email' => 'required|email',
+            'contact' => 'required|numeric',
+            'address' => 'required',
 
 
         ]);
 
 
-        $id = $request->input('id'); // Get the user's ID from the input
+        $id = $request->id; // Get the user's ID from the input
 
         // Update the user's record in the database
-        User::where('id', $id)->update([
+        User::where('id', '=', $id)->update([
             'name' => $request->input('name'),
             'email' => $request->input('email'),
             'contact' => $request->input('contact'),
@@ -94,40 +93,43 @@ class CustomerController extends Controller
         ]);
 
 
-
-
-        return redirect()->back()->with('success','customer updated succesfully');
+        return redirect()->back()->with('success', 'customer updated succesfully');
     }
 
 
+    public function deleteCustomer($id)
+    {
 
-
-    public function deleteCustomer($id){
-
-        $user= User::where('id','=',$id)->delete();
+        $user = User::where('id', '=', $id)->delete();
 
         return redirect('customer-list');
     }
 
 
-
     public function viewWelcome()
     {
-        $categories = Category::all();
-        $products=Product::all();
-        $cartItems = CartItem::where('user_id', auth()->user()->id)->get();
-        return view('welcome', compact('categories','products','cartItems'));
+        $products = Product::all();
+
+        if (auth()->check()) {
+            $cartItems = CartItem::where('user_id', auth()->user()->id)->get();
+        }
+
+        return view('welcome', [
+            'products' => $products,
+            'cartItems' => $cartItems ?? null
+        ]);
+
     }
 
-     public function  viewAddressBook(){
+    public function viewAddressBook()
+    {
 
-         $customers = User::where('role_id', 2)->get();
-         return view('address-book', compact('customers'));
-     }
+        $customers = User::where('role_id', 2)->get();
+        return view('address-book', compact('customers'));
+    }
 
     public function getCount()
     {
-
 
 
         $customerCount = User::where('role_id', 2)->count();
@@ -135,7 +137,6 @@ class CustomerController extends Controller
 
         return view('dashboard', compact('customerCount'));
     }
-
 
 
 }

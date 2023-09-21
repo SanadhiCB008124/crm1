@@ -18,6 +18,11 @@ class CartController extends Controller
 
     public function addToCart(Request $request, $productSlug)
     {
+        // check if the user is logged in or redirect to login
+        if (!auth()->check()) {
+            return redirect()->route('login');
+        }
+
         $customerId = auth()->user()->id;
 
         // Get the product details by slug

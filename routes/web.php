@@ -25,9 +25,9 @@ use App\Http\Controllers\ProductController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
 
 Route::middleware([
     'auth:sanctum',
@@ -43,9 +43,12 @@ Route::middleware([
 
 });
 
+//Route::get('welcome',[CustomerController::class,'viewWelcome']);
+Route::get('/',[CustomerController::class,'viewWelcome']);
+
 Route::get('redirects', [HomeController::class, 'index'])->name('index');
+
 Route::get('/logout', [UserController::class, 'logout']);
-Route::get('welcome',[CustomerController::class,'viewWelcome']);
 Route::get('men-products', [ProductController::class, 'men'])->name('men');
 Route::get('women-products', [ProductController::class, 'women'])->name('women');
 Route::get('top-selling-products', [ProductController::class, 'topSelling'])->name('topSelling');
@@ -72,9 +75,9 @@ Route::get('/more-analytics', [AnalyticsController::class,'moreAnalytics'])->nam
 Route::middleware(['role:0'])->group(function () {
     Route::get('customer-list', [CustomerController::class, 'customer'])->name('customer-list');
     Route::post('save-Customer',[CustomerController::class,'saveCustomer'])->name('save-Customer');
-    Route::get('add-customer ',[CustomerController::class,'addCustomer'])->name('add-customer');
-    Route::get('edit-customer/{id}',[CustomerController::class,'editCustomer'])->name('edit-customer');
-    Route::post('update-customer',[CustomerController::class,'updateCustomer'])->name('update-customer');
+    Route::get('add-customer ',[CustomerController::class,'addCustomer']);
+    Route::get('edit-customer/{id}',[CustomerController::class,'editCustomer']);
+    Route::post('update-customer/{id}',[CustomerController::class,'updateCustomer']);
     Route::get('delete-customer/{id}',[CustomerController::class,'deleteCustomer']);
     Route::get('category-list',[CategoryController::class,'categoryList'])->name('category-list');
     Route::get('add-category',[CategoryController::class,'addCategory'])->name('add-category');

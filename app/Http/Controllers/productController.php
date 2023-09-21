@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Jobs\ProductViews;
 use App\Models\CartItem;
 use App\Models\Category;
@@ -15,35 +16,40 @@ class productController extends Controller
 {
     public function showProductsByCategory($category_id, Request $request)
     {
-        $customerId = auth()->user()->id;
-        $colors=Color::all();
-        $sizes=Size::all();
+//        if(auth()->check()){
+//            $customerId = auth()->user()->id;
+//            $cartItems = CartItem::where('user_id', $customerId)->get();
+//        }
+
+        $colors = Color::all();
+        $sizes = Size::all();
 
 
-
-        $cartItems = CartItem::where('user_id', $customerId)->get();
         $category = Category::find($category_id);
-        $categories=Category::all();
-        $products = Product::with('category', 'color','size')->where('category_id', $category_id)->get();
+        $categories = Category::all();
+        $products = Product::with('category', 'color', 'size')->where('category_id', $category_id)->get();
 
 
-
-
-        return view('dynamic-product-page', compact('products', 'category','categories','cartItems','colors','sizes',));
+        return view('dynamic-product-page', [
+            'products' => $products,
+            'category' => $category,
+            'categories' => $categories,
+//            'cartItems' => $cartItems ?? null,
+            'colors' => $colors,
+            'sizes' => $sizes
+        ]);
     }
+
     public function filter(Request $request)
     {
 
         $categoryId = $request->input('category_id');
         $colorId = $request->input('color_id');
         $sizeId = $request->input('size_id');
-        $categories=Category::all();
+        $categories = Category::all();
         $customerId = auth()->user()->id;
-        $colors=Color::all();
-        $sizes=Size::all();
-
-
-
+        $colors = Color::all();
+        $sizes = Size::all();
 
 
         $cartItems = CartItem::where('user_id', $customerId)->get();
@@ -63,7 +69,7 @@ class productController extends Controller
             ->get();
 
 
-        return view('filter-products',compact('filteredProducts','categories','colors','sizes','cartItems'));
+        return view('filter-products', compact('filteredProducts', 'categories', 'colors', 'sizes', 'cartItems'));
     }
 
     public function productDescription($productSlug)
@@ -71,13 +77,9 @@ class productController extends Controller
         $product = Product::where('slug', $productSlug)->first();
 
         dispatch(new ProductViews($product));
-        $sizes=Size::all();
-        return view('product-description',compact('sizes','product'));
+        $sizes = Size::all();
+        return view('product-description', compact('sizes', 'product'));
     }
-
-
-
-
 
 
 }

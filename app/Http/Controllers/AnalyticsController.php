@@ -1,15 +1,15 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use App\Events\Checkouts;
-use App\Events\ProductAddedToCart;
 use App\Models\CartEvent;
 use App\Models\CheckOutEvent;
+use App\Models\OnlineRegistrations;
 use App\Models\Order;
 use App\Models\OrderItem;
 use App\Models\Product;
-use Illuminate\Http\Request;
+
+use App\Models\SiteRegistration;
+use App\Models\User;
 use Illuminate\Support\Facades\DB;
 
 class AnalyticsController extends Controller
@@ -19,6 +19,27 @@ class AnalyticsController extends Controller
         return view('analytics');
     }
     public  function showCartEvents(){
+
+        $today = now()->format('Y-m-d');
+        $sevenDaysAgo = now()->subDays(7)->format('Y-m-d');
+        $lastMonthStart = now()->subMonth()->startOfMonth()->format('Y-m-d');
+        $lastMonthEnd = now()->subMonth()->endOfMonth()->format('Y-m-d');
+
+
+        $checkoutsToday = CheckOutEvent::whereDate('checkout_date', $today)->count();
+        $registrationsToday = SiteRegistration::whereDate('register_date', $today)->count();
+
+
+        $checkoutsLast7Days = CheckOutEvent::whereBetween('checkout_date', [$sevenDaysAgo, $today])->count();
+        $registrationsLast7Days = SiteRegistration::whereBetween('register_date', [$sevenDaysAgo, $today])->count();
+        $OnlineRegistrationsLast7Days=OnlineRegistrations::whereBetween('register_date',[$sevenDaysAgo,$today])->count();
+
+
+
+        $checkoutsLastMonth = CheckOutEvent::whereBetween('checkout_date', [$lastMonthStart, $lastMonthEnd])->count();
+        $registrationsLastMonth = SiteRegistration::whereBetween('register_date', [$lastMonthStart, $lastMonthEnd])->count();
+        $OnlineRegistrationsLastMonth=OnlineRegistrations::whereBetween('register_date',[$lastMonthStart,$lastMonthEnd])->count();
+
         $cart_event=CartEvent::all();
 
         $mostAddedProduct = CartEvent::select('product_id', DB::raw('COUNT(*) as count'))
@@ -47,6 +68,16 @@ class AnalyticsController extends Controller
             ->orderBy('year', 'desc')
             ->orderBy('month', 'desc')
             ->get();
+
+        $mostSoldProducts = OrderItem::select('products.name', 'products.image', 'products.unit_price', 'products.detail', 'colors.color', 'sizes.name as size_name', DB::raw('SUM(order_items.quantity) as total_sold'))
+            ->join('products', 'order_items.product_slug', '=', 'products.slug')
+            ->join('colors', 'products.color_id', '=', 'colors.id')
+            ->join('sizes', 'products.size_id', '=', 'sizes.id')
+            ->groupBy('products.name', 'products.image', 'products.unit_price', 'products.detail', 'colors.color', 'sizes.name')
+            ->orderByDesc('total_sold')
+            ->limit(5)
+            ->get();
+
 
         $mostSoldByColor = OrderItem::select('products.color_id', 'colors.color', DB::raw('SUM(order_items.quantity) as total_sold'))
             ->join('products', 'order_items.product_slug', '=', 'products.slug')
@@ -117,11 +148,11 @@ class AnalyticsController extends Controller
             'cart_event',
             'product',
             'leastAddedProduct',
-
             'checkoutsPerMonth',
             'checkoutsPerDay',
             'mostSoldByColor',
             'mostSoldBySize',
+            'mostSoldProducts',
             'mostSoldByCategory',
             'loginCountPerDay',
             'averageSessionRate',
@@ -133,14 +164,19 @@ class AnalyticsController extends Controller
             'totalRegistrationCount',
             'totalCartsStarted',
             'totalCheckouts',
-            'abandonedCartRate'
+            'abandonedCartRate',
+            'checkoutsToday',
+            'registrationsToday',
+            'checkoutsLast7Days',
+            'registrationsLast7Days',
+            'checkoutsLastMonth',
+            'registrationsLastMonth',
+            'OnlineRegistrationsLast7Days',
+            'OnlineRegistrationsLastMonth'
+
+
 
         ));
-
-
-
-
-
 
     }
 
@@ -170,14 +206,13 @@ class AnalyticsController extends Controller
         // Calculate Profit Margin
         $profitMargin = ($totalRevenue - $totalCOGS) / $totalRevenue * 100;
 
+
+
+
+
         return view('dashboard', compact('totalRevenue', 'totalCOGS', 'profitMargin'));
 
     }
-
-
-
-
-
 
 
 

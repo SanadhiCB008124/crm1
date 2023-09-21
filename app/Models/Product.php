@@ -40,5 +40,11 @@ class Product extends Model
         return $this->belongsTo(Size::class,'size_id');
     }
 
+    public function orderItems()
+    {
+        return $this->hasMany(OrderItem::class, 'product_slug', 'slug');
+    }
+
+
 
 }

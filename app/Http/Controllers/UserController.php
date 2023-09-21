@@ -17,20 +17,9 @@ class UserController extends Controller
      *
      * @var array
      */
-
-
-     public function logout(Request $request)
-     {
-         Auth::logout();
-         $categories = Category::all();
-         $products=Product::all();
-
-
-         return view('welcome', compact('categories','products'));
-
-     }
-
-
-
-
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        return redirect('/');
+    }
 }

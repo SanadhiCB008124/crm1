@@ -56,6 +56,8 @@ class AnalyticsController extends Controller
 
         $leastAddedProduct = Product::find($leastAddedProduct->product_id);
 
+        $totalOrderCount= Order::count();
+
 
 
         $checkoutsPerDay = CheckOutEvent::selectRaw('DATE(checkout_date) as date, COUNT(*) as count')
@@ -103,12 +105,19 @@ class AnalyticsController extends Controller
 
         $loginCountPerDay = DB::table('logged_users')
             ->select(DB::raw('DATE(login_timestamp) as date'), DB::raw('COUNT(*) as login_count'))
-            ->groupBy('date')
+            ->groupBy(DB::raw('DATE(login_timestamp)'))
             ->get();
+
+
+
+        // Calculate the average session rate based on login times
 
         $averageSessionRate = DB::table('logged_users')
             ->select(DB::raw('AVG(session_duration) as avg_session_rate'))
             ->value('avg_session_rate');
+
+
+
 
         $siteRegistrationCountPerday = DB::table('site_registrations')//when the admin registers the customers
             ->select(DB::raw('DATE(register_date) as date'), DB::raw('COUNT(*) as registration_count'))
@@ -172,7 +181,10 @@ class AnalyticsController extends Controller
             'checkoutsLastMonth',
             'registrationsLastMonth',
             'OnlineRegistrationsLast7Days',
-            'OnlineRegistrationsLastMonth'
+            'OnlineRegistrationsLastMonth',
+            'totalOrderCount',
+
+
 
 
 
@@ -193,6 +205,10 @@ class AnalyticsController extends Controller
 
         return $siteRegistrationCountPerday;
     }
+
+
+
+
     public function moreAnalytics(){
 
         // Calculate Total Revenue
@@ -206,11 +222,13 @@ class AnalyticsController extends Controller
         // Calculate Profit Margin
         $profitMargin = ($totalRevenue - $totalCOGS) / $totalRevenue * 100;
 
+        $totalOrderCount= Order::count();
 
 
 
 
-        return view('dashboard', compact('totalRevenue', 'totalCOGS', 'profitMargin'));
+
+        return view('dashboard', compact('totalRevenue', 'totalCOGS', 'profitMargin','totalOrderCount'));
 
     }
 

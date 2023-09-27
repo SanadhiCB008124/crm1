@@ -1,17 +1,4 @@
-<!DOCTYPE html>
-
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.0/dist/cdn.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-
-
-    <title>Product Description</title>
-</head>
-<body>
+<x-app-layout>
 <div class="bg-white">
     <div class="pt-6">
 
@@ -122,8 +109,11 @@
                             </div>
 
                         </div>
-</div>
-                </form>
+                    </form>
+
+            </div>
+
+
             </div>
 
             <div class="py-10 lg:col-span-2 lg:col-start-1 lg:border-r lg:border-gray-200 lg:pb-16 lg:pr-8 lg:pt-6">
@@ -149,21 +139,9 @@
                     </div>
                 </div>
 
-
-            </div>
+               </div>
         </div>
     </div>
 </div>
 
-<script>
-    // Send a POST request to track views when the page loads
-    axios.post('{{ route('track.views', ['product' => $product->id]) }}')
-        .then(response => {
-            console.log('View count updated');
-        })
-        .catch(error => {
-            console.error('Failed to update view count', error);
-        });
-</script>
-</body>
-</html>
+</x-app-layout>

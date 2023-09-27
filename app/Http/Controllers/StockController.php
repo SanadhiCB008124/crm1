@@ -2,14 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\LowStock;
 use App\Models\OrderItem;
 use App\Models\Product;
+use App\Notifications\LowStockNotification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class StockController extends Controller
 {
     public function stocks(){
+
+
         $products=Product::all();
 
         $totalCOGS = OrderItem::join('products', 'order_items.product_slug', '=', 'products.slug')

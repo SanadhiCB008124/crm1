@@ -11,9 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('products', function (Blueprint $table) {
-            $table->unsignedBigInteger('size_id')->nullable();
-            $table->foreign('size_id')->references('id')->on('sizes');
+        Schema::table('logged_users', function (Blueprint $table) {
+            $table->timestamp('logout_timestamp')->nullable();
         });
     }
 
@@ -22,9 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('products', function (Blueprint $table) {
-            $table->dropForeign(['size_id']);
-            $table->dropColumn('size_id');
+        Schema::table('logged_users', function (Blueprint $table) {
+            $table->dropColumn('logout_timestamp');
         });
     }
 };

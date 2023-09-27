@@ -1,259 +1,266 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
+<x-admin-layout>
+   <div class="flex m-10 px-4 py-2 bg-white ">
+        <div class="mx-auto sm:px-6 flex  gap-4 flex-wrap">
+    <div id="content" class="bg-white/10 ">
+        <div id="24h">
+            <h1 class="font-bold py-4 uppercase">Statistics</h1>
+            <div id="stats" class="grid gird-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class=" p-6 rounded-lg">
+                    <div class="flex flex-row space-x-4 items-center">
 
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <script src="https://cdn.tailwindcss.com"></script>
+                        <div>
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
-
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-
-        <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-
-        <!-- Styles -->
-        @livewireStyles
-    </head>
-    <body class="font-sans antialiased">
-        <x-banner />
-
-        <div class="min-h-screen bg-gray-100">
-
-            <div class="flex h-screen">
-            <div class="px-4 py-2  bg-black lg:w-1/4 border border-r-amber-100  border-y-black">
-                <svg xmlns="http://www.w3.org/2000/svg" class="inline w-8 h-8 text-white lg:hidden" fill="none"
-                    viewBox="0 0 24 24" stroke="currentColor" id="menu-button">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-                <div class="hidden lg:block" id="menu">
-                <span class="text-white text-xl">
-           Hi  {{ Auth::user()->email }} !
-</span><br>
-                    <div class="my-2 mb-6">
-                        <h1 class="text-2xl font-bold text-white">Admin Dashboard</h1>
-                    </div>
-                    <div>
-
-</div>
-                    <ul >
-                        <li class="mb-6">
-                            <div class="relative">
-                                <span class="absolute inset-y-0 left-0 flex items-center pl-2">
-                                    <button type="submit" class="p-1 focus:outline-none">
-                                        <svg fill="none" stroke="currentColor" stroke-linecap="round"
-                                            stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
-                                            class="w-4 h-4">
-                                            <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                                        </svg>
-                                    </button>
-                                </span>
-                                <input type="search" name="search"
-                                    class="w-full px-4 py-2 pl-12 rounded shadow outline-none  focus:border-amber-100       " placeholder="Search...">
-                        </li>
-                        <li class="mb-2 rounded hover:shadow hover:bg-amber-100 ">
-                            <a href="{{route('stocks')}}" class="inline-block w-full h-full px-3 py-2 font-bold text-white hover:text-black">
-
-                                Stocks
-                            </a>
-                        </li>
-                        <li class="mb-2 rounded hover:shadow hover:bg-amber-100  ">
-                            <a href="{{route('address-book')}}" class="inline-block w-full h-full px-3 py-2 font-bold text-white hover:text-black">
-
-                                Address Book
-                            </a>
-                        </li>
-                        <li class="mb-2 rounded hover:shadow hover:bg-amber-100 ">
-                            <a href="#" class="inline-block w-full h-full px-3 py-2 font-bold text-white hover:text-black">
-
-                                Sales
-                            </a>
-                        </li>
-                        <li class="mb-2 rounded hover:shadow hover:bg-amber-100 ">
-                            <a href="{{route('all-orders')}}" class="inline-block w-full h-full px-3 py-2 font-bold text-white hover:text-black">
-
-                                Purchase history
-                            </a>
-                        </li>
-                        <li class="mb-2 rounded hover:shadow hover:bg-amber-100 ">
-                            <a href="{{route('Analytics')}}" class="inline-block w-full h-full px-3 py-2 font-bold text-white hover:text-black">
-
-                               Analytics
-                            </a>
-                        </li>
-                        <li class="mb-2 rounded hover:shadow hover:bg-amber-100 ">
-                            <a href="#" class="inline-block w-full h-full px-3 py-2 font-bold text-white hover:text-black">
-
-                               Setting
-                            </a>
-                        </li>
-                        <li class="mb-2 rounded hover:shadow hover:bg-amber-100 ">
-                            <a href="{{ route('profile.show') }}"  class="inline-block w-full h-full px-3 py-2 font-bold text-white hover:text-black">
-
-                               Profile
-                            </a>
-                        </li>
-                        <li class="mb-2 rounded hover:shadow hover:bg-amber-100 ">
-                            <a href="{{ url('welcome') }}" class="inline-block w-full h-full px-3 py-2 font-bold text-white hover:text-black">
-
-                               view homepage
-
-                            </a>
-                        </li>
-
-                        <li >
-                        <a href="{{ route('logout') }}" class="block mt-4 lg:inline-block lg:mt-0 text-amber-100 mr-4 px-3 py-2 no-underline hover:underline  sm:block"
-                                         @click.prevent="$root.submit();">
-                                    {{ __('Log Out') }}
-                                </a>
-                        <li>
-                    </ul>
-                </div>
-                <script>
-
-
-      const button = document.querySelector('#menu-button');
-  const menu = document.querySelector('#menu');
-
-
-  button.addEventListener('click', () => {
-    menu.classList.toggle('hidden');
-  });
-  </script>
-
-            </div>
-            <div class="w-full px-4 py-2 bg-black lg:w-full">
-                <div class="container mx-auto mt-12">
-                    <div class="grid gap-4 lg:grid-cols-3">
-                        <div class="flex items-center px-4 py-6 bg-white rounded-md shadow-md">
-                            <div class="p-3 bg-indigo-600 rounded">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none"
-                                    viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                                </svg>
-                            </div>
-                            <div class="mx-4">
-
-
-                                <div class="text-gray-500">Total customers:  {{$customerCount}}</div>
-
-                                <div class="text-black"><a href="{{ route('customer-list') }}">view customer registered</a></div>
-                            </div>
+                            <x-dashboard-card
+                                value="LKR {{ number_format($totalRevenue, 2) }}"
+                                description="Total Revenue"
+                            />
                         </div>
+                    </div>
+                </div>
+                <div class=" p-6 rounded-lg">
+                    <div class="flex flex-row space-x-4 items-center">
+                        <div>
+                            <x-dashboard-card
+                                value="{{ $customerCount }}"
+                                description="Total customers: {{ $customerCount }}"
+                            />
 
-                        <div class="flex items-center px-4 py-6 bg-white rounded-md shadow-md">
-                            <div class="p-3 bg-indigo-600 rounded">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none"
-                                    viewBox="0 0 24 24" stroke="currentColor">
-                                    <path d="M12 14l9-5-9-5-9 5 9 5z" />
-                                    <path
-                                        d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
-                                </svg>
-                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class=" p-6 rounded-lg">
+                    <div class="flex flex-row space-x-4 items-center">
+                        <div>
+                            <x-dashboard-card
+                                value="{{ $totalOrderCount }}"
+                                description="Total Orders: {{ $totalOrderCount}}"
+                            />
+
+                        </div>
+                    </div>
+                </div>
+                <div class=" p-6 rounded-lg">
+                    <div class="flex flex-row space-x-4 items-center">
+
+                        <div>
+                            <x-dashboard-card
+                                value="$0.00"
+                                description="Total Sales"
+                            />
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class=" p-6 rounded-lg">
+                    <div class="flex flex-row space-x-4 items-center">
+
+                        <div>
+                            <x-dashboard-card
+                                value="LKR {{ number_format($totalRevenue, 2) }}"
+                                description="Total Revenue"
+                            />
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class=" p-6 rounded-lg">
+                    <div class="flex flex-row space-x-4 items-center">
+
+                        <div>
+                            <x-dashboard-card
+
+                                value="{{ number_format($profitMargin, 2) }}%"
+                                description="Profit Margin"
+                            />
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class=" p-6 rounded-lg">
+                    <div class="flex flex-row space-x-4 items-center">
+
+                        <div>
+                            <x-dashboard-card
+                                value="LKR {{ number_format($totalCOGS, 2) }}"
+                                description="Total COGS"
+                            />
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class=" p-6 rounded-lg">
+                    <div class="flex flex-row space-x-4 items-center">
+
+
                             <div class="mx-4">
 
                                 <div class="text-gray-500">Products</div>
-                                <div class="text-black"><a href="{{ url('livewire/products') }}">View Products</a></div>
+                                <div class="text-black"><a href="{{ route('products') }}">View Products</a></div>
                             </div>
-                        </div>
-
-                        <div class="flex items-center px-4 py-6 bg-white rounded-md shadow-md">
-                            <div class="p-3 bg-indigo-600 rounded">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none"
-                                     viewBox="0 0 24 24" stroke="currentColor">
-                                    <path d="M12 14l9-5-9-5-9 5 9 5z" />
-                                    <path
-                                        d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                          d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
-                                </svg>
-                            </div>
-                            <div class="mx-4">
-
-                                <h4 class="text-2xl font-semibold text-gray-700">$0.00</h4>
-                                <div class="text-gray-500">Total Sales</div>
-                            </div>
-                        </div>
-
-
-                        <div class="flex items-center px-4 py-6 bg-white rounded-md shadow-md">
-                            <div class="p-3 bg-indigo-600 rounded">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none"
-                                     viewBox="0 0 24 24" stroke="currentColor">
-                                    <path d="M12 14l9-5-9-5-9 5 9 5z" />
-                                    <path
-                                        d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                          d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
-                                </svg>
-                            </div>
-                            <div class="mx-4">
-
-                                <h4 class="text-2xl font-semibold text-gray-700">LKR {{ number_format($totalRevenue, 2) }}</h4>
-                                <div class="text-gray-500">Total Revenue</div>
-                            </div>
-                        </div>
-
-
-                        <div class="flex items-center px-4 py-6 bg-white rounded-md shadow-md">
-                            <div class="p-3 bg-indigo-600 rounded">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none"
-                                     viewBox="0 0 24 24" stroke="currentColor">
-                                    <path d="M12 14l9-5-9-5-9 5 9 5z" />
-                                    <path
-                                        d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                          d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
-                                </svg>
-                            </div>
-                            <div class="mx-4">
-
-                                <h4 class="text-2xl font-semibold text-gray-700">LKR {{ number_format($totalCOGS, 2) }}</h4>
-                                <div class="text-gray-500">Total COGS</div>
-                            </div>
-                        </div>
-
-
-                        <div class="flex items-center px-4 py-6 bg-white rounded-md shadow-md">
-                            <div class="p-3 bg-indigo-600 rounded">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none"
-                                     viewBox="0 0 24 24" stroke="currentColor">
-                                    <path d="M12 14l9-5-9-5-9 5 9 5z" />
-                                    <path
-                                        d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                          d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
-                                </svg>
-                            </div>
-                            <div class="mx-4">
-
-                                <h4 class="text-2xl font-semibold text-gray-700">{{ number_format($profitMargin, 2) }}%</h4>
-                                <div class="text-gray-500">Profit Margin</div>
-                            </div>
-                        </div>
-
-
-
 
                     </div>
-
                 </div>
-
             </div>
-
-
         </div>
-</div>
+
+        <div id="last-users">
+
+            <div class="overflow-x-scroll">
+                <table class="w-full whitespace-nowrap">
+                    <thead class="bg-black/60">
+                    <th class="text-left py-3 px-2 rounded-l-lg">Name</th>
+                    <th class="text-left py-3 px-2">Email</th>
+                    <th class="text-left py-3 px-2">Group</th>
+                    <th class="text-left py-3 px-2">Status</th>
+                    <th class="text-left py-3 px-2 rounded-r-lg">Actions</th>
+                    </thead>
+                    <tr class="border-b border-gray-700">
+                        <td class="py-3 px-2 font-bold">
+                            <div class="inline-flex space-x-3 items-center">
+                                <span><img class="rounded-full w-8 h-8" src="https://images.generated.photos/tGiLEDiAbS6NdHAXAjCfpKoW05x2nq70NGmxjxzT5aU/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/OTM4ODM1LmpwZw.jpg" alt=""></span>
+                                <span>Thai Mei</span>
+                            </div>
+                        </td>
+                        <td class="py-3 px-2">thai.mei@abc.com</td>
+                        <td class="py-3 px-2">User</td>
+                        <td class="py-3 px-2">Approved</td>
+                        <td class="py-3 px-2">
+                            <div class="inline-flex items-center space-x-3">
+                                <a href="" title="Edit" class="hover:text-white"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+                                    </svg>
+                                </a>
+                                <a href="" title="Edit password" class="hover:text-white"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+                                    </svg>
+                                </a>
+                                <a href="" title="Suspend user" class="hover:text-white"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="border-b border-gray-700">
+                        <td class="py-3 px-2 font-bold">
+                            <div class="inline-flex space-x-3 items-center">
+                                <span><img class="rounded-full w-8 h-8" src="https://images.generated.photos/tGiLEDiAbS6NdHAXAjCfpKoW05x2nq70NGmxjxzT5aU/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/OTM4ODM1LmpwZw.jpg" alt=""></span>
+                                <span>Thai Mei</span>
+                            </div>
+                        </td>
+                        <td class="py-3 px-2">thai.mei@abc.com</td>
+                        <td class="py-3 px-2">User</td>
+                        <td class="py-3 px-2">Approved</td>
+                        <td class="py-3 px-2">
+                            <div class="inline-flex items-center space-x-3">
+                                <a href="" title="Edit" class="hover:text-white"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+                                    </svg>
+                                </a>
+                                <a href="" title="Edit password" class="hover:text-white"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+                                    </svg>
+                                </a>
+                                <a href="" title="Suspend user" class="hover:text-white"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="border-b border-gray-700">
+                        <td class="py-3 px-2 font-bold">
+                            <div class="inline-flex space-x-3 items-center">
+                                <span><img class="rounded-full w-8 h-8" src="https://images.generated.photos/tGiLEDiAbS6NdHAXAjCfpKoW05x2nq70NGmxjxzT5aU/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/OTM4ODM1LmpwZw.jpg" alt=""></span>
+                                <span>Thai Mei</span>
+                            </div>
+                        </td>
+                        <td class="py-3 px-2">thai.mei@abc.com</td>
+                        <td class="py-3 px-2">User</td>
+                        <td class="py-3 px-2">Approved</td>
+                        <td class="py-3 px-2">
+                            <div class="inline-flex items-center space-x-3">
+                                <a href="" title="Edit" class="hover:text-white"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+                                    </svg>
+                                </a>
+                                <a href="" title="Edit password" class="hover:text-white"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+                                    </svg>
+                                </a>
+                                <a href="" title="Suspend user" class="hover:text-white"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="border-b border-gray-700">
+                        <td class="py-3 px-2 font-bold">
+                            <div class="inline-flex space-x-3 items-center">
+                                <span><img class="rounded-full w-8 h-8" src="https://images.generated.photos/niCVbIBAm4hahzwS83HoEtcVEIactkKohOzgXWYY4lM/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/NTk4ODczLmpwZw.jpg" alt=""></span>
+                                <span>Marquez Spineli</span>
+                            </div>
+                        </td>
+                        <td class="py-3 px-2">marquez.spineli@cba.com</td>
+                        <td class="py-3 px-2">User</td>
+                        <td class="py-3 px-2">Approved</td>
+                        <td class="py-3 px-2">
+                            <div class="inline-flex items-center space-x-3">
+                                <a href="" title="Edit" class="hover:text-white"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+                                    </svg>
+                                </a>
+                                <a href="" title="Edit password" class="hover:text-white"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+                                    </svg>
+                                </a>
+                                <a href="" title="Suspend user" class="hover:text-white"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="border-b border-gray-800">
+                        <td class="py-3 px-2 font-bold">
+                            <div class="inline-flex space-x-3 items-center">
+                                <span><img class="rounded-full w-8 h-8" src="https://images.generated.photos/f_xU7q780YXiKG7IwKVV05eU6Sj2nIodEkN1S8GyM2M/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/NDk2MTc4LmpwZw.jpg" alt=""></span>
+                                <span>Mark Spike</span>
+                            </div>
+                        </td>
+                        <td class="py-3 px-2">mark.spike@abc.com</td>
+                        <td class="py-3 px-2">Administrator</td>
+                        <td class="py-3 px-2">Approved</td>
+                        <td class="py-3 px-2">
+                            <div class="inline-flex items-center space-x-3">
+                                <a href="" title="Edit" class="hover:text-white"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+                                    </svg>
+                                </a>
+                                <a href="" title="Edit password" class="hover:text-white"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+                                    </svg>
+                                </a>
+                                <a href="" title="Suspend user" class="hover:text-white"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
 
 
+                </table>
+            </div>
+        </div>
+    </div>
+        </div>
+    </div>
 
-</body>
-</html>
+</x-admin-layout>

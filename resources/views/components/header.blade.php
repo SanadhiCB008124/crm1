@@ -63,9 +63,9 @@
             <div class="flex items-center justify-center mt-4 mb-2">
                 <div class="flex border-2 rounded border-black">
 
-                    <form method="POST" action="{{ route('products.search') }} " class="m-0 p-0 flex">
-                        @csrf
-                        <input type="text" name="search" class="px-4 py-2 w-40 " placeholder="Search ..">
+
+                        <input wire:model="search" type="text" placeholder="Search products...">
+
                         <button type="submit" class="flex items-center justify-center px-4 border-l">
                             <svg class="w-6 h-6 text-gray-600 " fill="black" xmlns="http://www.w3.org/2000/svg"
                                  viewBox="0 0 24 24">
@@ -73,13 +73,13 @@
                                     d="M16.32 14.9l5.39 5.4a1 1 0 0 1-1.42 1.4l-5.38-5.38a8 8 0 1 1 1.41-1.41zM10 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12z"/>
                             </svg>
                         </button>
-                    </form>
+
                 </div>
             </div>
 
 
             @if (Route::has('login'))
-                <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 space-x-2 sm:pr-0">
                     @auth
                         <div x-data="{ open: false }">
                             <button type="button" id="dropdown-button" @click="open = ! open"
@@ -116,7 +116,7 @@
                                     <div
                                         class="w-screen max-w-md overflow-hidden rounded-3xl bg-white text-sm leading-6 shadow-lg ring-1 ring-gray-900/5">
                                         <div class="p-4">
-                                            <div class="group relative flex flex-col gap-y-4 p-4 hover:bg-gray-50 ">
+                                            <div class="group relative flex flex-col gap-y-4 p-4 ">
                                                 @if(isset($cartItems))
                                                     <!-- Place your dropdown content here -->
                                                     @if ($cartItems->isEmpty())
@@ -147,8 +147,9 @@
                                                         @endforeach
                                                     @endif
                                                 @endif
-                                                <a href="{{ route('cart', ['id' => auth()->user()->id]) }}">View
-                                                    Cart</a>
+                                                <button class="bg-green-600 text-white rounded-full w-1/3 hover:bg-green-700">
+                                                <a href="{{ route('cart', ['id' => auth()->user()->id]) }}">
+                                                    View Cart</a> </button>
                                             </div>
                                         </div>
                                     </div>
@@ -191,6 +192,14 @@
                                     </g>
                                 </svg>
                             </a>
+                        </button>
+                        <button>
+
+                            <a href="{{ route('logout') }}" class="block mt-2 lg:inline-block lg:mt-0 text-black mr-4  no-underline hover:underline  sm:block"
+                               @click.prevent="$root.submit();">
+                                {{ __('Log Out') }}
+                            </a>
+
                         </button>
 
                     @else

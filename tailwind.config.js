@@ -20,6 +20,8 @@ export default {
     },
 
     plugins: [forms, typography,
-        require('@tailwindcss/aspect-ratio'),
+        require('@tailwindcss/aspect-ratio',
+            [require("daisyui")],
+            ),
     ],
 };

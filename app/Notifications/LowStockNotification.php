@@ -4,7 +4,6 @@ namespace App\Notifications;
 
 use App\Models\Product;
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
@@ -12,14 +11,16 @@ class LowStockNotification extends Notification
 {
     use Queueable;
 
-    protected  $product;
+    protected $product;
+    protected $recipientEmail;
 
     /**
      * Create a new notification instance.
      */
     public function __construct(Product $product)
     {
-        $this->product=$product;
+        $this->product = $product;
+
     }
 
     /**
@@ -40,9 +41,10 @@ class LowStockNotification extends Notification
         return (new MailMessage)
             ->subject('Low stock alert for product: ' . $this->product->name)
             ->greeting('Hello,')
+            ->line('Product ID: ' . $this->product->id)
+            ->line('This is a low stock alert for the product.');
 
-            ->line('product ID: ' . $this->product->id);
-
+        // You don't need to use ->to($this->recipientEmail) here
     }
 
     /**

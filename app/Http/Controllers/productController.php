@@ -76,7 +76,7 @@ class productController extends Controller
     {
         $product = Product::where('slug', $productSlug)->first();
 
-        dispatch(new ProductViews($product));
+        ProductViews::dispatch($product);
         $sizes = Size::all();
         return view('product-description', compact('sizes', 'product'));
     }

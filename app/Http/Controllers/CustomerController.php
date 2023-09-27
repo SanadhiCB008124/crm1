@@ -124,8 +124,8 @@ class CustomerController extends Controller
     public function viewAddressBook()
     {
 
-        $customers = User::where('role_id', 2)->get();
-        return view('address-book', compact('customers'));
+        $users = User::where('role_id', 2)->get();
+        return view('address-book', compact('users'));
     }
 
     public function getCount()

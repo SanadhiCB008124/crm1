@@ -21,22 +21,10 @@ class HomeController extends Controller
 
         if ($role_id == 0) {
 
-            $customerCount = User::where('role_id', 2)->count();
-
-            $totalRevenue = Order::sum('total_amount');
-
-
-            $totalCOGS = OrderItem::join('products', 'order_items.product_slug', '=', 'products.slug')
-                ->sum(DB::raw('order_items.quantity * products.unit_price'));
-
-
-            // Calculate Profit Margin
-            $profitMargin = ($totalRevenue - $totalCOGS) / $totalRevenue * 100;
-
             return redirect('/dashboard');
 
 
-            return view('dashboard', compact('customerCount', 'totalRevenue', 'totalCOGS', 'profitMargin',));
+//            return view('dashboard', compact(,));
         } else {
 
             return redirect('/');

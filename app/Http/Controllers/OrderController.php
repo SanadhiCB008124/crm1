@@ -151,6 +151,10 @@ class OrderController extends Controller
         return redirect()->route('my-orders')->with('success', 'Order has been reordered.');
     }
 
+    public function checkoutPageNew(){
+        return  view('checkout-page');
+    }
+
 
 
 

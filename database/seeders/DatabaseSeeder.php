@@ -19,7 +19,13 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-
+        $categories=[
+            ['category_name'=>'Mens'],
+            ['category_name'=>'Womens'],
+            ['category_name'=>'Kids'],
+            ['category_name'=>'Sports']
+        ];
+        DB::table('categories')->insert($categories);
         $roles = [
             ['name' => 'Admin'],
             ['name' => 'Employee'],
@@ -68,6 +74,8 @@ class DatabaseSeeder extends Seeder
 
         ];
         DB::table('sizes')->insert($sizes);
+
+
 
 
 

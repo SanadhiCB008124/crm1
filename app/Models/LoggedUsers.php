@@ -9,5 +9,8 @@ class LoggedUsers extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['user_id'];
+    protected $fillable = ['user_id',
+        'login_timestamp',
+        'logout_timestamp',
+        'session_duration'];
 }

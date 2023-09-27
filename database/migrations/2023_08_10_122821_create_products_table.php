@@ -19,9 +19,12 @@ return new class extends Migration
             $table->string('slug')->unique();
             $table->integer('stocks');
             $table->string('image')->nullable();
-            $table->string('color');
-            $table->string('size_id');
+            $table->integer('views')->nullable();
+
+            $table->foreignId('size_id')->default(1)->constrained('sizes')->onDelete('cascade');
+            $table->foreignId('color_id')->default(1)->constrained('colors')->onDelete('cascade')->default(1);
             $table->timestamps();
+
             $table->foreignId('category_id')->constrained('categories')->onDelete('cascade');
         });
     }

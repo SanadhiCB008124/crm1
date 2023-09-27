@@ -21,6 +21,7 @@ use App\Listeners\TrackCheckouts;
 use App\Listeners\TrackProductAddedToCart;
 use Illuminate\Auth\Events\Authenticated;
 use Illuminate\Auth\Events\Login;
+use Illuminate\Auth\Events\Logout;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -38,6 +39,9 @@ class EventServiceProvider extends ServiceProvider
             TrackProductAddedToCart::class,
         ],
         Authenticated::class => [
+            LogLogins::class,
+        ],
+        Logout::class => [
             LogLogins::class,
         ],
 

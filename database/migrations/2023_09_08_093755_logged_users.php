@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('logged_users', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->integer('session_duration');
+            $table->integer('session_duration')->nullable();
             $table->timestamp('login_timestamp')->default(now());
 
             $table->timestamps();

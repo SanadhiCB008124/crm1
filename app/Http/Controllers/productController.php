@@ -47,12 +47,14 @@ class productController extends Controller
         $colorId = $request->input('color_id');
         $sizeId = $request->input('size_id');
         $categories = Category::all();
-        $customerId = auth()->user()->id;
+
+        if (auth()->check()) {
+            $customerId = auth()->user()->id;
+            $cartItems = CartItem::where('user_id', $customerId)->get();
+        }
+
         $colors = Color::all();
         $sizes = Size::all();
-
-
-        $cartItems = CartItem::where('user_id', $customerId)->get();
 
 
         // Query the products table based on the filter criteria
@@ -69,7 +71,7 @@ class productController extends Controller
             ->get();
 
 
-        return view('filter-products', compact('filteredProducts', 'categories', 'colors', 'sizes', 'cartItems'));
+        return view('filter-products', compact('filteredProducts', 'categories', 'colors', 'sizes'));
     }
 
     public function productDescription($productSlug)

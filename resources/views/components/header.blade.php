@@ -114,7 +114,7 @@
                             <div x-show="open" @click.outside="open = false">
                                 <div class="absolute left-1/2 z-10 mt-5 transform -translate-x-1/2 " id="dropdown-menu">
                                     <div
-                                        class="w-screen max-w-md overflow-hidden rounded-3xl bg-white text-sm leading-6 shadow-lg ring-1 ring-gray-900/5">
+                                        class="max-w-md overflow-hidden rounded-3xl bg-white text-sm leading-6 shadow-lg ring-1 ring-gray-900/5">
                                         <div class="p-4">
                                             <div class="group relative flex flex-col gap-y-4 p-4 ">
                                                 @if(isset($cartItems))
@@ -131,15 +131,15 @@
                                                                         class="w-full h-full object-cover object-center rounded-lg">
                                                                 </div>
                                                                 <div class="flex-grow">
-                                                                    <h2 class="title-font text-lg font-medium text-gray-900">{{ $item->product->name}}</h2>
-                                                                    <h2 class="title-font text-lg font-medium text-rose-500">
+                                                                    <h2 class="title-font  font-medium text-gray-900">{{ $item->product->name}}</h2>
+                                                                    <h2 class="title-font  font-medium text-rose-500">
                                                                         LKR {{$item->product->unit_price}}</h2>
-                                                                    <h2 class="title-font text-lg font-medium text-gray-900">
+                                                                    <h2 class="title-font font-medium text-gray-900">
                                                                         color: {{ $item->product->color->color}}</h2>
 
-                                                                    <h2 class="title-font text-lg font-medium text-gray-900">
+                                                                    <h2 class="title-font font-medium text-gray-900">
                                                                         size: {{ $item->product->size->name}}</h2>
-                                                                    <h2 class="title-font text-lg font-medium text-gray-900">
+                                                                    <h2 class="title-font font-medium text-gray-900">
                                                                         Quantity: {{ $item->quantity}}</h2>
                                                                 </div>
                                                             </div>
@@ -147,9 +147,10 @@
                                                         @endforeach
                                                     @endif
                                                 @endif
-                                                <button class="bg-green-600 text-white rounded-full w-1/3 hover:bg-green-700">
+                                                <button class="bg-black text-white rounded-full py-2 px-2 w-full ">
                                                 <a href="{{ route('cart', ['id' => auth()->user()->id]) }}">
-                                                    View Cart</a> </button>
+                                                    View Cart</a>
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
@@ -193,9 +194,9 @@
                                 </svg>
                             </a>
                         </button>
-                        <button>
+                        <button class="m-6">
 
-                            <a href="{{ route('logout') }}" class="block mt-2 lg:inline-block lg:mt-0 text-black mr-4  no-underline hover:underline  sm:block"
+                            <a href="{{ route('logout') }}" class="block mt-2 lg:inline-block lg:mt-0 text-red-600  no-underline hover:underline  sm:block"
                                @click.prevent="$root.submit();">
                                 {{ __('Log Out') }}
                             </a>
@@ -220,8 +221,8 @@
     <div class="sm:hidden" id="mobile-menu">
         <div class="space-y-1 px-2 pb-3 pt-2">
             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-            <a href="#" class="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium"
-               aria-current="page">Dashboard</a>
+            <a href="#"   class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
+               >Dashboard</a>
             <a href="#"
                class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Team</a>
             <a href="#"

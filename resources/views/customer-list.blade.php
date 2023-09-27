@@ -1,41 +1,29 @@
 
-<!DOCTYPE html>
-
-<html lang="en">
-    <head>
-    <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script src="https://cdn.tailwindcss.com"></script>
-        <title>customer list</title>
-</head>
-
-<body class="bg-black">
-
-
+<x-admin-layout>
 <div class="container flex justify-center mx-auto mt-10">
     <div class="flex flex-col">
         <div class="w-full">
             <div class="border-b border-gray-200 shadow">
-            <a href="{{ url('add-customer') }}"  class="bg-amber-500 hover:bg-amber-700 text-white py-1 mb-6 px-3 rounded my-3 mt-1"> Add Customer</a>
+            <a href="{{ url('add-customer') }}"  class="bg-gray-800 text-white  = px-2 py-2 rounded mt-1"> Register Customer</a>
 
- <table class="table-auto ">
-    <thead class="bg-black divide-y divide-gray-300">
+ <table class="table-auto mt-6 ">
+    <thead class="bg-gray-100   text-black ">
        <tr>
-                            <th class="px-6 py-2 text-xs text-gray-500">
+                            <th class="px-6 py-2 text-xs ">
                                 ID
                             </th>
-                            <th class="px-6 py-2 text-xs text-gray-500">
+                            <th class="px-6 py-2 text-xs ">
                                 Name
                             </th>
-                            <th class="px-6 py-2 text-xs text-gray-500">
+                            <th class="px-6 py-2 text-xs ">
                                 Email
                             </th>
-           <th class="px-6 py-2 text-xs text-gray-500">
-               Contact
-           </th>
-           <th class="px-6 py-2 text-xs text-gray-500">
-              Address
-           </th>
+                            <th class="px-6 py-2 text-xs ">
+                                Contact
+                            </th>
+                             <th class="px-6 py-2 text-xs">
+                                Address
+                              </th>
 
 
                             <th class="px-6 py-2 text-xs text-gray-500">
@@ -46,18 +34,23 @@
                             </th>
         </tr>
   </thead>
-  <tbody class="bg-black divide-y divide-gray-300">
+  <tbody class=" bg-white text-black ">
                 @foreach(  $users as $user)
 
                 <tr class="whitespace-nowrap">
-                    <td class="px-6 py-4 text-sm text-white">{{ $user-> id}}</td>
-                    <td class="px-6 py-4 text-sm text-white">{{$user -> name}}</td>
-                    <td class="px-6 py-4 text-sm text-white"> {{$user -> email}}</td>
-                    <td class="px-6 py-4 text-sm text-white">{{$user -> contact}}</td>
-                    <td class="px-6 py-4 text-sm text-white"> {{$user -> address}}</td>
+                    <td class="px-6 py-4 text-sm border ">{{ $user-> id}}</td>
+                    <td class="px-6 py-4 text-sm border ">{{$user -> name}}</td>
+                    <td class="px-6 py-4 text-sm border "> {{$user -> email}}</td>
+                    <td class="px-6 py-4 text-sm border">{{$user -> contact}}</td>
+                    <td class="px-6 py-4 text-sm border "> {{$user -> address}}</td>
 
-                    <td class="px-6 py-4 text-sm text-amber-500"><a href="{{ url ('edit-customer/'.$user->id)}}">Edit</a></td>
-                    <td class="px-6 py-4 text-sm text-red-600"><a href="{{ url ('delete-customer/'.$user->id)}}">Delete</a></td>
+                    <td class=" px-6 py-4 text-sm border text-center ">
+                       <button class="bg-blue-500 hover:bg-blue-700 text-white py-1 px-3 rounded"><a href="{{ url ('edit-customer/'.$user->id)}}" >Update </a></button>
+                    </td>
+                    <td class="px-6 py-4 text-sm border text-center">
+                        <button class="bg-red-500 hover:bg-red-700 text-white py-1 px-3 rounded">
+                        <a href="{{ url ('delete-customer/'.$user->id)}}">Delete</a>
+                        </button></td>
                 </tr>
                 @endforeach
 
@@ -67,9 +60,7 @@
             </div>
         </div>
     </div>
-    <a href="{{ route('dashboard') }}" class="text-white no-underline hover:underline" >Back To Dashboard</a>
 </div>
 
 
-</body>
-</html>
+</x-admin-layout>>

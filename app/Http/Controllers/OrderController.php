@@ -155,6 +155,13 @@ class OrderController extends Controller
         return  view('checkout-page');
     }
 
+    public  function allOrders(){
+        $orders=Order::all();
+        $orderCount=Order::count();
+        return view('all-orders',compact('orders','orderCount'));
+    }
+
+
 
 
 

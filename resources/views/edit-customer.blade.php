@@ -1,16 +1,4 @@
-<!DOCTYPE html>
-
-<html lang="en">
-    <head>
-    <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script src="https://cdn.tailwindcss.com"></script>
-        <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>
-        <title>Edit customer</title>
-</head>
-
-<body class="bg-black">
-
+<x-admin-layout>
 <div class="container mx-auto py-8 mt-12" x-data="{ success: {{ session('success') ? 'true' : 'false' }}, error: {{ session('error') ? 'true' : 'false' }}}">
     <div x-show="success" class="bg-green-500 p-4 rounded-lg mb-6 text-white text-center">
         {{ session('success') }}
@@ -19,7 +7,7 @@
     <div x-show="error" class="bg-red-500 p-4 rounded-lg mb-6 text-white text-center">
         {{ session('error') }}
     </div>
-<h2 class="text-2xl font-bold mb-6 text-center text-white">Edit Customer</h2>
+<h2 class="text-2xl font-bold mb-6 text-left text-black">Edit Customer Details</h2>
   <form method="post" action="{{ url('update-customer',['id'=> $user->id]) }}" class="w-full max-w-sm mx-auto bg-white p-8 rounded-md shadow-md" >
 
   @csrf
@@ -60,7 +48,4 @@
   </form>
 
 </div>
-
-</body>
-</html>
-
+</x-admin-layout>>

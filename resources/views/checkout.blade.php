@@ -1,12 +1,12 @@
 <x-app-layout>
-    <h1 class="mb-10 text-center text-2xl font-bold m-4">Complete your order</h1>
+    <h1 class="mb-10 text-center text-2xl font-bold m-4">Complete your checkput</h1>
     <div class="split-container m-10 mx-auto flex px-6">
-        <div class="split-section bg-white hidden lg:block flex-1">
-            <img src="{{ asset('images/delivery.jpg') }}" alt="" class="object-fit h-full">
+        <div class="flex flex-row split-section bg-white justify-center sm:hidden lg:block flex-1">
+            <img src="{{ asset('images/delivery.jpg') }}" alt="" class=" w-2/3">
         </div>
         <div class="split-section bg-white flex-1 px-2">
             <div class="pb-12">
-                <h2 class="text-base font-semibold leading-7 text-gray-900">Delivery Information</h2>
+
                 <form method="POST" action="{{ route('orders.place') }}">
                     @csrf
                     <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
@@ -81,7 +81,7 @@
 
                     </div>
                     <div>
-                        <div x-data="{ open: false }">
+                        <div x-data="{ open: true }">
                             <button type="submit" x-on:click="open = ! open"
                                     class="px-4 w-4/5 ml-16 py-2 text-sm bg-black hover:bg-amber-200 hover:text-black text-white">
                                 Confirm Order
@@ -90,10 +90,10 @@
                                 <div id="cart-modal" class="fixed inset-0 flex items-center justify-center z-50 ">
                                     <div class="modal-overlay absolute inset-0 bg-gray-500 opacity-75"></div>
                                     <div
-                                        class="modal-container bg-white w-96 mx-auto rounded-lg shadow-lg z-50 overflow-y-auto">
+                                        class="modal-container bg-white w-180 mx-auto rounded-lg shadow-lg z-50 overflow-y-auto">
 
-                                        <div class="modal-content p-4">
-                                            <svg fill="#2ccb2a" viewBox="0 0 35 35" xmlns="http://www.w3.org/2000/svg"
+                                        <div class="flex justify-center modal-content py-4 px-4">
+                                            <svg fill="#2ccb2a" height="70px" width="70px" viewBox="0 0 35 35" xmlns="http://www.w3.org/2000/svg"
                                                  stroke="#2ccb2a">
                                                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                                                 <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
@@ -103,8 +103,10 @@
                                                         d="M12,1A11,11,0,1,0,23,12,11.013,11.013,0,0,0,12,1Zm0,20a9,9,0,1,1,9-9A9.011,9.011,0,0,1,12,21ZM17.737,8.824a1,1,0,0,1-.061,1.413l-6,5.5a1,1,0,0,1-1.383-.03l-3-3a1,1,0,0,1,1.415-1.414l2.323,2.323,5.294-4.853A1,1,0,0,1,17.737,8.824Z"></path>
                                                 </g>
                                             </svg>
-                                            <h2 class="text-lg font-bold text-green-600">Your Order has been placed
-                                                Successfully ! :)</h2>
+                                            <div>
+
+                                            <h2 class="text-lg font-bold text-green-600 text-center">Your Order has been placed
+                                                Successfully !</h2>
 
 
                                         </div>

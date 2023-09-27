@@ -21,6 +21,15 @@
                 <x-section-border />
             @endif
 
+
+                <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8 m-5 ">
+                    <a href="{{ route('my-orders') }}" class="bg-gray-800 rounded rounded-l py-2 px-5 text-white font-bold">My Orders</a>
+                </div>
+
+                <x-section-border/>
+
+
+
             @if (Laravel\Fortify\Features::enabled(Laravel\Fortify\Features::updatePasswords()))
                 <div class="mt-10 sm:mt-0">
                     @livewire('profile.update-password-form')

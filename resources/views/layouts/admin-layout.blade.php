@@ -35,8 +35,9 @@
                  viewBox="0 0 24 24" stroke="currentColor" id="menu-button">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
             </svg>
-            <div class="hidden lg:block  " id="menu">
-                <span class="text-black text-sm">Welcome  {{ Auth::user()->email }} !</span>
+            <div class="hidden lg:block " id="menu">
+
+                <span class="text-black text-sm text-center ">Welcome  {{ Auth::user()->email }} !</span>
                 <div class="avatar flex items-center justify-center mt-4">
                     <div class="w-24 rounded-full">
                         <img src="{{asset('images/people.png')}}"  alt="avatar"/>
@@ -52,7 +53,7 @@
 
                 </div>
                 <ul>
-                    <li class="mb-6">
+                 <!--   <li class="mb-6">
                         <div class="relative">
                                 <span class="absolute inset-y-0 left-0 flex items-center pl-2">
                                     <button type="submit" class="p-1 focus:outline-none ">
@@ -66,7 +67,7 @@
                             <input type="search" name="search"
                                    class="w-full px-4 py-2 pl-12 rounded shadow outline-none  focus:border-amber-100       "
                                    placeholder="Search..."/></div>
-                    </li>
+                    </li>-->
                     <li class="mb-2 rounded hover:shadow hover:bg-black  ">
                         <a href="{{ route('products') }}"
                      class="inline-block w-full h-full px-3 py-2 font-bold text-black hover:text-white">Product Management</a>
@@ -78,6 +79,10 @@
 
                             Stocks
                         </a>
+                    </li>
+                    <li class="mb-2 rounded hover:shadow hover:bg-black  ">
+                        <a href="{{ route('customer-list') }}"
+                           class="inline-block w-full h-full px-3 py-2 font-bold text-black hover:text-white">Customer Management</a>
                     </li>
                     <li class="mb-2 rounded hover:shadow hover:bg-black  ">
                         <a href="{{route('address-book')}}"
@@ -93,6 +98,7 @@
 
                             Purchase history
                         </a>
+
                     </li>
                     <li class="mb-2 rounded hover:shadow hover:bg-black  ">
                         <a href="{{route ('Analytics')}}"

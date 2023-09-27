@@ -12,7 +12,7 @@ class Product extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name', 'detail','unit_price','image','category_id','stocks','slug','color_id','size_id'
+        'name', 'detail','unit_price','image','category_id','stocks','slug','color_id','size_id','views'
     ];
 
     protected static function booted()

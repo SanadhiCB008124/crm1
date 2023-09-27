@@ -29,7 +29,7 @@
     {{ $slot }}
 </main>
 
-<footer class="relative bg-black pt-8 pb-6 flex">
+<footer class="fixed w-full bg-black pt-8  flex">
     <div class="container mx-auto px-4">
         <div class="flex flex-wrap text-left lg:text-left">
             <div class="w-full lg:w-6/12 px-4">
@@ -73,8 +73,8 @@
                         </ul>
                     </div>
                     <div class="w-full lg:w-4/12 px-4">
-                        <span class="block uppercase text-white text-sm font-semibold mb-2">Company</span>
-                        <ul class="list-unstyled">
+
+                        <ul class="list-unstyled ">
                             <li>
                                 <a class="text-white hover:text-amber-100 font-semibold block pb-2 text-sm" href="#">About</a>
                             </li>

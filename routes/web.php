@@ -71,12 +71,10 @@ Route::get('/page-views', [AnalyticsController::class, 'productViews'])->name('p
 Route::get('/more-analytics', [AnalyticsController::class, 'moreAnalytics'])->name('more-analytics');
 
 Route::middleware(['role:0'])->group(function () {
-    Route::get('customer-list', [CustomerController::class, 'customer'])->name('customer-list');
+
     Route::post('save-Customer', [CustomerController::class, 'saveCustomer'])->name('save-Customer');
     Route::get('add-customer ', [CustomerController::class, 'addCustomer']);
-    Route::get('edit-customer/{id}', [CustomerController::class, 'editCustomer']);
-    Route::post('update-customer/{id}', [CustomerController::class, 'updateCustomer']);
-    Route::get('delete-customer/{id}', [CustomerController::class, 'deleteCustomer']);
+
     Route::get('category-list', [CategoryController::class, 'categoryList'])->name('category-list');
     Route::get('add-category', [CategoryController::class, 'addCategory'])->name('add-category');
     Route::post('save-category', [CategoryController::class, 'saveCategory'])->name('save-category');
@@ -95,5 +93,9 @@ Route::get('livewire/products', Products::class)->name('products');
 Route::get('checkout-page', [OrderController::class, 'checkoutPageNew']);
 Route::get('analytics', [AnalyticsController::class, 'showCartEvents'])->name('Analytics');
 Route::get('address-book', [CustomerController::class, 'viewAddressBook'])->name('address-book');
-Route::get('all-orders', [AnalyticsController::class, 'allOrders'])->name('all-orders');
+Route::get('all-orders', [OrderController::class, 'allOrders'])->name('all-orders');
 Route::get('stocks', [StockController::class, 'stocks'])->name('stocks');
+Route::get('customer-list', [CustomerController::class, 'customer'])->name('customer-list');
+Route::get('edit-customer/{id}', [CustomerController::class, 'editCustomer']);
+Route::post('update-customer/{id}', [CustomerController::class, 'updateCustomer']);
+Route::get('delete-customer/{id}', [CustomerController::class, 'deleteCustomer']);

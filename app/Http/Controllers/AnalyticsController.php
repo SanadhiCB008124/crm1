@@ -192,10 +192,7 @@ class AnalyticsController extends Controller
 
     }
 
-    public  function allOrders(){
-        $orders=Order::all();
-        return view('all-orders',compact('orders'));
-    }
+
 
     public function registerCount(){
         $siteRegistrationCountPerday = DB::table('site_registrations')

@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Customer;
 use App\Models\Product;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class SearchController extends Controller
@@ -29,6 +31,9 @@ class SearchController extends Controller
 
         return view($view, compact('products', 'categories'));
     }
+
+
+
 
 
 

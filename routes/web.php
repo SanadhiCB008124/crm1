@@ -59,7 +59,6 @@ Route::post('/cart/decrease/{cartItem}', [CartController::class, 'decreaseQuanti
 Route::get('checkout/{id}', [OrderController::class, 'checkout'])->name('checkout');
 Route::post('/orders/place', [OrderController::class, 'placeOrder'])->name('orders.place');
 Route::get('/my-orders', [OrderController::class, 'viewOrder'])->name('my-orders');
-Route::match(['get', 'post'], 'search-results', [SearchController::class, 'searchProduct'])->name('products.search');
 Route::get('/get-cart-count', [CartController::class, 'getCartCount']);
 Route::get('/reorder/{order_id}', [OrderController::class, 'reorder'])->name('reorder');
 Route::get('filter-products', [ProductController::class, 'filter'])->name('products.filter');
@@ -99,3 +98,8 @@ Route::get('customer-list', [CustomerController::class, 'customer'])->name('cust
 Route::get('edit-customer/{id}', [CustomerController::class, 'editCustomer']);
 Route::post('update-customer/{id}', [CustomerController::class, 'updateCustomer']);
 Route::get('delete-customer/{id}', [CustomerController::class, 'deleteCustomer']);
+Route::get('customer-search',[CustomerController::class, 'searchCustomers'])->name('customer-search');
+Route::match(['get', 'post'], 'search-results', [SearchController::class, 'searchProduct'])->name('products.search');
+
+
+Route::get('filter-orders', [OrderController::class, 'filterOrders'])->name('orders.filter');

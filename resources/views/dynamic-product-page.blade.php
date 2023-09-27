@@ -82,49 +82,7 @@
                     </div>
 
                 </div></a>
-                <!-- Product Card HTML
-                <div class="w-full p-4 rounded-lg border border-gray-300 shadow-lg">
-                    <a class="block h-48 overflow-hidden rounded">
-                        <img src="{{ asset('images/'.$product->image) }}" alt="{{ $product->name }}" class="h-full w-full object-cover object-center">
-                    </a>
-                    <div class="mt-4">
-                        <h2 class="font-medium text-gray-900">{{ $product->name }}</h2>
-                        <h2 class=" font-medium text-rose-500">LKR {{ $product->unit_price }}</h2>
 
-                        <h2 class="font-medium text-gray-900">{{ $product->detail }}</h2>
-                        <h2 class=" font-medium text-gray-900">color: {{ $product->color->color}}</h2>
-                        <h2 class="font-medium text-gray-900">SIZE: {{ $product->size->name }}</h2>
-                        <div class="flex items-center space-x-1.5 mt-4">
-                            <a href="{{ route('product-description', ['productSlug' => $product->slug]) }}">View Details</a>
-
-                            <form method="post" action="{{ route('cart.add', ['productSlug' => $product->slug]) }}">
-                                @csrf
-                                <div x-data="{ open: false }">
-                                    <button type="submit"  @click="open = ! open" class="text-white bg-black rounded-lg w-5/5 px-4 py-1.5 hover:bg-gray-800 transition duration-200">
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-4 w-4">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
-                                        </svg>Add to Cart</button>
-
-                                    <div id="cart-modal" class="fixed inset-0 flex items-center justify-center z-50" x-show="open" @click.outside="open = false ">
-                                        <div class="modal-overlay absolute inset-0 bg-gray-500 opacity-75"></div>
-                                        <div class="modal-container bg-white w-96 mx-auto rounded-lg shadow-lg z-50 overflow-y-auto">
-
-                                            <div class="modal-content p-4">
-                                                <h2 class="text-lg font-bold">Product Added to Cart</h2>
-                                                <p>Your selected product has been added to the cart.</p>
-
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </form>
-
-
-                        </div>
-                    </div>
-                </div>
-              -->
             </div>
         @endforeach
     </div>

@@ -1,5 +1,60 @@
 <x-admin-layout>
-    @if(count($orders) > 0)
+    <form action="{{ route('orders.filter') }}" method="GET" class="flex items-center space-x-4">
+        <!-- Order Number Filter -->
+        <div>
+            <label for="order_number" class="block text-gray-700">Order Number:</label>
+            <input type="text" name="order_number" id="order_number" class="border rounded-md px-2 py-1">
+        </div>
+
+        <!-- Status Filter -->
+        <div>
+            <label for="status" class="block text-gray-700">Status:</label>
+            <select name="status" id="status" class="border rounded-md px-2 py-1">
+                <option value="">All</option>
+                <option value="pending">Pending</option>
+                <option value="processing">Processing</option>
+                <option value="shipped">Shipped</option>
+                <!-- Add more status options as needed -->
+            </select>
+        </div>
+
+        <!-- Payment Status Filter -->
+        <div>
+            <label for="payment_status" class="block text-gray-700">Payment Status:</label>
+            <select name="payment_status" id="payment_status" class="border rounded-md px-2 py-1">
+                <option value="">All</option>
+                <option value="unpaid">Unpaid</option>
+                <option value="paid">Paid</option>
+                <!-- Add more payment status options as needed -->
+            </select>
+        </div>
+
+        <!-- Date of Order Filter -->
+        <div>
+            <label for="date_of_order" class="block text-gray-700">Date of Order:</label>
+            <input type="date" name="date_of_order" id="date_of_order" class="border rounded-md px-2 py-1">
+        </div>
+
+        <!-- Payment Method Filter -->
+        <div>
+            <label for="payment_id" class="block text-gray-700">Payment Method:</label>
+            <select name="payment_id" id="payment_id" class="border rounded-md px-2 py-1">
+                <option value="">All Payment Methods</option>
+                @foreach ($paymentMethod as $payment)
+                    <option value="{{ $payment->id}}">{{ $payment->payment_method}}</option>
+                @endforeach
+
+            </select>
+        </div>
+
+        <!-- Filter Button -->
+        <button type="submit" class="bg-black text-white rounded-full py-2 px-4 border border-black">Filter</button>
+    </form>
+
+
+
+
+@if(count($orders) > 0)
     <section class="container mx-auto p-6">
 <p>Total Orders : {{$orderCount}}</p>
         <div class="w-full mb-8 overflow-hidden rounded-lg shadow-lg">
@@ -89,90 +144,5 @@
     </section>
     @endif
 
- <!--   @if(count($orders) > 0)
-        <ul>
-            @foreach($orders as $order)
-                <div>
-
-                    <h3 class="text-base font-semibold leading-7 text-gray-900">Order Information</h3>
-
-                </div>
-                <div class="mt-6 border-t border-gray-100">
-                    <dl class="divide-y divide-gray-100">
-                        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                            <dt class="text-sm font-medium leading-6 text-gray-900">Order number</dt>
-                            <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{ $order->order_number }}</dd>
-                        </div>
-
-                        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                            <dt class="text-sm font-medium leading-6 text-gray-900">Customer</dt>
-                            <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{ $order->customer->name }}</dd>
-                        </div>
-                        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                            <dt class="text-sm font-medium leading-6 text-gray-900">Order Total</dt>
-                            <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{ $order->total_amount }} LKR</dd>
-                        </div>
-                        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                            <dt class="text-sm font-medium leading-6 text-gray-900">Status</dt>
-                            <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{ $order->status }}</dd>
-                        </div>
-                        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                            <dt class="text-sm font-medium leading-6 text-gray-900">Payment Method</dt>
-                            <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{$order->payment->payment_method}}</dd>
-                        </div>
-                        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                            <dt class="text-sm font-medium leading-6 text-gray-900">Name</dt>
-                            <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{ $order->first_name }} {{$order->last_name}}</dd>
-                        </div>
-                        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                            <dt class="text-sm font-medium leading-6 text-gray-900">Shipping Address</dt>
-                            <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{$order->shipping_address}}</dd>
-                        </div>
-                        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                            <dt class="text-sm font-medium leading-6 text-gray-900">Billing Address</dt>
-                            <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{$order->billing_address}}</dd>
-                        </div>
-                        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                            <dt class="text-sm font-medium leading-6 text-gray-900">Contact</dt>
-                            <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{$order->contact}}</dd>
-                        </div>
-                        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                            <dt class="text-sm font-medium leading-6 text-gray-900">date of Order</dt>
-                            <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{$order->date_of_order}}</dd>
-                        </div>
-
-
-
-
-
-                        @foreach($order->orderItems as $item)
-                            <div>
-                                <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                                    <dt class="text-sm font-medium leading-6 text-gray-900">Product Name:</dt>
-                                    <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{$item->product->name}}</dd>
-                                </div>
-                                <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                                    <dt class="text-sm font-medium leading-6 text-gray-900">Product UNIT PRICE :</dt>
-                                    <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{$item->product->unit_price }}</dd>
-                                </div>
-                                <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                                    <dt class="text-sm font-medium leading-6 text-gray-900">Quantity:</dt>
-                                    <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{ $item->quantity}}</dd>
-                                </div>
-
-
-
-                            </div>
-                        @endforeach
-                    </dl>
-                </div>
-
-            @endforeach
-        </ul>
-
-    @else
-        <p>No orders found.</p>
-    @endif
--->
 </x-admin-layout>
 

@@ -158,7 +158,40 @@ class OrderController extends Controller
     public  function allOrders(){
         $orders=Order::all();
         $orderCount=Order::count();
-        return view('all-orders',compact('orders','orderCount'));
+        $paymentMethod = Payment::all();
+
+        return view('all-orders',compact('orders','orderCount','paymentMethod'));
+    }
+
+    public function filterOrders(Request $request)
+    {
+
+        $paymentMethod = Payment::all();
+
+        $filteredOrders = Order::query()
+            ->when($request->input('order_number'), function ($query) use ($request) {
+                return $query->where('order_number', $request->input('order_number'));
+            })
+            ->when($request->input('status'), function ($query) use ($request) {
+                return $query->where('status', $request->input('status'));
+            })
+            ->when($request->input('payment_status'), function ($query) use ($request) {
+                return $query->where('payment_status', $request->input('payment_status'));
+            })
+            ->when($request->input('date_of_order'), function ($query) use ($request) {
+                return $query->where('date_of_order', $request->input('date_of_order'));
+            })
+
+            ->when($request->input('payment_id'), function ($query) use ($request) {
+                return $query->where('payment_id', $request->input('payment_id'));
+            })
+
+
+
+
+            ->get();
+
+        return view('filter-orders',compact('filteredOrders','paymentMethod'));
     }
 
 

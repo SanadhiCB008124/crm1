@@ -49,7 +49,7 @@
                         @foreach ($categories as $category)
                             <li>
                                 <a
-                                    class="bg-white text-black no-underline hover:underline rounded-md px-3 py-2 text-sm font-medium"
+                                    class="bg-white text-black no-underline hover:underline rounded-md px-3 py-2 text-ms font-medium"
                                     href="{{ route('products.by.category', ['category_id' => $category->id]) }}"
                                 >
                                     {{ ucfirst($category->category_name) }}
@@ -61,24 +61,16 @@
             </div>
 
             <div class="flex items-center justify-center mt-4 mb-2">
-                <div class="flex border-2 rounded border-black">
-
-
-                        <input wire:model="search" type="text" placeholder="Search products...">
-
-                        <button type="submit" class="flex items-center justify-center px-4 border-l">
-                            <svg class="w-6 h-6 text-gray-600 " fill="black" xmlns="http://www.w3.org/2000/svg"
-                                 viewBox="0 0 24 24">
-                                <path
-                                    d="M16.32 14.9l5.39 5.4a1 1 0 0 1-1.42 1.4l-5.38-5.38a8 8 0 1 1 1.41-1.41zM10 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12z"/>
-                            </svg>
-                        </button>
-
+                <div class="flex border-2 rounded ">
+                    <input wire:model="search" type="search" placeholder="Search products by name...">
+                    <button wire:click="searchProducts" class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded">
+                        Search
+                    </button>
                 </div>
             </div>
 
 
-            @if (Route::has('login'))
+        @if (Route::has('login'))
                 <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 space-x-2 sm:pr-0">
                     @auth
                         <div x-data="{ open: false }">

@@ -26,8 +26,6 @@ class Products extends Component
     public  $color;
     public $size;
 
-    public $search='';
-
     public function mount()
     {
         $this->categories = Category::all();
@@ -37,24 +35,19 @@ class Products extends Component
     }
 
 
+
+
     public function render()
     {
-        $product = Product::all();
-        $category=Category::all();
-        $color=Color::all();
-        $size=Size::all();
+
+        $products = Product::all();
+
+        return view('livewire.products', [
+            'products' => $products,
 
 
-
-
-
-        return view('livewire.products',['product' => $product],
-            [ 'category' => $category,
-            'color' => $color,
-
-            'size' => $size]
-        )
-            ;
+            ]
+        );
     }
 
     /**

@@ -81,7 +81,7 @@
 
                     </div>
                     <div>
-                        <div x-data="{ open: true }">
+                        <div x-data="{ open: false }">
                             <button type="submit" x-on:click="open = ! open"
                                     class="px-4 w-4/5 ml-16 py-2 text-sm bg-black hover:bg-amber-200 hover:text-black text-white">
                                 Confirm Order

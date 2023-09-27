@@ -18,11 +18,31 @@ class CustomerController extends Controller
 
     public function customer()
     {
-
         $users = User::where('role_id', 2)->get();
         return view('customer-list', compact('users'));
-
     }
+
+    public function searchCustomers(Request $request)
+    {
+        $searchTerm = $request->input('search');
+        $searchedUsers = User::query(); // Start with an empty query builder
+
+        if (!empty($searchTerm)) {
+            $searchedUsers = $searchedUsers->where(function ($query) use ($searchTerm) {
+                $query->where('name', 'LIKE', "%$searchTerm%")
+                    ->orWhere('email', 'LIKE', "%$searchTerm%")
+                    ->orWhere('contact', 'LIKE', "%$searchTerm%")
+                    ->orWhere('address', 'LIKE', "%$searchTerm%");
+            });
+        }
+
+        $searchedUsers = $searchedUsers->get(); // Execute the query and get the results
+
+        return view('customer-list', [
+            'users' => $searchedUsers,
+        ]);
+    }
+
 
 
     public function addCustomer()

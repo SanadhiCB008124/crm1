@@ -92,19 +92,6 @@
                         </div>
                     </div>
                 </div>
-
-                <div class=" p-6 rounded-lg">
-                    <div class="flex flex-row space-x-4 items-center">
-
-
-                            <div class="mx-4">
-
-                                <div class="text-gray-500">Products</div>
-                                <div class="text-black"><a href="{{ route('products') }}">View Products</a></div>
-                            </div>
-
-                    </div>
-                </div>
             </div>
         </div>
 

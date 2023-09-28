@@ -11,6 +11,7 @@
 
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
 
+
         <div class="flex items-center px-4 py-6 bg-white rounded-md shadow-md">
             <div class="p-3 bg-indigo-600 rounded">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none"
@@ -28,15 +29,8 @@
                 <div class="text-gray-500">Inventory Turnover Rate</div>
             </div>
         </div>
+
         <div class="container mx-auto mt-12 ml-10">
-
-
-
-
-
-
-
-
 
 
             <div class="grid gap-4 lg:grid-cols-3">
@@ -54,6 +48,21 @@
 
             </div>
         </div>
+
+        <div class="flex items-center justify-end mt-4 mb-2">
+            <form action="" method="GET" class="flex items-center justify-end mt-4 mb-2">
+                <div class="flex border-2 rounded-full py-2 px-4 border-black">
+                    <input type="text" name="search" placeholder="Search Stocks..." value="{{ request('search') }}">
+                    <button type="submit" class="flex items-center justify-center px-4 border-l">
+                        <svg class="w-6 h-6 text-gray-600" fill="black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path
+                                d="M16.32 14.9l5.39 5.4a1 1 0 0 1-1.42 1.4l-5.38-5.38a8 8 0 1 1 1.41-1.41zM10 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12z"/>
+                        </svg>
+                    </button>
+                </div>
+            </form>
+        </div>
+
 
 
         <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg px-4 py-4">
@@ -89,8 +98,6 @@
                         <td class="border px-4 py-2">
                             <img src="{{ asset('images/'.$product->image) }}" alt="" width="100px" height="100px">
                         </td>
-                        <td class="border px-4 py-2">
-                            <img src="{{ asset('images/'.$product->image) }}" alt="" width="100px" height="100px">
 
 
                     </tr>

@@ -22,14 +22,14 @@
     @livewireStyles
 </head>
 <body class="font-sans antialiased">
-{{--@include('navbar')--}}
+
 <x-banner/>
 <x-header/>
 <main>
     {{ $slot }}
 </main>
 
-<footer class="fixed w-full bg-black pt-8  flex">
+<footer class=" w-full bg-black pt-8  flex">
     <div class="container mx-auto px-4">
         <div class="flex flex-wrap text-left lg:text-left">
             <div class="w-full lg:w-6/12 px-4">

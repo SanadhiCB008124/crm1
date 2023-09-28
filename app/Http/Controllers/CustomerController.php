@@ -24,6 +24,7 @@ class CustomerController extends Controller
 
     public function searchCustomers(Request $request)
     {
+        $users = User::where('role_id', 2)->get();
         $searchTerm = $request->input('search');
         $searchedUsers = User::query(); // Start with an empty query builder
 
@@ -38,9 +39,12 @@ class CustomerController extends Controller
 
         $searchedUsers = $searchedUsers->get(); // Execute the query and get the results
 
-        return view('customer-list', [
-            'users' => $searchedUsers,
-        ]);
+        $view = !empty($searchedUsers) ? 'address-book' : 'customer-list';
+        return view($view, [
+            'users' =>$searchedUsers]
+        );
+
+
     }
 
 

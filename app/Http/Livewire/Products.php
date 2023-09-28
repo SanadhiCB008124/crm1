@@ -8,6 +8,7 @@ use App\Models\Size;
 use Livewire\Component;
 use App\Models\Product;
 use Livewire\WithFileUploads;
+use Livewire\WithPagination;
 
 
 class Products extends Component
@@ -15,6 +16,8 @@ class Products extends Component
       use WithFileUploads;
     public $products, $name, $detail, $unit_price,$image, $product_id, $category_id, $stocks,$color_id,$size_id;
     public $isOpen = 0;
+
+    public $layout = 'layouts.admin-layout';
 
     /**
      * The attributes that are mass assignable.
@@ -26,6 +29,11 @@ class Products extends Component
     public  $color;
     public $size;
 
+
+
+    public $search;
+
+
     public function mount()
     {
         $this->categories = Category::all();
@@ -35,20 +43,14 @@ class Products extends Component
     }
 
 
-
-
     public function render()
     {
-
-        $products = Product::all();
-
         return view('livewire.products', [
-            'products' => $products,
-
-
-            ]
-        );
+            'product' => Product::where('name', 'like', '%' . $this->search . '%')->get(),
+        ]);
     }
+
+
 
     /**
      * The attributes that are mass assignable.

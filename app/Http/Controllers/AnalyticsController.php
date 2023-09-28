@@ -140,7 +140,7 @@ class AnalyticsController extends Controller
         $leastViewedProduct = Product::orderBy('views', 'asc')->first();
 
 
-        $mostViewedProduct = Product::orderBy('views', 'desc')->first();
+        $mostViewedProduct = Product::orderBy('views', 'desc')->take(5)->get();
 
         $totalCartsStarted = CartEvent::count();
         $totalCheckouts = CheckOutEvent::count();

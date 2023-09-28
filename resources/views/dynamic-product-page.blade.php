@@ -1,5 +1,6 @@
 <x-app-layout>
-    <div class="flex flex-row justify-end">
+    <div class="h-screen">
+    <div class=" flex flex-row justify-end">
     <form action="{{ route('products.filter') }}" method="GET">
         <!-- Category filter -->
         <select name="category_id" class="bg-white  py-2 px-2 m-2 border border-black border-2" >
@@ -28,7 +29,7 @@
         <button type="submit"  class="bg-white text-black hover:text-white hover:bg-black py-2 px-2 m-2 border-black border-2" >Filter</button>
     </form>
     </div>
-
+@if(count($products) > 0)
     <div class="flex flex-wrap -mx-4">
         @foreach($products as $product)
 
@@ -85,5 +86,9 @@
 
             </div>
         @endforeach
+    </div>
+      @else
+    <p class="text-black ml-10">No products found.</p>
+    @endif
     </div>
 </x-app-layout>

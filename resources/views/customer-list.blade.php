@@ -6,7 +6,7 @@
 
             <div class="flex items-center justify-end mt-4 mb-2">
                 <form action="{{ route('customer-search') }}" method="GET" class="flex items-center justify-end mt-4 mb-2">
-                    <div class="flex border-2 rounded border-black">
+                    <div class="flex border-2 rounded-full py-2 px-4 border-black">
                         <input type="text" name="search" placeholder="Search Customers..." value="{{ request('search') }}">
                         <button type="submit" class="flex items-center justify-center px-4 border-l">
                             <svg class="w-6 h-6 text-gray-600" fill="black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">

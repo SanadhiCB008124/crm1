@@ -30,7 +30,7 @@
 
 <div class="min-h-screen bg-white">
     <div class="flex h-screen ">
-        <div class="px-4 py-2 text-black bg-white lg:w-2/6 sticky h-full ">
+        <div class="px-4 py-2 text-black bg-white  fixed h-full ">
             <svg xmlns="http://www.w3.org/2000/svg" class="inline w-8 h-8 text-black lg:hidden" fill="none"
                  viewBox="0 0 24 24" stroke="currentColor" id="menu-button">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
@@ -139,11 +139,12 @@
 
         </div>
 
-        <div class="px-4 py-2  lg:w-full lg:ml-1/5">
+        <div class="px-4 py-2 lg:ml-[250px]">
             <div class="container mx-auto mt-12">
-               {{ $slot }}
+                {{ $slot }}
             </div>
-         </div>
+        </div>
+
     </div>
 </div>
 

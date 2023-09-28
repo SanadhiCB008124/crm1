@@ -1,9 +1,6 @@
 <x-admin-layout>
-<div class="py-12 h-full bg-white">
-    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
         <div class="bg-white flex flex-row overflow-hidden shadow-xl sm:rounded-lg px-4 py-4 mb-2">
             <livewire:colors-manager />
-
         </div>
         <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg px-4 py-4 mb-2">
             <livewire:size-manager />
@@ -22,10 +19,15 @@
                   </div>
                 </div>
             @endif
+
+            <input type="search" wire:model="search"  class="form-control border border-black w-3/4 py-2 px-2" placeholder="search Products..."/>
+
+
             <button wire:click="create()" class="bg-bg-gray-600  text-white py-1 mb-6 px-3 rounded my-3 mt-1">Create New Product</button>
             @if($isOpen)
                 @include('livewire.create')
             @endif
+
             <table class=" w-full">
 
                 <thead>
@@ -62,9 +64,11 @@
                         </td>
                     </tr>
                     @endforeach
+
                 </tbody>
             </table>
+
+
         </div>
-    </div>
-</div>
+
 </x-admin-layout>

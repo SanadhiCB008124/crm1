@@ -2,8 +2,11 @@
 <div class="container">
     <h1>Search Results</h1>
 
+
+
     <!-- Placeholders for content -->
     <div class="products">
+
         @yield('products')
     </div>
 
@@ -11,5 +14,5 @@
         @yield('categories')
     </div>
 
-    <!-- More placeholders for other content -->
+
 </div>

@@ -1,5 +1,5 @@
 <x-admin-layout>
-    <form action="{{ route('orders.filter') }}" method="GET" class="flex items-center space-x-4">
+    <form action="{{ route('orders.filter') }}" method="GET" class="flex items-center justify-end m-6 space-x-4">
         <!-- Order Number Filter -->
         <div>
             <label for="order_number" class="block text-gray-700">Order Number:</label>
@@ -48,7 +48,7 @@
         </div>
 
         <!-- Filter Button -->
-        <button type="submit" class="bg-black text-white rounded-full py-2 px-4 border border-black">Filter</button>
+        <button type="submit" class="bg-black text-white py-2 px-4 border border-black">Filter</button>
     </form>
 
 
@@ -56,7 +56,9 @@
 
 @if(count($orders) > 0)
     <section class="container mx-auto p-6">
+        <div class="border border-black py-2 px-2 w-1/6 m-3">
 <p>Total Orders : {{$orderCount}}</p>
+        </div>
         <div class="w-full mb-8 overflow-hidden rounded-lg shadow-lg">
             <div class="w-full overflow-x-auto">
                 <table class="w-full">

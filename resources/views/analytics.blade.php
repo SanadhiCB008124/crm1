@@ -380,12 +380,10 @@
     </div>
 
     </div>
-
-    <div class="container mx-auto px-4 sm:px-8">
+    <h2 class="text-2xl mt-9 font-semibold leading-tight">Product Hits</h2>
+    <div class="flex flex-row container mx-auto mt-6 px-4 sm:px-8">
         <div class="py-8">
-            <div>
-                <h2 class="text-2xl font-semibold leading-tight">Product Hits</h2>
-            </div>
+
             <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
                 <div class="inline-block  shadow rounded-lg overflow-hidden">
                     <table class="w-full leading-normal">
@@ -429,19 +427,20 @@
                 </div>
             </div>
         </div>
-        <div class="container mx-auto mt-12 ml-10">
+        <div class="container mx-auto mt-2 ml-10">
             <div class="flex flex-row space-x-4 flex-wrap">
                 <div class="flex items-center px-4 py-6 bg-purple-200 rounded-md shadow-md ">
                     <canvas id="productHitsChart" style="width: 400px; height: 200px;"></canvas>
                 </div>
 
         </div>
+        </div>
 
 
 
     </div>
 
-    <h2 class="text-2xl font-semibold leading-tight">Top 5 Most Viewed Products</h2>
+    <h2 class="text-2xl font-semibold m-10 leading-tight">Top 5 Most Viewed Products</h2>
 
     <div class="flex flex-row">
 

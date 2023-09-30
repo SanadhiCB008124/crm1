@@ -20,7 +20,7 @@
                 </div>
             @endif
 
-            <input type="search" wire:model="search"  class="form-control border border-black w-3/4 py-2 px-2" placeholder="search Products..."/>
+            <input type="search" wire:model="search"  class="form-control border border-black rounded-full w-3/4 py-2 px-2" placeholder="search Products..."/>
 
 
             <button wire:click="create()" class="bg-bg-gray-600  text-white py-1 mb-6 px-3 rounded my-3 mt-1">Create New Product</button>

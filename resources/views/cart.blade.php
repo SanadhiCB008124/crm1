@@ -1,7 +1,7 @@
 <x-app-layout>
 
     <!-- component -->
-    <div class="flex flex-col md:flex-row w-screen h-full px-14 py-7">
+    <div class="flex flex-col md:flex-row w-screen h-full px-14 py-7 mb-10">
      <!--   <a href="{{ route('my-orders') }}" class="btn btn-primary">My Orders</a>-->
 
         <!-- My Cart -->

@@ -41,8 +41,10 @@
         </div>
 
         <br>
-        <button type="submit"  class="w-full bg-amber-500 text-white text-sm font-bold py-2 px-4 rounded-md hover:bg-amber-600 transition duration-300">Save</button>
-        <a href="{{ url('customer-list') }}"  class="w-full bg-black text-white text-sm font-bold py-2 px-4 rounded-md hover:bg-amber-600 transition duration-300">Back</a>
+        <div class="flex flex-row justify-center space-x-2">
+        <button type="submit"  class=" bg-amber-500 text-white text-sm font-bold py-2 px-4 rounded-md hover:bg-amber-600 transition duration-300">Save</button>
+        <a href="{{ url('customer-list') }}"  class=" bg-black text-white text-sm font-bold py-2 px-4 rounded-md hover:bg-amber-600 transition duration-300">Back</a>
+        </div>
     </form>
 </div>
 </div>

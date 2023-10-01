@@ -7,7 +7,7 @@
     <div x-show="error" class="bg-red-500 p-4 rounded-lg mb-6 text-white text-center">
         {{ session('error') }}
     </div>
-<h2 class="text-2xl font-bold mb-6 text-left text-black">Edit Customer Details</h2>
+<h2 class="text-2xl font-bold mb-6 text-left text-black">Update Customer </h2>
   <form method="post" action="{{ url('update-customer',['id'=> $user->id]) }}" class="w-full max-w-sm mx-auto bg-white p-8 rounded-md shadow-md" >
 
   @csrf
@@ -37,12 +37,12 @@
 </div>
 <br>
 
-    <div class="flex items-center justify-around">
+    <div class="flex items-center justify-center space-x-2">
       <button class="bg-amber-500 hover:bg-amber-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
         Update
       </button>
 
-      <a href="{{ url('customer-list') }}" class="text-black no-underline hover:underline" >Back</a>
+      <a href="{{ url('customer-list') }}" class=" bg-black text-white text-sm font-bold py-2 px-4 rounded-md hover:bg-amber-600 transition duration-300" >Back</a>
 
     </div>
   </form>

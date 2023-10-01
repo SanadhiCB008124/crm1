@@ -5,7 +5,7 @@
     </h2>
 </x-slot>
 
-<div class="mt-0 bg-white">
+<div class="mt-5 bg-white">
     <div class=" bg-white">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <a href="{{route ('category-list')}}" class="bg-gray-600 text-white py-1 mb-6 px-3 rounded my-3 mt-1 ">Categories</a>

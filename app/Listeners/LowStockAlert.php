@@ -33,7 +33,7 @@ class LowStockAlert implements ShouldQueue
         if ($event->product->stocks < $threshold) {
 
             Log::info('Low stock alert for product: ' . $event->product->name);
-            $event->product->notify(new LowStockNotification($event->product));
+
 
 
         }

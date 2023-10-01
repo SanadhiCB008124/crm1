@@ -28,7 +28,13 @@ class AdminController extends Controller
         $profitMargin = ($totalRevenue - $totalCOGS) / $totalRevenue * 100;
 
         $totalOrderCount= Order::count();
+        $averageOrderValue = 0;
+        $totalOrderCount = Order::count();
 
+        if ($totalOrderCount > 0) {
+            $totalRevenue = Order::sum('total_amount');
+            $averageOrderValue = $totalRevenue / $totalOrderCount;
+        }
 
         return view('dashboard', [
             'customerCount' => $customerCount,
@@ -36,6 +42,7 @@ class AdminController extends Controller
             'totalCOGS' => $totalCOGS,
             'profitMargin' => $profitMargin,
             'totalOrderCount' => $totalOrderCount,
+            'averageOrderValue' => $averageOrderValue
         ]);
     }
 }

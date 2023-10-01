@@ -1,6 +1,6 @@
 <x-app-layout>
     <div class="h-screen">
-    <div class=" flex flex-row justify-end">
+    <div class=" flex flex-row justify-end mr-10 mt-5">
     <form action="{{ route('products.filter') }}" method="GET">
         <!-- Category filter -->
         <select name="category_id" class="bg-white  py-2 px-2 m-2 border border-black border-2" >
@@ -30,7 +30,7 @@
     </form>
     </div>
 @if(count($products) > 0)
-    <div class="flex flex-wrap -mx-4">
+    <div class="flex flex-wrap m-10">
         @foreach($products as $product)
 
 

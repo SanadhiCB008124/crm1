@@ -45,7 +45,6 @@ Route::middleware([
 Route::get('/', [CustomerController::class, 'viewWelcome']);
 
 Route::get('redirects', [HomeController::class, 'index'])->name('index');
-
 Route::get('/logout', [UserController::class, 'logout']);
 Route::get('men-products', [ProductController::class, 'men'])->name('men');
 Route::get('women-products', [ProductController::class, 'women'])->name('women');
@@ -68,38 +67,26 @@ Route::get('product-description/{productSlug}', [productController::class, 'prod
 Route::post('/track-views/{product}', [ProductController::class, 'trackViews'])->name('track.views');
 Route::get('/page-views', [AnalyticsController::class, 'productViews'])->name('product-views');
 Route::get('/more-analytics', [AnalyticsController::class, 'moreAnalytics'])->name('more-analytics');
-
-Route::middleware(['role:0'])->group(function () {
-
-    Route::post('save-Customer', [CustomerController::class, 'saveCustomer'])->name('save-Customer');
-    Route::get('add-customer ', [CustomerController::class, 'addCustomer']);
-
-    Route::get('category-list', [CategoryController::class, 'categoryList'])->name('category-list');
-    Route::get('add-category', [CategoryController::class, 'addCategory'])->name('add-category');
-    Route::post('save-category', [CategoryController::class, 'saveCategory'])->name('save-category');
-    Route::get('edit-category/{id}', [CategoryController::class, 'editCategory'])->name('edit-category');
-    Route::post('update-category', [CategoryController::class, 'updateCategory'])->name('update-category');
-    Route::get('delete-category/{id}', [CategoryController::class, 'deleteCategory'])->name('delete-category');
-
-
-
-
-});
-
-Route::get('abandonedCart', [AnalyticsController::class, 'calculateAbandonedCartRate']);
-Route::get('livewire/products', Products::class)->name('products');
-
-Route::get('checkout-page', [OrderController::class, 'checkoutPageNew']);
-Route::get('analytics', [AnalyticsController::class, 'showCartEvents'])->name('Analytics');
 Route::get('address-book', [CustomerController::class, 'viewAddressBook'])->name('address-book');
-Route::get('all-orders', [OrderController::class, 'allOrders'])->name('all-orders');
 Route::get('stocks', [StockController::class, 'stocks'])->name('stocks');
 Route::get('customer-list', [CustomerController::class, 'customer'])->name('customer-list');
 Route::get('edit-customer/{id}', [CustomerController::class, 'editCustomer']);
 Route::post('update-customer/{id}', [CustomerController::class, 'updateCustomer']);
 Route::get('delete-customer/{id}', [CustomerController::class, 'deleteCustomer']);
+Route::post('save-Customer', [CustomerController::class, 'saveCustomer'])->name('save-Customer');
+Route::get('add-customer ', [CustomerController::class, 'addCustomer']);
+Route::get('analytics', [AnalyticsController::class, 'showCartEvents'])->name('Analytics');
+Route::get('all-orders', [OrderController::class, 'allOrders'])->name('all-orders');
+Route::get('abandonedCart', [AnalyticsController::class, 'calculateAbandonedCartRate']);
+Route::get('livewire/products', Products::class)->name('products');
+Route::get('livewire/create', Products::class)->name('create');
+Route::get('checkout-page', [OrderController::class, 'checkoutPageNew']);
 Route::get('customer-search',[CustomerController::class, 'searchCustomers'])->name('customer-search');
 Route::match(['get', 'post'], 'search-results', [SearchController::class, 'searchProduct'])->name('products.search');
-
-
 Route::get('filter-orders', [OrderController::class, 'filterOrders'])->name('orders.filter');
+Route::get('category-list', [CategoryController::class, 'categoryList'])->name('category-list');
+Route::get('add-category', [CategoryController::class, 'addCategory'])->name('add-category');
+Route::post('save-category', [CategoryController::class, 'saveCategory'])->name('save-category');
+Route::get('edit-category/{id}', [CategoryController::class, 'editCategory'])->name('edit-category');
+Route::post('update-category', [CategoryController::class, 'updateCategory'])->name('update-category');
+Route::get('delete-category/{id}', [CategoryController::class, 'deleteCategory'])->name('delete-category');

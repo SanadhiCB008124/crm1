@@ -60,6 +60,7 @@ class CartController extends Controller
         event(new LowStock($product));
 
 
+
         return redirect()->back()->with('success', 'Product added to cart.');
 
     }

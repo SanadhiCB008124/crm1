@@ -73,6 +73,7 @@
                      class="inline-block w-full h-full px-3 py-2 font-bold text-black hover:text-white">Product Management</a>
                     </li>
 
+
                     <li class="mb-2 rounded hover:shadow hover:bg-black  ">
                         <a href="{{route('stocks')}}"
                            class="inline-block w-full h-full px-3 py-2 font-bold text-black hover:text-white">

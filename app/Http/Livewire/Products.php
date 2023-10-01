@@ -13,11 +13,11 @@ use Livewire\WithPagination;
 
 class Products extends Component
 {
-      use WithFileUploads;
+    use WithFileUploads;
     public $products, $name, $detail, $unit_price,$image, $product_id, $category_id, $stocks,$color_id,$size_id;
     public $isOpen = 0;
 
-    public $layout = 'layouts.admin-layout';
+
 
     /**
      * The attributes that are mass assignable.
@@ -28,9 +28,6 @@ class Products extends Component
     public $categories;
     public  $color;
     public $size;
-
-
-
     public $search;
 
 
@@ -45,9 +42,18 @@ class Products extends Component
 
     public function render()
     {
-        return view('livewire.products', [
-            'product' => Product::where('name', 'like', '%' . $this->search . '%')->get(),
-        ]);
+        $product = Product::all();
+
+        $category = Category::all();
+        $color = Color::all();
+        $size = Size::all();
+
+
+        return view('livewire.products',['product' => $product],
+            [ 'category' => $category,
+                'color' => $color,
+
+                'size' => $size]);
     }
 
 

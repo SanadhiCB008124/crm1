@@ -133,6 +133,10 @@ class CustomerController extends Controller
     public function viewWelcome()
     {
         $products = Product::all();
+        $menProducts=Product::where('category_id',1)->get();
+        $womenProducts=Product::where('category_id',2)->get();
+        $kidsProducts=Product::where('category_id',3)->get();
+        $sportsProducts=Product::where('category_id',4)->get();
 
         if (auth()->check()) {
             $cartItems = CartItem::where('user_id', auth()->user()->id)->get();
@@ -140,6 +144,10 @@ class CustomerController extends Controller
 
         return view('welcome', [
             'products' => $products,
+            'menProducts'=>$menProducts,
+            'womenProducts'=>$womenProducts,
+            'kidsProducts'=>$kidsProducts,
+            'sportsProducts'=>$sportsProducts,
             'cartItems' => $cartItems ?? null
         ]);
 

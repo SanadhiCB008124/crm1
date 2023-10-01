@@ -7,7 +7,6 @@ use App\Models\OnlineRegistrations;
 use App\Models\Order;
 use App\Models\OrderItem;
 use App\Models\Product;
-
 use App\Models\SiteRegistration;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
@@ -149,7 +148,13 @@ class AnalyticsController extends Controller
         } else {
             $abandonedCartRate = 0; // Prevent division by zero.
         }
+        $averageOrderValue = 0;
+        $totalOrderCount = Order::count();
 
+        if ($totalOrderCount > 0) {
+            $totalRevenue = Order::sum('total_amount');
+            $averageOrderValue = $totalRevenue / $totalOrderCount;
+        }
 
 
 
@@ -183,6 +188,7 @@ class AnalyticsController extends Controller
             'OnlineRegistrationsLast7Days',
             'OnlineRegistrationsLastMonth',
             'totalOrderCount',
+            'averageOrderValue'
 
 
 
@@ -221,11 +227,15 @@ class AnalyticsController extends Controller
 
         $totalOrderCount= Order::count();
 
+        $averageOrderValue = 0;
+        $totalOrderCount = Order::count();
 
+        if ($totalOrderCount > 0) {
+            $totalRevenue = Order::sum('total_amount');
+            $averageOrderValue = $totalRevenue / $totalOrderCount;
+        }
 
-
-
-        return view('dashboard', compact('totalRevenue', 'totalCOGS', 'profitMargin','totalOrderCount'));
+        return view('dashboard', compact('totalRevenue', 'totalCOGS', 'profitMargin','totalOrderCount','averageOrderValue'));
 
     }
 

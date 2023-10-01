@@ -1,6 +1,6 @@
 <x-admin-layout>
     <div class="container mx-auto px-4 sm:px-8 mt-4 ">
-        <h3 class="font-bold ">Analytics</h3>
+        <h2 class="text-2xl font-semibold ml-10 leading-tight ">Analytics</h2>
 
         <div class="container mx-auto mt-12 ml-10">
             <div class="flex flex-row space-x-4 flex-wrap">
@@ -221,12 +221,12 @@
 
          </div>
 
-    <h1 class="font-bold m-5 mt-10">Product Analytics</h1>
+    <h2 class="text-2xl font-semibold ml-10 leading-tight mt-6 ">Product Analytics</h2>
 
 
     <div class="flex flex-row">
         <div class=" p-4 rounded-lg ">
-            <h2 class="text-2xl font-semibold leading-tight">Most Added-to-Cart Item</h2>
+            <h2 class="text-2xl font-semibold ml-4 leading-tight mt-6 ">Most Added-to-Cart Item</h2>
             <div class=" p-4 rounded-lg border border-gray-300 shadow-lg">
                 @if(isset($product))
                     <a class="block h-48 overflow-hidden rounded">
@@ -247,7 +247,7 @@
 
 
         <div class=" p-4 rounded-lg ">
-            <h2 class="text-2xl font-semibold leading-tight">Least Added-to-Cart Item</h2>
+            <h2 class="text-2xl font-semibold ml-4 leading-tight mt-6 ">Least Added-to-Cart Item</h2>
 
             <div class="p-4 rounded-lg border border-gray-300 shadow-lg">
                 @if(isset($leastAddedProduct))
@@ -269,9 +269,8 @@
 
     </div>
 <!--Most sold Products-->
-    <h2 class="text-2xl font-semibold leading-tight">Top 5 Most Sold Products</h2>
-
-
+    <h2 class="text-2xl font-semibold ml-10 leading-tight mt-6 ">Top 5 Most Sold Products</h2>
+<div class="flex flex-row">
     @foreach ($mostSoldProducts as $mostSoldProduct)
 
     <div class=" p-4 rounded-lg w-1/3">
@@ -291,12 +290,12 @@
         </div>
     </div>
     @endforeach
+</div>
 
 
     <div class="flex flex-row">
     <div class="container mx-auto px-4 sm:px-8 mt-4">
         <div class="container mx-auto mt-12">
-            <div >
                 <div class="flex items-center px-4 py-6 bg-white rounded-md shadow-md">
                     <div class="p-3 bg-indigo-600 rounded">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none"
@@ -316,8 +315,6 @@
                         @endif
 
                     </div>
-
-                </div>
             </div>
         </div>
     </div>
@@ -380,7 +377,7 @@
     </div>
 
     </div>
-    <h2 class="text-2xl mt-9 font-semibold leading-tight">Product Hits</h2>
+    <h2 class="text-2xl font-semibold ml-10 leading-tight mt-6">Product Hits</h2>
     <div class="flex flex-row container mx-auto mt-6 px-4 sm:px-8">
         <div class="py-8">
 
@@ -440,7 +437,7 @@
 
     </div>
 
-    <h2 class="text-2xl font-semibold m-10 leading-tight">Top 5 Most Viewed Products</h2>
+    <h2 class="text-2xl font-semibold ml-10 leading-tight mt-6 ">Top 5 Most Viewed Products</h2>
 
     <div class="flex flex-row">
 

@@ -10,6 +10,7 @@ use App\Models\Order;
 use App\Models\OrderItem;
 use App\Models\Payment;
 use App\Models\Product;
+use App\Notifications\LowStockNotification;
 use App\Notifications\OrderPlaced;
 use App\Notifications\ReOrderNotification;
 use Illuminate\Http\Request;
@@ -186,22 +187,8 @@ class OrderController extends Controller
                 return $query->where('payment_id', $request->input('payment_id'));
             })
 
-
-
-
             ->get();
 
         return view('filter-orders',compact('filteredOrders','paymentMethod'));
     }
-
-
-
-
-
-
-
-
-
-
-
 }

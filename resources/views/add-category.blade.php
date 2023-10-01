@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <title>Add Category</title> <!-- Corrected title -->
-</head>
-
-<body class="bg-black">
+<x-admin-layout>
 <div class="container mx-auto py-8 mt-12">
     <h2 class="text-2xl font-bold mb-6 text-center text-white">Add Category</h2> <!-- Corrected heading text -->
 
@@ -20,9 +11,8 @@
         </div>
 
         <br>
-        <button type="submit" class="w-full bg-amber-500 text-white text-sm font-bold py-2 px-4 rounded-md hover:bg-amber-600 transition duration-300">Save</button>
-        <a href="{{ url('category-list') }}">Back</a> <!-- Corrected view name -->
+        <button type="submit" class="bg-amber-500 hover:bg-amber-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Save</button>
+        <a href="{{ url('category-list') }}" class="ml-2 bg-black text-white text-sm font-bold py-2 px-4 rounded-md hover:bg-amber-600 transition duration-300">Back</a> <!-- Corrected view name -->
     </form>
 </div>
-</body>
-</html>
+</x-admin-layout>

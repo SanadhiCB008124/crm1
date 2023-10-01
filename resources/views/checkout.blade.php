@@ -1,10 +1,10 @@
 <x-app-layout>
-    <h1 class="mb-10 text-center text-2xl font-bold m-4">Complete your checkput</h1>
+    <h1 class="mb-10 text-center text-2xl font-bold m-4">Complete your checkout</h1>
     <div class="split-container m-10 mx-auto flex px-6">
-        <div class="flex flex-row split-section bg-white justify-center sm:hidden lg:block flex-1">
-            <img src="{{ asset('images/delivery.jpg') }}" alt="" class=" w-2/3">
+        <div class=" bg-white align-middle justify-center sm:hidden lg:block flex-1">
+            <img src="{{ asset('images/delivery.jpg') }}" alt="" class=" w-full">
         </div>
-        <div class="split-section bg-white flex-1 px-2">
+        <div class=" bg-white flex-1 px-2">
             <div class="pb-12">
 
                 <form method="POST" action="{{ route('orders.place') }}">

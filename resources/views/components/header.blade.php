@@ -111,7 +111,7 @@
                             </button>
 
                             <div x-show="open" @click.outside="open = false">
-                                <div class="absolute left-1/2 z-10 mt-5 transform -translate-x-1/2 " id="dropdown-menu">
+                                <div class="absolute left-68% w-3/4 mt-5 transform -translate-x-1/2 " id="dropdown-menu">
                                     <div
                                         class="max-w-md overflow-hidden rounded-3xl bg-white text-sm leading-6 shadow-lg ring-1 ring-gray-900/5">
                                         <div class="p-4">

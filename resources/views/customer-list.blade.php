@@ -63,9 +63,37 @@
                        <button class="bg-blue-500 hover:bg-blue-700 text-white py-1 px-3 rounded"><a href="{{ url ('edit-customer/'.$user->id)}}" >Update </a></button>
                     </td>
                     <td class="px-6 py-4 text-sm border text-center">
-                        <button class="bg-red-500 hover:bg-red-700 text-white py-1 px-3 rounded">
-                        <a href="{{ url ('delete-customer/'.$user->id)}}">Delete</a>
-                        </button></td>
+                        <div x-data="{ open: false, toggle() { this.open = ! this.open }, close() { this.open = false }}">
+                            <button @click="toggle()" class="bg-red-500 hover:bg-red-700 text-white py-1 px-3 rounded">Delete</button>
+
+                            <div x-show="open">
+                                <div id="cart-modal" class="fixed inset-0 flex items-center justify-center z-50 ">
+                                    <div class="modal-overlay absolute inset-0 bg-gray-500 opacity-75"></div>
+                                    <div
+                                        class="modal-container bg-white w-180 mx-auto rounded-lg shadow-lg z-50 overflow-y-auto">
+
+                                        <div class="flex justify-center modal-content py-4 px-4">
+                                            <div>
+                                                <p class="mb-2">Are you sure you want to delete this customer?</p>
+                                                <button class="bg-red-500 hover:bg-red-700 text-white py-1 px-3 rounded mr-2">
+
+                                                    <a href="{{ url ('delete-customer/'.$user->id)}}">Delete</a>
+                                                </button>
+                                                <button @click="close()" class="bg-red-500 hover:bg-red-700 text-white py-1 px-3 rounded">
+                                                    Cancel
+                                                </button>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                        </div>
+                        </div>
+
+                    </td>
                 </tr>
                 @endforeach
 

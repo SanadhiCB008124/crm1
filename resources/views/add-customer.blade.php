@@ -1,15 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <title>Add Customer</title>
-</head>
+<x-admin-layout>
 
-<body class="bg-black">
-<div class="container mx-auto py-8 mt-12" x-data="{ success: {{ session('success') ? 'true' : 'false' }}, error: {{ session('error') ? 'true' : 'false' }}}">
+    <div class=" flex w-full px-4 py-2 bg-white lg:w-full">
+
+
+
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+
+<div class="container w-full py-8 " x-data="{ success: {{ session('success') ? 'true' : 'false' }}, error: {{ session('error') ? 'true' : 'false' }}}">
     <div x-show="success" class="bg-green-500 p-4 rounded-lg mb-6 text-white text-center">
         {{ session('success') }}
     </div>
@@ -18,7 +15,7 @@
         {{ session('error') }}
     </div>
 
-    <h2 class="text-2xl font-bold mb-6 text-center text-white">Add Customer</h2>
+    <h2 class="text-2xl font-bold mb-6 text-center text-black ml-10">Add Customer</h2>
 
     <form  class="w-full max-w-sm mx-auto bg-white p-8 rounded-md shadow-md" method="post" action="{{ route('save-Customer') }}">
         @csrf
@@ -45,8 +42,10 @@
 
         <br>
         <button type="submit"  class="w-full bg-amber-500 text-white text-sm font-bold py-2 px-4 rounded-md hover:bg-amber-600 transition duration-300">Save</button>
-        <a href="{{ url('customer-list') }}">Back</a>
+        <a href="{{ url('customer-list') }}"  class="w-full bg-black text-white text-sm font-bold py-2 px-4 rounded-md hover:bg-amber-600 transition duration-300">Back</a>
     </form>
 </div>
-</body>
-</html>
+</div>
+        </div>
+
+</x-admin-layout>

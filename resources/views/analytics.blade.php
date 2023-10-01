@@ -274,7 +274,7 @@
     @foreach ($mostSoldProducts as $mostSoldProduct)
 
     <div class=" p-4 rounded-lg w-1/3">
-
+        @if(isset($mostSoldProduct))
         <div class="p-4 rounded-lg border border-gray-300 shadow-lg">
                 <a class="block h-48 overflow-hidden rounded ">
                     <img src="{{ asset('images/'.$mostSoldProduct->image) }}" alt="{{ $mostSoldProduct->name }}" class="h-full w-full  object-cover object-center">
@@ -284,9 +284,11 @@
                     <h2 class="text-sm font-medium text-rose-500">LKR {{ $mostSoldProduct->unit_price }}</h2>
                     <h2 class="text-sm font-medium text-gray-900">details: {{ $mostSoldProduct->detail }}</h2>
                     <h2 class="text-sm font-medium text-gray-900">color: {{ $mostSoldProduct->color}}</h2>
-                    <h2 class="text-sm font-medium text-gray-900">SIZE: {{ $mostSoldProduct->size }}</h2>
+                    <h2 class="text-sm font-medium text-gray-900">size: {{ $mostSoldProduct->size }}</h2>
                 </div>
-
+            @else
+                <p>No product has been added to the cart yet.</p>
+            @endif
         </div>
     </div>
     @endforeach
@@ -459,7 +461,7 @@
                             <h2 class="text-sm font-medium text-gray-900">SIZE: {{ $mostViewedProduct->size->name }}</h2>
                         </div>
                     @else
-                        <p>No product has been added to the cart yet.</p>
+                        <p>No products have been viewed yet.</p>
                     @endif
                 </div>
             @endforeach

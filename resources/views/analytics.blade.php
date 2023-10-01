@@ -225,7 +225,7 @@
 
 
     <div class="flex flex-row">
-        <div class=" p-4 rounded-lg ">
+        <div class="w-1/3 p-4 rounded-lg ">
             <h2 class="text-2xl font-semibold ml-4 leading-tight mt-6 ">Most Added-to-Cart Item</h2>
             <div class=" p-4 rounded-lg border border-gray-300 shadow-lg">
                 @if(isset($product))
@@ -246,7 +246,7 @@
         </div>
 
 
-        <div class=" p-4 rounded-lg ">
+        <div class="w-1/3 p-4 rounded-lg ">
             <h2 class="text-2xl font-semibold ml-4 leading-tight mt-6 ">Least Added-to-Cart Item</h2>
 
             <div class="p-4 rounded-lg border border-gray-300 shadow-lg">
@@ -270,7 +270,7 @@
     </div>
 <!--Most sold Products-->
     <h2 class="text-2xl font-semibold ml-10 leading-tight mt-6 ">Top 5 Most Sold Products</h2>
-<div class="flex flex-row">
+<div class="flex flex-row  flex-wrap">
     @foreach ($mostSoldProducts as $mostSoldProduct)
 
     <div class=" p-4 rounded-lg w-1/3">
@@ -437,14 +437,16 @@
 
     </div>
 
+
+
+
+
     <h2 class="text-2xl font-semibold ml-10 leading-tight mt-6 ">Top 5 Most Viewed Products</h2>
 
     <div class="flex flex-row">
-
-        <div class=" p-4 rounded-lg w-full flex flex-row flex-wrap gap-2 ">
             @foreach($mostViewedProduct as $mostViewedProduct)
-                <div class=" p-4 rounded-lg border border-gray-300 shadow-lg">
-                 <!--   <div>view count:  {{ $mostViewedProduct->views }}</div>-->
+                <div class="w-1/3 p-4 rounded-lg border border-gray-300 shadow-lg">
+               <div>view count:  {{ $mostViewedProduct->views }}</div>
                     @if(isset($mostViewedProduct))
                         <a class="block h-48 overflow-hidden rounded">
                             <img src="{{ asset('images/'.$mostViewedProduct->image) }}" alt="{{ $mostViewedProduct->name }}" class="h-full w-full  object-cover object-center">

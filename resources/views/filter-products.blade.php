@@ -1,5 +1,5 @@
 <x-app-layout>
-
+    <div class=" flex flex-row justify-end mr-10 mt-5">
     <form action="{{ route('products.filter') }}" method="GET">
 
 
@@ -27,9 +27,9 @@
             @endforeach
         </select>
 
-        <button type="submit"  class="bg-black text-white rounded-full py-2 px-2 m-2 border border-black border-2" >Filter</button>
+        <button type="submit" class="bg-white text-black hover:text-white hover:bg-black py-2 px-2 m-2 border-black border-2">Filter</button>
     </form>
-
+</div>
 
 
 

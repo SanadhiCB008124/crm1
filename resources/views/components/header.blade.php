@@ -1,4 +1,6 @@
-<nav class="bg-black-800">
+
+
+<nav id="nav" class="bg-black-800">
     <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div class="relative flex h-16 items-center justify-between">
             <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -39,7 +41,7 @@
                     <div class="flex space-x-4">
                         <li>
                             <a
-                                class="bg-white text-black no-underline hover:underline rounded-md px-3 py-2 text-sm font-medium"
+                                class="bg-white text-black no-underline  hover:underline rounded-md px-3 py-2 text-sm font-medium"
                                 href="{{ url('/') }}"
                             >
                                 Home
@@ -49,7 +51,7 @@
                         @foreach ($categories as $category)
                             <li>
                                 <a
-                                    class="bg-white text-black no-underline hover:underline rounded-md px-3 py-2 text-ms font-medium"
+                                    class="bg-white text-black no-underline active  hover:underline rounded-md px-3 py-2 text-ms font-medium"
                                     href="{{ route('products.by.category', ['category_id' => $category->id]) }}"
                                 >
                                     {{ ucfirst($category->category_name) }}

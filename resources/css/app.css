@@ -46,4 +46,6 @@ text-decoration: none;
 cursor: pointer;
 }
 
-
+.nav link a:active{
+    text-decoration: underline;
+}

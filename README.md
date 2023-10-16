@@ -1,66 +1,103 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# POINT CRM System for Shoe-selling Ecommerce
+## Table of Contents
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+- [Introduction](#introduction)
+- [Features](#features)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Technologies I have used](#technologies-i-have-used)
+- [Analytics I Have Implemented in the CRM](#analytics-provided-in-the-CRM)
 
-## About Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Introduction
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+In the dynamic world of ecommerce, building and sustaining strong customer relationships is crucial for long-term success. Enter "POINT," our sophisticated Customer Relationship Management (CRM) system designed specifically for our premium shoe-selling ecommerce platform.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Learning Laravel
+## Features
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- User-friendly e-commerce website for browsing and purchasing books.
+- Advanced search functionality based on titles, authors, genres, and keywords.
+- Detailed book descriptions and availability status.
+- Secure and reliable payment options.
+- CRM system for efficient customer relationship management.
+- Centralized customer data, including contact information and purchase history.
+- Personalized recommendations and targeted marketing campaigns.
+- Order management with real-time order status tracking.
+- Customer support with communication history for faster issue resolution.
+- Analytics and reporting capabilities for data-driven decision-making.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## Getting Started
+1. Clone the repository: `git clone https://github.com/SanadhiCB008124/crm1.git`
+2. Install dependencies: `composer install && npm install && npm run dev`
+3. Configure your environment variables: `.env`
+4. Run migrations: `php artisan migrate`
+5. Serve the application: `php artisan serve`
+   
+## Technologies I Have Used
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+#### Laravel Jetstream
+- A robust application scaffolding providing pre-built authentication for access control.
 
-## Laravel Sponsors
+#### Livewire
+- A full-stack framework for Laravel, enhancing development speed for dynamic interfaces and reactive components.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+#### Tailwind CSS
+- A utility-first CSS framework for building modern and responsive user interfaces directly in markup.
 
-### Premium Partners
+#### Daisy Tailwind UI
+- A Tailwind CSS extension providing a collection of customizable and ready-to-use UI components.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+#### Alpine.js
+- A minimal JavaScript framework seamlessly integrated with Laravel and Livewire for enhanced interactivity.
 
-## Contributing
+#### Chart.js
+- A JavaScript library for creating interactive and visually appealing charts and graphs.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+#### Mailtrap
+- A service for testing email functionality in development environments.
 
-## Code of Conduct
+#### MySQL Database
+- The chosen database management system for holding and retrieving data in the CRM.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## Analytics provided in the CRM
 
-## Security Vulnerabilities
+### Importance of Analytics
+Analytics play a crucial role in fortifying business intelligence and facilitating informed decision-making in the dynamic landscape of modern commerce.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### A. Financial Metrics
+- Average Order Value
+- Product Revenue
+- COGS (Cost of Goods Sold)
+- Profit Margin
 
-## License
+### B. Operational Metrics
+- Checkouts Per Day
+- Most Added to Cart
+- Logins Per Day
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### C. User Engagement Metrics
+- Total Site Registrations
+- Total Site Registrations per day
+- Total Online Registrations per day
+- Total Checkouts
+- Total Orders
+- Least Added Product to Cart
+
+### D. Product Sales Metrics
+- Most Sold Colors, Categories, and Sizes
+
+### E. User Behavior Metrics
+- Logins Per Day
+- Average Session Rate
+- Abandoned Cart Rate
+
+### F. Inventory Metrics
+- Inventory Turnover Rate
+
+
+Feel free to explore the codebase, contribute, and enhance the POINT CRM system for a cutting-edge ecommerce experience.
+
+Happy coding! 🚀
+

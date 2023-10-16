@@ -129,15 +129,18 @@ Analytics play a crucial role in fortifying business intelligence and facilitati
 - Profit Margin
 
 ### B. Operational Metrics
-- Checkouts Per Day
-- Most Added to Cart
+- Checkouts Per Day, For the past week and Month
+- Top 5 Most Added to Cart
+- Top 5 Most viewed Products
+- Least Viewed Product
 - Logins Per Day
 
 ### C. User Engagement Metrics
 - Total Site Registrations
-- Total Site Registrations per day
-- Total Online Registrations per day
-- Total Checkouts
+- Total Site Registrations per day , For the past week and Past month.
+- Total Online Registrations per day , For the past week and Past month.
+- Total Checkouts.
+- Total Checkouts per day , For the past week and Past month.
 - Total Orders
 - Least Added Product to Cart
 

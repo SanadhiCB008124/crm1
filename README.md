@@ -1,4 +1,6 @@
 # POINT CRM System for Shoe-selling Ecommerce
+
+![Project Image](https://github.com/SanadhiCB008124/crm1/blob/master/public/images/homepage-capture.png?raw=true)
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -17,16 +19,24 @@ In the dynamic world of ecommerce, building and sustaining strong customer relat
 
 ## Features
 
-- User-friendly e-commerce website for browsing and purchasing books.
-- Advanced search functionality based on titles, authors, genres, and keywords.
-- Detailed book descriptions and availability status.
-- Secure and reliable payment options.
-- CRM system for efficient customer relationship management.
-- Centralized customer data, including contact information and purchase history.
-- Personalized recommendations and targeted marketing campaigns.
-- Order management with real-time order status tracking.
-- Customer support with communication history for faster issue resolution.
-- Analytics and reporting capabilities for data-driven decision-making.
+-Intuitive E-commerce Platform: A user-friendly interface for seamless browsing and purchasing of shoes.
+-Advanced Search Functionality: Powerful search options based on shoe names, colors and sizes for a refined shopping experience.
+-Advanced Filter Functionality: Powerful search options based on shoe names, colors and sizes for a refined shopping experience.
+-Comprehensive Product Details: Detailed descriptions and availability status to provide customers with complete information about each shoe.
+-Effortless Cart Management: Intuitive cart interface for users to easily add, remove, and edit selected shoes before checkout.
+-Saved Cart Sessions: Enable users to save their shopping carts for future visits, promoting a convenient and personalized shopping experience.
+-Secure Checkout Process: Implement a secure and streamlined checkout process with multiple payment options, ensuring customer trust and satisfaction.
+-Order Summary: Display a clear and detailed order summary, including itemized lists, quantities, and prices, for transparent transactions.
+-Real-time Price Calculation: Dynamically calculate and display the total price, including taxes and shipping fees, as customers modify their cart.
+-Discount Support: Allow  discounts during the checkout process, incentivizing purchases.
+-Order Confirmation: Send automated order confirmation emails with detailed information, creating a sense of reassurance and transparency.
+-Order History: Enable users to view their previous order and re-order for a more convenient shopping experiance.
+-Customer Relationship Management (CRM) System: An efficient CRM system to manage and nurture customer relationships effectively.
+-Centralized Customer Data: Store and organize customer information, including contact details and purchase history, in one central location.
+-Personalized Recommendations: Utilize customer data to offer personalized shoe recommendations, enhancing the shopping experience.
+-Order Management: Real-time tracking of order status, allowing customers to monitor their purchases at every stage.
+-Analytics and Reporting: Powerful analytics and reporting capabilities for data-driven insights, aiding in strategic decision-making.
+-Mobile Responsiveness: Ensure a smooth and responsive cart and checkout experience across various devices, including mobile phones and tablets.
 
 ## Getting Started
 1. Clone the repository: `git clone https://github.com/SanadhiCB008124/crm1.git`

@@ -4,6 +4,7 @@
 ## Table of Contents
 
 - [Introduction](#introduction)
+- [My Report](#my-report)
 - [Features](#features)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
@@ -16,6 +17,8 @@
 
 In the dynamic world of ecommerce, building and sustaining strong customer relationships is crucial for long-term success. Enter our sophisticated Customer Relationship Management (CRM) system designed specifically for our premium shoe-selling ecommerce platform "POINT" .
 
+## My Report
+[click here to view the report](https://github.com/SanadhiCB008124/crm1/blob/master/SANADHI%20CORRECT%20SEM%202%20PHP%20REPORT.pdf)
 
 ## Features
 

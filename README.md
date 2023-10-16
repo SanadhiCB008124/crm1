@@ -1,6 +1,8 @@
 #  CRM System for POINT Shoe-selling Ecommerce Platform
 
 ![Project Image](https://github.com/SanadhiCB008124/crm1/blob/master/public/images/homepage-capture.png?raw=true)
+![Project Image](https://github.com/SanadhiCB008124/crm1/blob/master/public/images/analytics.png?raw=true)
+![Project Image](https://github.com/SanadhiCB008124/crm1/blob/master/public/images/analytics2.png?raw=true)
 ## Table of Contents
 
 - [Introduction](#introduction)

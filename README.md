@@ -9,7 +9,7 @@
 - [Installation](#installation)
 - [Technologies used](#technologies-used)
 - [Features of "POINT"](#features-of-point)
-- [Analytics provided by the CRM](#analytics-provided-by-the-crm)
+- [Analytics provided by the CRM System](#analytics-provided-by-the-crm-system)
 - [License](#license)
 
 ## Introduction
@@ -117,7 +117,7 @@ php artisan serve
 
 -Mobile Responsiveness: Ensure a smooth and responsive cart and checkout experience across various devices, including mobile phones and tablets.
  
-## Analytics provided by the CRM
+## Analytics provided by the CRM System
 
 ### Importance of Analytics
 Analytics play a crucial role in fortifying business intelligence and facilitating informed decision-making in the dynamic landscape of modern commerce.

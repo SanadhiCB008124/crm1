@@ -5,11 +5,11 @@
 
 - [Introduction](#introduction)
 - [My Report](#my-report)
-- [Features](#features)
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [Technologies used](#technologies-used)
-- [Analytics](#analytics)
+- [Features of "POINT"](#features-of-point)
+- [Analytics provided by the CRM](#analytics-provided-by-the-crm)
 - [License](#license)
 
 ## Introduction
@@ -19,7 +19,65 @@ In the dynamic world of ecommerce, building and sustaining strong customer relat
 ## My Report
 [click here to view the report](https://github.com/SanadhiCB008124/crm1/blob/master/SANADHI%20CORRECT%20SEM%202%20PHP%20REPORT.pdf)
 
-## Features
+
+## Prerequisites
+1. PHP 8 or higher
+2. Composer 
+3. Node.Js
+   
+## Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/SanadhiCB008124/crm1.git
+   ```
+2. Install dependencies:
+ ```bash
+ composer install && npm install && npm run dev
+ ```
+3. Configure your environment variables:
+ ```bash
+cp .env.example .env
+```
+4. Run migrations:
+ ```bash
+php artisan migrate
+ ```
+5. Serve the application:
+  ```bash
+php artisan serve
+ ```
+6. Run the build:
+ ```bash
+ npm run dev
+  ```
+
+## Technologies used
+
+#### Laravel Jetstream
+- A robust application scaffolding providing pre-built authentication for access control.
+
+#### Livewire
+- A full-stack framework for Laravel, enhancing development speed for dynamic interfaces and reactive components.
+
+#### Tailwind CSS
+- A utility-first CSS framework for building modern and responsive user interfaces directly in markup.
+
+#### Daisy Tailwind UI
+- A Tailwind CSS extension providing a collection of customizable and ready-to-use UI components.
+
+#### Alpine.js
+- A minimal JavaScript framework seamlessly integrated with Laravel and Livewire for enhanced interactivity.
+
+#### Chart.js
+- A JavaScript library for creating interactive and visually appealing charts and graphs.
+
+#### Mailtrap
+- A service for testing email functionality in development environments.
+
+#### MySQL Database
+- The chosen database management system for holding and retrieving data in the CRM.
+
+## Features of "POINT"
 
 -Intuitive E-commerce Platform: A user-friendly interface for seamless browsing and purchasing of shoes.
 
@@ -58,65 +116,8 @@ In the dynamic world of ecommerce, building and sustaining strong customer relat
 -Analytics and Reporting: Powerful analytics and reporting capabilities for data-driven insights, aiding in strategic decision-making.
 
 -Mobile Responsiveness: Ensure a smooth and responsive cart and checkout experience across various devices, including mobile phones and tablets.
-
-## Prerequisites
-1. PHP 8 or higher
-2. Composer 
-3. Node.Js
-   
-## Installation
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/SanadhiCB008124/crm1.git
-   ```
-2. Install dependencies:
- ```bash
- composer install && npm install && npm run dev
- ```
-3. Configure your environment variables:
- ```bash
-cp .env.example .env
-```
-4. Run migrations:
- ```bash
-php artisan migrate
- ```
-5. Serve the application:
-  ```bash
-php artisan serve
- ```
-6. Run the build:
- ```bash
- npm run dev
-  ```
-   
-## Technologies used
-
-#### Laravel Jetstream
-- A robust application scaffolding providing pre-built authentication for access control.
-
-#### Livewire
-- A full-stack framework for Laravel, enhancing development speed for dynamic interfaces and reactive components.
-
-#### Tailwind CSS
-- A utility-first CSS framework for building modern and responsive user interfaces directly in markup.
-
-#### Daisy Tailwind UI
-- A Tailwind CSS extension providing a collection of customizable and ready-to-use UI components.
-
-#### Alpine.js
-- A minimal JavaScript framework seamlessly integrated with Laravel and Livewire for enhanced interactivity.
-
-#### Chart.js
-- A JavaScript library for creating interactive and visually appealing charts and graphs.
-
-#### Mailtrap
-- A service for testing email functionality in development environments.
-
-#### MySQL Database
-- The chosen database management system for holding and retrieving data in the CRM.
-
-## Analytics
+ 
+## Analytics provided by the CRM
 
 ### Importance of Analytics
 Analytics play a crucial role in fortifying business intelligence and facilitating informed decision-making in the dynamic landscape of modern commerce.

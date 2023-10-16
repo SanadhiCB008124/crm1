@@ -156,8 +156,5 @@ Analytics play a crucial role in fortifying business intelligence and facilitati
 https://opensource.org/license/mit/
 
 
-
-Feel free to explore the codebase, contribute, and enhance the POINT CRM system for a cutting-edge ecommerce experience.
-
 Happy coding! 🚀
 

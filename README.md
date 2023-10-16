@@ -6,12 +6,11 @@
 - [Introduction](#introduction)
 - [My Report](#my-report)
 - [Features](#features)
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
 - [Technologies used](#technologies-used)
-- [Analytics provided in the CRM](#analytics-provided-in-the-CRM)
-
+- [Analytics](#analytics)
+- [License](#license)
 
 ## Introduction
 
@@ -23,6 +22,8 @@ In the dynamic world of ecommerce, building and sustaining strong customer relat
 ## Features
 
 -Intuitive E-commerce Platform: A user-friendly interface for seamless browsing and purchasing of shoes.
+
+-User Authentication: Secure your personal space with a robust user login system. Enjoy personalized features and a tailored shopping experience once you have registered an account and have logged in.
 
 -Advanced Search Functionality: Powerful search options based on shoe names, colors and sizes for a refined shopping experience.
 
@@ -58,14 +59,38 @@ In the dynamic world of ecommerce, building and sustaining strong customer relat
 
 -Mobile Responsiveness: Ensure a smooth and responsive cart and checkout experience across various devices, including mobile phones and tablets.
 
-## Getting Started
-1. Clone the repository: `git clone https://github.com/SanadhiCB008124/crm1.git`
-2. Install dependencies: `composer install && npm install && npm run dev`
-3. Configure your environment variables: `.env`
-4. Run migrations: `php artisan migrate`
-5. Serve the application: `php artisan serve`
+## Prerequisites
+1. PHP 8 or higher
+2. Composer 
+3. Node.Js
    
-## Technologies I Have Used
+## Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/SanadhiCB008124/crm1.git
+   ```
+2. Install dependencies:
+ ```bash
+ composer install && npm install && npm run dev
+ ```
+3. Configure your environment variables:
+ ```bash
+cp .env.example .env
+```
+4. Run migrations:
+ ```bash
+php artisan migrate
+ ```
+5. Serve the application:
+  ```bash
+php artisan serve
+ ```
+6. Run the build:
+ ```bash
+ npm run dev
+  ```
+   
+## Technologies used
 
 #### Laravel Jetstream
 - A robust application scaffolding providing pre-built authentication for access control.
@@ -91,7 +116,7 @@ In the dynamic world of ecommerce, building and sustaining strong customer relat
 #### MySQL Database
 - The chosen database management system for holding and retrieving data in the CRM.
 
-## Analytics provided in the CRM
+## Analytics
 
 ### Importance of Analytics
 Analytics play a crucial role in fortifying business intelligence and facilitating informed decision-making in the dynamic landscape of modern commerce.
@@ -125,6 +150,11 @@ Analytics play a crucial role in fortifying business intelligence and facilitati
 
 ### F. Inventory Metrics
 - Inventory Turnover Rate
+
+## License
+
+https://opensource.org/license/mit/
+
 
 
 Feel free to explore the codebase, contribute, and enhance the POINT CRM system for a cutting-edge ecommerce experience.

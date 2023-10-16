@@ -26,6 +26,8 @@ In the dynamic world of ecommerce, building and sustaining strong customer relat
 1. PHP 8 or higher
 2. Composer 
 3. Node.Js
+4. NPM
+5. WAMPP or XAMPP Server can be used.
    
 ## Installation
 1. Clone the repository:
@@ -161,6 +163,9 @@ Analytics play a crucial role in fortifying business intelligence and facilitati
 
 https://opensource.org/license/mit/
 
+Users have a role id to give the users the role types of "Admin" and  "Customer".
+Admin : role id = 0
+Customer :role id = 2
 
 Happy coding! 🚀
 

@@ -12,6 +12,7 @@
 - [Technologies used](#technologies-used)
 - [Features of "POINT"](#features-of-point)
 - [Analytics provided by the CRM System](#analytics-provided-by-the-crm-system)
+- [Notes](#notes)
 - [License](#license)
 
 ## Introduction
@@ -159,13 +160,17 @@ Analytics play a crucial role in fortifying business intelligence and facilitati
 ### F. Inventory Metrics
 - Inventory Turnover Rate
 
+## Notes
+Users have a role id to give the users the role types of "Admin" and  "Customer".
+
+Admin : role id = 0
+
+Customer :role id = 2
+
 ## License
 
 https://opensource.org/license/mit/
 
-Users have a role id to give the users the role types of "Admin" and  "Customer".
-Admin : role id = 0
-Customer :role id = 2
 
 Happy coding! 🚀
 

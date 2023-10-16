@@ -1,4 +1,4 @@
-# POINT CRM System for Shoe-selling Ecommerce
+#  CRM System for POINT Shoe-selling Ecommerce Platform
 
 ![Project Image](https://github.com/SanadhiCB008124/crm1/blob/master/public/images/homepage-capture.png?raw=true)
 ## Table of Contents
@@ -14,7 +14,7 @@
 
 ## Introduction
 
-In the dynamic world of ecommerce, building and sustaining strong customer relationships is crucial for long-term success. Enter "POINT," our sophisticated Customer Relationship Management (CRM) system designed specifically for our premium shoe-selling ecommerce platform.
+In the dynamic world of ecommerce, building and sustaining strong customer relationships is crucial for long-term success. Enter our sophisticated Customer Relationship Management (CRM) system designed specifically for our premium shoe-selling ecommerce platform "POINT" .
 
 
 ## Features

@@ -8,8 +8,8 @@
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
-- [Technologies I have used](#technologies-i-have-used)
-- [Analytics I Have Implemented in the CRM](#analytics-provided-in-the-CRM)
+- [Technologies used](#technologies-used)
+- [Analytics provided in the CRM](#analytics-provided-in-the-CRM)
 
 
 ## Introduction
